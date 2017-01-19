@@ -45,18 +45,18 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Recap Your Round</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <%= simple_form_for Round.new do |f| %>
-            <%= f.input :course %>
-            <%= f.input :score %>
-            <%= f.input :greenshit %>
-            <%= f.input :greenstotal %>
-            <%= f.input :fwyhit %>
-            <%= f.input :fwytotal %>
-            <%= f.input :putts %>
+          <%= f.error_notification %>
+            <%= f.input :course, required: true %>
+            <%= f.input :score, required: true %>
+            <%= f.input :greens, required: true %>
+            <%= f.input :greenstotal, required: true %>
+            <%= f.input :fwys, required: true %>
+            <%= f.input :fwystotal, required: true %>
+            <%= f.input :putts,required: true %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -67,9 +67,9 @@
     </div>
   </div>
 
-
-
-
+  <% if flash[:error].present? %>
+  <%= flash[:error].html_safe %>
+  <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 

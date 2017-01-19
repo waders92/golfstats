@@ -1,23 +1,18 @@
 class RoundsController < ApplicationController
 
-  def new
-    @round = Round.new
-  end
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def create
-    @round = Round.create(round_params)
-    if @round.valid?
-    redirect_to root_path
-  else
-    render :new, status: :unprocessable_entity
-  end
-end
+     @round = current_user.rounds.create(round_params)
+       if @round.invalid?
+         flash[:error] = 'Form can\'t be blank'
+       end
+         redirect_to root_path
+   end
+
   private
 
   def round_params
-    params.require(:round).permit(:course, :score, :greenshit, :greenstotal, :fwyhit, :fwytotal, :putts)
+    params.require(:round).permit(:course, :score, :greens, :greenstotal, :fwys, :fwystotal, :putts)
   end
-
-
-
 end

@@ -1,2 +1,28 @@
 <h2 class="text-center">Welcome to Stat Tracker</h2>
 <h3 class="text-center">A place to keep track of your golf stats</h3>
+
+<div class="leaderboard col-xs-10 col-xs-offset-1">
+  <h2 class="text-center">Latest Scores</h2>
+    <hr />
+    <div class="col-xs-4 text-center">
+      <h3>Name</h3>
+      <br />
+      <% @rounds.each do |round| %>
+      <h4><%= round.user.name %></h4>
+      <% end %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <h3>Course</h3>
+      <br />
+      <% @rounds.each do |round| %>
+      <h4><%= round.course %></h4>
+      <% end %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <h3>Score</h3>
+      <br />
+      <% @rounds.each do |round| %>
+      <h4><%= round.score %></h4>
+      <% end %>
+    </div>
+</div>
