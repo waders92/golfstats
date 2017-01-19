@@ -17,5 +17,10 @@ RSpec.describe RoundsController, type: :controller do
         round = Round.last
         expect(round.course).to eq ("Hello")
       end
+
+      it "should deal with errors correctly" do
+        post :create, round: {course: '' }
+        expect(Round.count).to eq 0
+      end
     end
   end
