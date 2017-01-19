@@ -8,4 +8,14 @@ RSpec.describe RoundsController, type: :controller do
       expect(response).to have_http_status(:success)
       end
     end
+
+    describe "grams#create action" do
+      it "should create a new round in the database" do
+        post :create, round: { course: 'Hello' }
+        expect(response).to redirect_to root_path
+
+        round = Round.last
+        expect(round.course).to eq ("Hello")
+      end
+    end
   end
