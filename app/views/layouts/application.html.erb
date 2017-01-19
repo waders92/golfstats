@@ -24,24 +24,50 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Sign-up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign-in', new_user_session_path %></li>
           <% if user_signed_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Members <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Post New Round</a></li>
-              <li><a href="#">View your profile</a></li>
-              <li><a href="#">Leave a comment</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">About</a></li>
-            </ul>
-          </li>
+          <li><%= link_to 'Post Round', '#', class: 'links', data: {toggle: 'modal', target: '#myModal'} %></li>
+          <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete', class: 'links pull-right' %></li>
+          <% else %>
+          <li><%= link_to 'Sign-in', new_user_session_path, class: 'links pull-right' %></li>
+          <li><%= link_to 'Sign-up', new_user_registration_path, class: 'links pull-right' %></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Recap Your Round</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for Round.new do |f| %>
+            <%= f.input :course %>
+            <%= f.input :score %>
+            <%= f.input :greenshit %>
+            <%= f.input :greenstotal %>
+            <%= f.input :fwyhit %>
+            <%= f.input :fwytotal %>
+            <%= f.input :putts %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit 'Create', class: 'btn btn-danger' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
 
 
   <p class="notice"><%= notice %></p>
@@ -52,9 +78,13 @@
 
 <div id="footer">
      <div class="container text-center">
-       <%= link_to 'Post Round', '#' %>
-       <%= link_to 'My Profile', '#' %>
-       <%= link_to 'About', '#' %>
+       <% if user_signed_in? %>
+         <%= link_to 'Post Round', '#', class: 'links', data: {toggle: 'modal', target: '#myModal'} %>
+         <%= link_to 'My Profile', '#' %>
+         <%= link_to 'About', '#' %>
+       <% else %>
+        <%= link_to 'About', '#' %>
+       <% end %>
      </div>
 </div>
 

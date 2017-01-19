@@ -9,7 +9,7 @@ RSpec.describe RoundsController, type: :controller do
       end
     end
 
-    describe "grams#create action" do
+    describe "rounds#create action" do
       it "should create a new round in the database" do
         post :create, round: { course: 'Hello' }
         expect(response).to redirect_to root_path
