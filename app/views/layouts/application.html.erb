@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id="wrap">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,6 +48,15 @@
   <p class="alert"><%= alert %></p>
 
 <%= yield %>
+</div> <!---/wrap for footer -->
+
+<div id="footer">
+     <div class="container text-center">
+       <%= link_to 'Post Round', '#' %>
+       <%= link_to 'My Profile', '#' %>
+       <%= link_to 'About', '#' %>
+     </div>
+</div>
 
 </body>
 </html>
