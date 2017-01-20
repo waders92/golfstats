@@ -1,0 +1,10 @@
+<br />
+<div class="big-box col-xs-6 col-xs-offset-3">
+  <h1>New Message</h1>
+  <%= simple_form_for Message.new do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :message, required: true, label: 'Add a Message', placeholder: 'Spaulding, you\'ll get nothing and like it!' %>
+    <br />
+    <%= f.submit 'Create', class: 'btn btn-primary pull-right' %>
+    <% end %>
+</div>

@@ -2,6 +2,7 @@ class StatsController < ApplicationController
 
   def index
     @rounds = Round.all
+    @messages = Message.all
   end
 
   def show

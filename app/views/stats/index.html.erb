@@ -33,4 +33,15 @@
 <div class="leaderboard col-xs-10 col-xs-offset-1">
   <h2 class="text-center">Member Chatter</h2>
     <hr />
+    <div class="col-xs-6 text-center info">
+      <% @messages.each do |message| %>
+        <p>" <%= message.message %> "</p>
+        <% end %>
+    </div>
+    <div class="col-xs-6 text-center info">
+      <% @messages.each do |message| %>
+        <p><%= message.user.name %></p>
+        <% end %>
+    </div>
+
 </div>

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :rounds
+  has_many :messages
 
   def name
     @name = [first_name, last_name].join(" ")
