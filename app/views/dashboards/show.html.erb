@@ -24,8 +24,12 @@
       <% end %>
     </div>
 
-    <h3 class="text-center">Scoring Average</h3></h3>
-    <br />
+    <div class="col-xs-12 text-center">
+      <h3 class="text-center">Scoring Average</h3>
+      --------------
+      <br />
+    </div>
+
 
     <p class="text-center big-score"><%= current_user.scoring_average_rounded %></p>
 </div>
@@ -53,8 +57,11 @@
       <% end %>
     </div>
 
-    <h3 class="text-center">Green's Hit %</h3></h3>
-    <br />
+    <div class="col-xs-12 text-center">
+      <h3 class="text-center">Greens Hit %</h3>
+      --------------
+      <br />
+    </div>
 
     <p class="text-center big-score"><%= current_user.greens_hit_average_rounded %></p>
 </div>
@@ -82,15 +89,18 @@
       <% end %>
     </div>
 
-    <h3 class="text-center">Fairways Hit % </h3></h3>
-    <br />
+    <div class="col-xs-12 text-center">
+      <h3 class="text-center">Fairway's Hit %</h3>
+      --------------
+      <br />
+    </div>
 
     <p class="text-center big-score"><%= current_user.fwys_hit_average_rounded %></p>
 </div>
 
 <br class="clr" />
 
-<div class="leaderboard col-xs-10 col-xs-offset-1">
+<div class="leaderboard last-stat col-xs-10 col-xs-offset-1">
   <h2 class="text-center">Putting Recap</h2>
   <hr />
     <div class="col-xs-6 text-center">
@@ -111,8 +121,10 @@
       <% end %>
     </div>
 
-    <h3 class="text-center">Putting Average</h3></h3>
-    <br />
-
+    <div class="col-xs-12 text-center">
+      <h3 class="text-center">Putting Average</h3>
+      --------------
+      <br />
+    </div>
     <p class="text-center big-score"><%= current_user.putting_average_rounded %></p>
 </div>
