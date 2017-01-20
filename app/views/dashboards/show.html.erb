@@ -25,7 +25,7 @@
     <h3 class="text-center">Scoring Average</h3></h3>
     <br />
 
-    <p class="text-center big-score"><%= current_user.scoring_average %></p>
+    <p class="text-center big-score"><%= current_user.scoring_average_rounded %></p>
 </div>
 
 <br class="clr" />
@@ -52,7 +52,7 @@
     <h3 class="text-center">Putting Average</h3></h3>
     <br />
 
-    <p class="text-center big-score"><%= current_user.putting_average %></p>
+    <p class="text-center big-score"><%= current_user.putting_average_rounded %></p>
 </div>
 
 <br class="clr" />
@@ -76,10 +76,10 @@
       <% end %>
     </div>
 
-    <h3 class="text-center">Green's Hit Percentage</h3></h3>
+    <h3 class="text-center">Green's Hit %</h3></h3>
     <br />
 
-    <p class="text-center big-score"><%= current_user.greens_hit_average %></p>
+    <p class="text-center big-score"><%= current_user.greens_hit_average_rounded %></p>
 </div>
 
 <br class="clr" />
@@ -103,8 +103,8 @@
       <% end %>
     </div>
 
-    <h3 class="text-center">Driving Accuracy</h3></h3>
+    <h3 class="text-center">Fairways Hit % </h3></h3>
     <br />
 
-    <p class="text-center big-score"><%= current_user.fwys_hit_average %></p>
+    <p class="text-center big-score"><%= current_user.fwys_hit_average_rounded %></p>
 </div>

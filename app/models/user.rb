@@ -14,8 +14,16 @@ class User < ActiveRecord::Base
     rounds.average(:score)
   end
 
+  def scoring_average_rounded
+    scoring_average.round(2)
+  end
+
   def putting_average
     rounds.average(:putts)
+  end
+
+  def putting_average_rounded
+    putting_average.round(2)
   end
 
   def greens_hit_total
@@ -27,11 +35,27 @@ class User < ActiveRecord::Base
   end
 
   def greens_hit_average
-    greens_hit_total / total_greens_possible
+    greens_hit_total / total_greens_possible.to_f * 100
+  end
+
+  def greens_hit_average_rounded
+    greens_hit_average.round(2)
+  end
+
+  def fwy_hit_total
+    rounds.sum(:fwys)
+  end
+
+  def total_fwys_possible
+    rounds.sum(:fwystotal)
   end
 
   def fwys_hit_average
+    fwy_hit_total / total_fwys_possible.to_f * 100
+  end
 
+  def fwys_hit_average_rounded
+    fwys_hit_average.round(2)
   end
 
 end
