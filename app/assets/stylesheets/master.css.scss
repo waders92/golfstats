@@ -77,6 +77,11 @@ a:focus {
   height: 125px;
 }
 
+.social {
+  height: 45px;
+
+}
+
 hr {
   width: 500px;
 }
@@ -89,6 +94,13 @@ hr {
   color: black;
 }
 
+.images {
+  height: 200px;
+}
+
+.info {
+  font-size: 20px;
+}
 @media (max-width: 780px) {
   hr {
     width: 100px;

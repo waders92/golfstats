@@ -31,33 +31,6 @@
 <br class="clr" />
 
 <div class="leaderboard col-xs-10 col-xs-offset-1">
-  <h2 class="text-center">Putting Recap</h2>
-  <hr />
-    <div class="col-xs-6 text-center">
-      <h3>Course</h3>
-      <br />
-      <% current_user.rounds.each do |round| %>
-        <h4><%= round.course %></h4>
-        <% end %>
-    </div>
-
-    <div class="col-xs-6 text-center">
-      <h3>Putts</h3>
-      <br />
-      <% current_user.rounds.each do |round| %>
-      <h4><%= round.putts %></h4>
-      <% end %>
-    </div>
-
-    <h3 class="text-center">Putting Average</h3></h3>
-    <br />
-
-    <p class="text-center big-score"><%= current_user.putting_average_rounded %></p>
-</div>
-
-<br class="clr" />
-
-<div class="leaderboard col-xs-10 col-xs-offset-1">
   <h2 class="text-center">Green's Hit Recap</h2>
   <hr />
     <div class="col-xs-6 text-center">
@@ -107,4 +80,31 @@
     <br />
 
     <p class="text-center big-score"><%= current_user.fwys_hit_average_rounded %></p>
+</div>
+
+<br class="clr" />
+
+<div class="leaderboard col-xs-10 col-xs-offset-1">
+  <h2 class="text-center">Putting Recap</h2>
+  <hr />
+    <div class="col-xs-6 text-center">
+      <h3>Course</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+        <h4><%= round.course %></h4>
+        <% end %>
+    </div>
+
+    <div class="col-xs-6 text-center">
+      <h3>Putts</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+      <h4><%= round.putts %></h4>
+      <% end %>
+    </div>
+
+    <h3 class="text-center">Putting Average</h3></h3>
+    <br />
+
+    <p class="text-center big-score"><%= current_user.putting_average_rounded %></p>
 </div>
