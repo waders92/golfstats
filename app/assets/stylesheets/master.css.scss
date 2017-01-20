@@ -1,25 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Hind+Siliguri|NTR');
 
 body {
   background-color: #3E7D98;
   color: #E4F1F5;
+  font-family: 'NTR', sans-serif;
 }
-
-// body {
-//   background: url('holston.jpg') no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
-
 
 .big-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
   background: #fff;
+  color: black;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding: 10px;
@@ -47,6 +41,7 @@ body {
 .navbar-default .navbar-nav > li > a {
   color: white;
   font-size: 16px;
+  font-family: 'NTR', sans-serif;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -55,10 +50,19 @@ body {
 
 .navbar .navbar-brand {
   color: white;
+  font-family: 'NTR', sans-serif;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: black;
+}
+
+.links a {
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 50px;
+  font-size: 18px;
 }
 
 .big-score {
@@ -77,8 +81,8 @@ hr {
   width: 500px;
 }
 
-.modal-backdrop {
-   background-color: red;
+.title {
+  margin-top: 50px;
 }
 
 .modal-header, .modal-body, .modal-footer {

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'stats#index'
+  get '/about', to: 'stats#about'
   resources :rounds
     resource :dashboard, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.

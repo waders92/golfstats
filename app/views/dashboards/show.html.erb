@@ -1,8 +1,11 @@
 
-<div class="leaderboard col-xs-10 col-xs-offset-1">
+<div class="leaderboard text-center col-xs-6 col-xs-offset-3">
   <h1><%= current_user.name %></h1>
   <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
-  <h2 class="text-center">Latest Scores</h2>
+</div>
+
+<div class="leaderboard col-xs-10 col-xs-offset-1">
+  <h2 class="text-center">Scoring Recap</h2>
   <hr />
     <div class="col-xs-6 text-center">
       <h3>Course</h3>
@@ -18,11 +21,90 @@
       <h4><%= round.score %>&nbsp;&nbsp;<%= link_to 'Edit', edit_round_path(round) , class: 'btn btn-primary btn-xs' %>&nbsp; &nbsp<%= link_to 'Erase', round_path(round), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger btn-xs' %></h4>
       <% end %>
     </div>
+
     <h3 class="text-center">Scoring Average</h3></h3>
     <br />
 
     <p class="text-center big-score"><%= current_user.scoring_average %></p>
-
 </div>
 
 <br class="clr" />
+
+<div class="leaderboard col-xs-10 col-xs-offset-1">
+  <h2 class="text-center">Putting Recap</h2>
+  <hr />
+    <div class="col-xs-6 text-center">
+      <h3>Course</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+        <h4><%= round.course %></h4>
+        <% end %>
+    </div>
+
+    <div class="col-xs-6 text-center">
+      <h3>Putts</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+      <h4><%= round.putts %></h4>
+      <% end %>
+    </div>
+
+    <h3 class="text-center">Putting Average</h3></h3>
+    <br />
+
+    <p class="text-center big-score"><%= current_user.putting_average %></p>
+</div>
+
+<br class="clr" />
+
+<div class="leaderboard col-xs-10 col-xs-offset-1">
+  <h2 class="text-center">Green's Hit Recap</h2>
+  <hr />
+    <div class="col-xs-6 text-center">
+      <h3>Course</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+        <h4><%= round.course %></h4>
+        <% end %>
+    </div>
+
+    <div class="col-xs-6 text-center">
+      <h3>Greens</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+      <h4><%= round.greens %> / <%= round.greenstotal %></h4>
+      <% end %>
+    </div>
+
+    <h3 class="text-center">Green's Hit Percentage</h3></h3>
+    <br />
+
+    <p class="text-center big-score"><%= current_user.greens_hit_average %></p>
+</div>
+
+<br class="clr" />
+
+<div class="leaderboard col-xs-10 col-xs-offset-1">
+  <h2 class="text-center">Fairway's Hit Recap</h2>
+  <hr />
+    <div class="col-xs-6 text-center">
+      <h3>Course</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+        <h4><%= round.course %></h4>
+        <% end %>
+    </div>
+
+    <div class="col-xs-6 text-center">
+      <h3>Fairways</h3>
+      <br />
+      <% current_user.rounds.each do |round| %>
+      <h4><%= round.fwys %> / <%= round.fwystotal %></h4>
+      <% end %>
+    </div>
+
+    <h3 class="text-center">Driving Accuracy</h3></h3>
+    <br />
+
+    <p class="text-center big-score"><%= current_user.fwys_hit_average %></p>
+</div>

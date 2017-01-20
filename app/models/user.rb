@@ -11,7 +11,27 @@ class User < ActiveRecord::Base
   end
 
   def scoring_average
-   rounds.average(:score)
- end
+    rounds.average(:score)
+  end
+
+  def putting_average
+    rounds.average(:putts)
+  end
+
+  def greens_hit_total
+    rounds.sum(:greens)
+  end
+
+  def total_greens_possible
+    rounds.sum(:greenstotal)
+  end
+
+  def greens_hit_average
+    greens_hit_total / total_greens_possible
+  end
+
+  def fwys_hit_average
+
+  end
 
 end
