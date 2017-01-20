@@ -41,7 +41,7 @@ body {
 .navbar {
   border-radius: 0;
   border: none;
-  background:rgba(0,0,0, 0.6)
+  background:rgba(0,0,0, 0.3)
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -75,6 +75,14 @@ a:focus {
 
 hr {
   width: 500px;
+}
+
+.modal-backdrop {
+   background-color: red;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  color: black;
 }
 
 @media (max-width: 780px) {

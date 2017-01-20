@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-          <li><%= link_to 'Post Round', '#', class: 'links', data: {toggle: 'modal', target: '#myModal'} %></li>
+          <li><%= link_to 'Add Round', '#', class: 'links', data: {toggle: 'modal', target: '#myModal'} %></li>
           <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete', class: 'links' %></li>
           <% else %>
           <li><%= link_to 'Sign-in', new_user_session_path, class: 'links pull-right' %></li>
@@ -80,8 +80,8 @@
      <div class="container text-center">
        <% if user_signed_in? %>
          <%= link_to 'Home', root_path %>
-         <%= link_to 'Post Round', '#', data: {toggle: 'modal', target: '#myModal'} %>
-         <%= link_to 'My Profile', dashboard_path %>
+         <%= link_to 'Add Round', '#', data: {toggle: 'modal', target: '#myModal'} %>
+         <%= link_to 'My Stats', dashboard_path %>
          <%= link_to 'About', '#' %>
        <% else %>
         <%= link_to 'About', '#' %>
