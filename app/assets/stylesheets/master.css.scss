@@ -2,7 +2,8 @@
 @import "bootstrap";
 
 body {
-background-color: #3E7D98;
+  background-color: #3E7D98;
+  color: #E4F1F5;
 }
 
 // body {
@@ -66,4 +67,18 @@ background-color: #3E7D98;
 
 a:focus {
   border: none;
+}
+
+.icons {
+  height: 125px;
+}
+
+hr {
+  width: 500px;
+}
+
+@media (max-width: 780px) {
+  hr {
+    width: 100px;
+  }
 }
