@@ -91,6 +91,15 @@ a:focus {
 
 }
 
+.errors {
+  font-size: 25px;
+  padding-left:100px;
+}
+
+.clr {
+  clear:both;
+}
+
 hr {
   width: 500px;
 }
@@ -110,6 +119,11 @@ hr {
 .info {
   font-size: 20px;
 }
+
+#input {
+  width: 100%;
+}
+
 @media (max-width: 780px) {
   hr {
     width: 100px;

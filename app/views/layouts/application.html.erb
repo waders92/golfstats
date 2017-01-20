@@ -78,10 +78,14 @@
       </div>
     </div>
   </div>
-
-  <% if flash[:error].present? %>
-  <%= flash[:error].html_safe %>
-  <% end %>
+<br />
+  <div class="pull-left errors">
+    <br /><br />
+    <% if flash[:error].present? %>
+    <%= flash[:error].html_safe %>
+    <% end %>
+  </div>
+<br class="clr" />
 
 <%= yield %>
 

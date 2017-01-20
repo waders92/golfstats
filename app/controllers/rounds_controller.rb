@@ -5,7 +5,7 @@ class RoundsController < ApplicationController
   def create
      @round = current_user.rounds.create(round_params)
        if @round.invalid?
-         flash[:error] = 'Form can\'t be blank'
+         flash[:error] = 'Round no Created! Form missing a field'
        end
          redirect_to root_path
    end
@@ -17,6 +17,9 @@ class RoundsController < ApplicationController
    def update
      @round = Round.find(params[:id])
      @round.update_attributes(round_params)
+     if @round.invalid?
+       flash[:error] = 'Round not Updated! Form missing a field.'
+     end
      redirect_to dashboard_path
    end
 
