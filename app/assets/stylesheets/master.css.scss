@@ -42,6 +42,7 @@ body {
   color: white;
   font-size: 16px;
   font-family: 'NTR', sans-serif;
+  display: inline-block;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -67,7 +68,7 @@ body {
   padding: 20px;
   margin: 20px;
   margin-bottom: 50px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .big-score {
@@ -131,5 +132,15 @@ hr {
 @media (max-width: 780px) {
   hr {
     width: 100px;
+  }
+}
+
+@media (max-width: 780px) {
+  .links a {
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    margin-bottom: 50px;
+    font-size: 15px;
   }
 }
