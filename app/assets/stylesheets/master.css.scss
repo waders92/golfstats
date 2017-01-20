@@ -57,6 +57,11 @@ body {
   color: black;
 }
 
+.banner {
+  margin-top: 100px;
+  padding-bottom: 50px;
+}
+
 .links a {
   color: white;
   padding: 20px;
@@ -71,6 +76,10 @@ body {
 
 a:focus {
   border: none;
+}
+
+.modal-open .modal, a:focus {
+  outline:none;
 }
 
 .icons {
