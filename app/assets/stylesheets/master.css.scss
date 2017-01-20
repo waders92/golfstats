@@ -1,6 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+background-color: #3E7D98;
+}
+
+// body {
+//   background: url('holston.jpg') no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
 
 
 .big-box {
@@ -16,12 +27,43 @@
 
 
 .leaderboard {
-  background:rgba(0,0,0, 0.2) no-repeat center center fixed;
+  background:rgba(0,0,0, 0.3) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: black;
+  color: #F1EBE4;
   height: auto;
   margin-top: 50px;
+}
+
+.navbar {
+  border-radius: 0;
+  border: none;
+  background:rgba(0,0,0, 0.6)
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: black;
+}
+
+.navbar .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: black;
+}
+
+.big-score {
+  font-size: 2em;
+}
+
+a:focus {
+  border: none;
 }

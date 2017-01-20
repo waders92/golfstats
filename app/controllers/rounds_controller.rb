@@ -10,6 +10,22 @@ class RoundsController < ApplicationController
          redirect_to root_path
    end
 
+   def edit
+     @round = Round.find(params[:id])
+   end
+
+   def update
+     @round = Round.find(params[:id])
+     @round.update_attributes(round_params)
+     redirect_to dashboard_path
+   end
+
+   def destroy
+     @round = Round.find(params[:id])
+     @round.destroy
+     redirect_to dashboard_path
+   end
+
   private
 
   def round_params

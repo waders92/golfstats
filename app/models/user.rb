@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
     @name = [first_name, last_name].join(" ")
   end
 
+  def scoring_average
+   rounds.average(:score)
+ end
+
 end

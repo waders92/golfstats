@@ -1,0 +1,17 @@
+
+<br />
+<div class="leaderboard col-xs-6 col-xs-offset-3">
+  <h3>Edit your round</h3>
+  <%= simple_form_for @round do |f| %>
+  <%= f.input :course, required: true, label: 'Course Name?' %>
+  <%= f.input :score, required: true, label: 'What score did you shoot?' %>
+  <%= f.input :greens, required: true, label: 'Greens Hit This Round' %>
+  <%= f.input :greenstotal, required: true, label: 'Total Greens?' %>
+  <%= f.input :fwys, required: true, label: 'Fairways Hit Today?' %>
+  <%= f.input :fwystotal, required: true, label: 'Total Fairways Possible?' %>
+  <%= f.input :putts,required: true, label: 'Putts Total' %>
+    <br />
+    <%= f.submit 'Update', class: 'btn btn-success btn-xs' %>
+    <% end %>
+    <br />
+</div>

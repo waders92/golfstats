@@ -21,20 +21,27 @@ body {
 /* Set the fixed height of the footer here */
 #footer {
   height: $footer-height;
-  background-color: #f5f5f5;
+  background-color: rgba(167, 152, 139, 0.4);
 }
 
 #footer a {
   padding: 20px;
   margin: 20px;
-  color: darkgrey;
+  color: white;
   font-size: 18px;
 }
 
 #footer a:hover {
   text-decoration: none;
+  color: black;
 }
 
 .container {
   padding-top: 40px;
+}
+
+@media (max-width: 780px) {
+  #footer a {
+    font-size: 14px;
+  }
 }
