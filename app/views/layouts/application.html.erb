@@ -33,7 +33,7 @@
           <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete', class: 'links' %></li>
           <% else %>
           <li><%= link_to 'Sign-in', new_user_session_path, class: 'links pull-right' %></li>
-          <li><%= link_to 'Sign-up', new_user_registration_path, class: 'links pull-right' %></li>
+          <li><%= link_to 'Register', new_user_registration_path, class: 'links pull-right' %></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -71,13 +71,13 @@
     </div>
   </div>
 
-  <div class="pull-left errors">
-    <br /><br />
+  <!-- <div class="pull-left errors"> -->
+  
     <% if flash[:error].present? %>
     <%= flash[:error].html_safe %>
     <% end %>
-  </div>
-<br class="clr" />
+  <!-- </div> -->
+
 
 <%= yield %>
 
