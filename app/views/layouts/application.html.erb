@@ -28,12 +28,12 @@
           <li><%= link_to 'Add Round', '#', data: {toggle: 'modal', target: '#myModal'} %></li>
           <li><%= link_to 'My Stats', dashboard_path %></li>
           <li><%= link_to 'Tips', '#' %></li>
-          <li><%= link_to 'Message', new_message_path, class: 'links' %></li>
           <li><%= link_to 'About', about_path %></li>
           <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete', class: 'links' %></li>
           <% else %>
           <li><%= link_to 'Sign-in', new_user_session_path, class: 'links pull-right' %></li>
           <li><%= link_to 'Register', new_user_registration_path, class: 'links pull-right' %></li>
+          <li><%= link_to 'About', about_path %></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -72,7 +72,7 @@
   </div>
 
   <!-- <div class="pull-left errors"> -->
-  
+
     <% if flash[:error].present? %>
     <%= flash[:error].html_safe %>
     <% end %>
