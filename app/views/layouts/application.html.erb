@@ -51,7 +51,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="signupForm">
           <%= simple_form_for Round.new do |f| %>
           <%= f.error_notification %>
             <%= f.input :course, required: true, label: 'Course Name?', placeholder: 'Kiawah Ocean Course' %>
@@ -61,6 +61,7 @@
             <%= f.input :fwys, required: true, placeholder: '7', label: 'Fairways Hit Today?' %>
             <%= f.input :fwystotal, required: true, label: 'Total Fairways Possible?', placeholder: '14' %>
             <%= f.input :putts,required: true, label: 'Putts Total', placeholder: '31' %>
+            <div id="errors"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -71,11 +72,27 @@
     </div>
   </div>
 
+
+  <script>
+    $('#signupForm').formValidation( {
+      err: {
+        container: '#errors'
+      },
+    });
+
+    $('#signupForm').on('err.form.fv', function(e) {
+      $('#myModal').modal('show');
+    });
+
+  </script>
+
   <!-- <div class="pull-left errors"> -->
 
     <% if flash[:error].present? %>
-    <%= flash[:error].html_safe %>
-    <% end %>
+    <div class="alert alert-danger">
+      <%= flash[:error].html_safe %>
+    </div>
+      <% end %>
   <!-- </div> -->
 
 

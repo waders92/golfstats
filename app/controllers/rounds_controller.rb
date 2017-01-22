@@ -5,9 +5,11 @@ class RoundsController < ApplicationController
   def create
      @round = current_user.rounds.create(round_params)
        if @round.invalid?
-         flash[:error] = 'Round no Created! Form missing a field'
+         flash[:error] = '<strong>Could not save</strong>, please fill all fields.'
        end
          redirect_to root_path
+
+
    end
 
    def edit
@@ -18,7 +20,7 @@ class RoundsController < ApplicationController
      @round = Round.find(params[:id])
      @round.update_attributes(round_params)
      if @round.invalid?
-       flash[:error] = 'Round not Updated! Form missing a field.'
+       flash[:error] = '<strong>Could not save</strong>, please fill all fields.'
      end
      redirect_to dashboard_path
    end
