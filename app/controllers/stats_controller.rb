@@ -1,8 +1,8 @@
 class StatsController < ApplicationController
 
   def index
-    @rounds = Round.all
-    @messages = Message.all
+    @rounds = Round.limit(10).order('created_at desc')
+    @messages = Message.limit(10).order('created_at desc')
   end
 
   def show
