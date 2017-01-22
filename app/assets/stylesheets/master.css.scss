@@ -21,9 +21,12 @@ body {
 .responsive-scale{
 	width:100%;
 	padding-bottom: 33.666666666667%; /* 960px/1440px */
-	background-image:url('kings.jpg');
+	background-image:url('saguro.jpg');
 	background-size:cover;
 	background-position:center; /* IE fix */
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
 }
 
 
@@ -47,7 +50,7 @@ body {
   background-size: cover;
   color: #F1EBE4;
   height: auto;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .navbar {
