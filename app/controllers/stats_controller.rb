@@ -10,4 +10,12 @@ class StatsController < ApplicationController
    @user = User.find(params[:id])
  end
 
+ def about
+
+ end
+
+ def tips
+
+ end
+
 end

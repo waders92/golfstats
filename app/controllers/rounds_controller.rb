@@ -5,7 +5,7 @@ class RoundsController < ApplicationController
   def create
      @round = current_user.rounds.create(round_params)
        if @round.invalid?
-         flash[:error] = '<strong>Could not save</strong>, please fill all fields.'
+         flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
        end
          redirect_to root_path
 
@@ -20,7 +20,7 @@ class RoundsController < ApplicationController
      @round = Round.find(params[:id])
      @round.update_attributes(round_params)
      if @round.invalid?
-       flash[:error] = '<strong>Could not save</strong>, please fill all fields.'
+       flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
      end
      redirect_to dashboard_path
    end

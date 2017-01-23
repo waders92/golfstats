@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'stats#index'
   get '/about', to: 'stats#about'
+  get '/tips', to: 'stats#tips'
   resources :rounds
   resources :messages
     resource :dashboard, only: [:show]
