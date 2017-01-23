@@ -55,4 +55,5 @@ gem 'active_median', '~> 0.1.0'
 # test suite
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.0'
 end

@@ -2,6 +2,10 @@ class RoundsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
+  def new
+
+  end
+
   def create
      @round = current_user.rounds.create(round_params)
        if @round.invalid?
