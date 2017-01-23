@@ -4,18 +4,22 @@ RSpec.describe RoundsController, type: :controller do
 
   describe "rounds#new action" do
     it "should show the new form" do
+
       get :new
-      expect(response).to have_http_status(:success)
+      expect(response).to redirect_to new_user_session_path
       end
     end
 
     describe "rounds#create action" do
       it "should create a new round in the database" do
-        post :create, round: { course: 'Augusta' }
+        user = FactoryGirl.create(:user)
+        sign_in user
+
+        post :create, round: { course: 'Test course' }
         expect(response).to redirect_to root_path
 
         round = Round.last
-        expect(round.course).to eq ("Augusta")
+        expect(round.course).to eq ("Test course")
       end
 
       it "should deal with errors correctly" do
