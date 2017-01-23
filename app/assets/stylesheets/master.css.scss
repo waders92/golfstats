@@ -176,6 +176,10 @@ hr {
   border-radius: 0;
 }
 
+.chart {
+  background: transparent;
+}
+
 @media (max-width: 780px) {
   hr {
     width: 100px;
