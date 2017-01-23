@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Golfstats
+* Ruby version 2.3.0
 
-Things you may want to cover:
+Golfstats is a golf stat tracking applicaton created in Ruby.
 
-* Ruby version
+Here are some of the key features -
 
-* System dependencies
+Devise (authentication)
+Users linked to Rounds
+Rounds track -
+* course
+* score
+* fairways hit
+* greens hit
+* putting
 
-* Configuration
+Views contain a dashboard that keeps track of the users stats.  Users can edit and modify rounds.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+There is also a section for improvement that links to videos (not user uploaded)
