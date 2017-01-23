@@ -33,27 +33,15 @@
 <!-- Chart showing averages -->
 
 <div class="col-xs-10 col-xs-offset-1">
-  <h3>Scoring Average By Course</h3>
-  <%= pie_chart Round.group(:score, :course).count %>
+  <h3 class="text-center">Scores By Course</h3>
+  <%= bar_chart Round.group(:course).sum(:score), colors: ["blue"] %>
 </div>
   <br />
   <div class="col-xs-10 col-xs-offset-1">
-    <h3>Putting Average By Course</h3>
-    <%= pie_chart Round.group(:putts, :course).count %>
+    <h3 class="text-center">Putting Average By Course</h3>
+    <%= bar_chart Round.group(:course).sum(:putts), colors: ["green"] %>
   </div>
   <br />
-  <div class="col-xs-10 col-xs-offset-1">
-    <h3>Fairway Average By Course</h3>
-    <%= pie_chart Round.group(:fwys, :course).count, library: {pieSliceText: ''} %>
-  </div>
-<br />
-<div class="col-xs-10 col-xs-offset-1">
-  <h3>Greens Hit Average By Course</h3>
-  <%= pie_chart Round.group(:greens, :course).count, library: {pieSliceText: ''} %>
-</div>
-
-
-
 
 <div class="leaderboard last-stat col-xs-10 col-xs-offset-1">
   <h2 class="text-center">Member Chatter</h2>
