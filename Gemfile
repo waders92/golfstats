@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
 # Use postgresql as the database for Active Record
@@ -36,6 +36,10 @@ gem 'sass-rails'
 gem 'devise'
 
 gem 'simple_form'
+
+gem 'chartkick', '1.2.4'
+gem 'groupdate', '2.1.1'
+gem 'active_median', '~> 0.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

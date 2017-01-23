@@ -30,6 +30,26 @@
     </div>
 </div>
 
+<!-- Chart showing averages -->
+<div class="col-xs-8 col-xs-offset-2">
+  <h3>Scoring Average By Course</h3>
+  <%= pie_chart Round.group(:score, :course).count %>
+</div>
+  <br />
+  <div class="col-xs-8 col-xs-offset-2">
+    <h3>Putting Average By Course</h3>
+    <%= pie_chart Round.group(:putts, :course).count %>
+  </div>
+  <br />
+  <div class="col-xs-8 col-xs-offset-2">
+    <h3>Fairway Average By Course</h3>
+    <%= pie_chart Round.group(:fwys, :course).count %>
+  </div>
+
+
+
+
+
 <div class="leaderboard last-stat col-xs-10 col-xs-offset-1">
   <h2 class="text-center">Member Chatter</h2>
   <div class="col-xs-6 col-xs-offset-3 text-center">
