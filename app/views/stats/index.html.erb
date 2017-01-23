@@ -31,6 +31,9 @@
 </div>
 
 <!-- Chart showing averages -->
+<div class="charts">
+
+</div>
 <div class="col-xs-8 col-xs-offset-2">
   <h3>Scoring Average By Course</h3>
   <%= pie_chart Round.group(:score, :course).count %>
@@ -43,7 +46,7 @@
   <br />
   <div class="col-xs-8 col-xs-offset-2">
     <h3>Fairway Average By Course</h3>
-    <%= pie_chart Round.group(:fwys, :course).count %>
+    <%= pie_chart Round.group(:fwys, :course).count, library: {pieSliceText: ''} %>
   </div>
 
 

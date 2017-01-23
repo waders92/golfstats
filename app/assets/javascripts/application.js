@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jsapi
+//= require chartkick
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
