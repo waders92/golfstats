@@ -27,13 +27,13 @@
     <div class="col-xs-12 text-center">
       <h1 class="text-center">Scoring Average</h1>
       --------------
-      <br />
+    <br />
     </div>
     <p class="text-center big-score"><%= current_user.scoring_average_rounded %></p>
     <br />
     <div class="col-xs-10 col-xs-offset-1">
       <h3 class="text-center">Scores Recap</h3>
-        <%= bar_chart current_user.rounds.group(:course).sum(:score), colors: ["#0D6E8F"] %>
+      <%= bar_chart current_user.rounds.group(:course).sum(:score), colors: ["firebrick"] %>
       <br />
     </div>
   </div>
@@ -62,15 +62,16 @@
     </div>
 
     <div class="col-xs-12 text-center">
-      <h1 class="text-center">Greens Hit</h1>
+      <h1 class="text-center">Greens Accuracy</h1>
       --------------
       <br />
     </div>
 
     <p class="text-center big-score"><%= current_user.greens_hit_average_rounded %> %</p>
     <div class="col-xs-10 col-xs-offset-1">
-      <h3 class="text-center">Greens Recap</h3>
-      <%= bar_chart current_user.rounds.group(:course).sum(:greens), colors: ["firebrick"] %>
+      <!-- <h3 class="text-center">Greens Recap</h3> -->
+      <%= pie_chart current_user.rounds.group(:greens).count, library: {pieSliceText:
+  'label'}, donut: true %>
       <br />
     </div>
 </div>
@@ -105,8 +106,9 @@
     </div>
     <p class="text-center big-score"><%= current_user.fwys_hit_average_rounded %> %</p>
     <div class="col-xs-10 col-xs-offset-1">
-      <h3 class="text-center">Scores Recap</h3>
-      <%= bar_chart current_user.rounds.group(:course).sum(:fwys), colors: ["#39535C"] %>
+      <!-- <h3 class="text-center">Fariway's Hit Recap</h3> -->
+      <%= pie_chart current_user.rounds.group(:fwys).count, library: {pieSliceText:
+'label'} %>
       <br />
     </div>
 </div>
@@ -142,7 +144,7 @@
     <p class="text-center big-score"><%= current_user.putting_average_rounded %></p>
     <div class="col-xs-10 col-xs-offset-1">
       <br />
-      <h3 class="text-center">Putting Average By Course</h3>
+      <!-- <h3 class="text-center">Total Putts By Course</h3> -->
       <%= bar_chart current_user.rounds.group(:course).sum(:putts), colors: ["green"] %>
       <br />
     </div>

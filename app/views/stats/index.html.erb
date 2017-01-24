@@ -30,7 +30,7 @@
     </div>
 </div>
 
-
+<% if user_signed_in? %>
 <div class="col-xs-12 splitter">
   <div class="last-stat col-xs-12">
       <div class="col-xs-12 info">
@@ -54,6 +54,12 @@
       <%= f.submit 'Add Message', class: 'btn btn-primary msgbtn' %>
       <% end %>
   </div>
+<% else %>
 
-
+<div class="col-xs-12 newpage">
+  <br /><br />
+  <h1 class="text-center">Welcome to TrakStats!</h1>
+    <h3 class="text-center">Register or Sign-in to get started....</h3>
+</div>
+<% end %>
 </div>
