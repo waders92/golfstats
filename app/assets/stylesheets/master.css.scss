@@ -94,6 +94,23 @@ body {
   padding-bottom: 50px;
 }
 
+.splitter {
+  background-color: white;
+  color: black;
+  height: 600px;
+  margin-top: 100px;
+}
+
+.msgbtn {
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.msgbtn:hover {
+  background-color: black;
+}
+
 .links a {
   color: white;
   padding: 20px;
@@ -174,7 +191,7 @@ hr {
 }
 
 .comment_handle {
-  color: rgba(242, 246, 247, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .alert-danger {

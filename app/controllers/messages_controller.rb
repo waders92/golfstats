@@ -8,7 +8,10 @@ class MessagesController < ApplicationController
 
   def create
     @message = current_user.messages.build(message_params)
-    if @message.save
+    if @message.valid?
+      @message.save
+      redirect_to root_path
+    else
       redirect_to root_path
   end
 end
