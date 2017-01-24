@@ -58,5 +58,4 @@ class User < ActiveRecord::Base
   def fwys_hit_average_rounded
     fwys_hit_average.round(2)
   end
-
 end
