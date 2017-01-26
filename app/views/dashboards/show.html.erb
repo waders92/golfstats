@@ -33,7 +33,7 @@
     <br />
     <div class="col-xs-10 col-xs-offset-1">
       <h3 class="text-center">Scores Recap</h3>
-      <%= bar_chart current_user.rounds.group(:course).sum(:score), colors: ["firebrick"] %>
+      <%= bar_chart current_user.rounds.group(:course).average(:score), colors: ["firebrick"] %>
       <br />
     </div>
   </div>
