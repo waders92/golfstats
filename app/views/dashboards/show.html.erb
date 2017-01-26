@@ -33,7 +33,7 @@
     <br />
     <div class="col-xs-10 col-xs-offset-1">
       <h3 class="text-center"></h3>
-      <%= bar_chart current_user.rounds.group(:course).average(:score), colors: ["#9C0808"] %>
+      <%= bar_chart current_user.rounds.group(:course).average(:score), colors: ["#9C0808"], xtitle: "Time", ytitle: "Population" %>
       <br />
     </div>
   </div>
