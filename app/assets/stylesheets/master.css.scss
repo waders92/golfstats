@@ -140,6 +140,9 @@ body {
   font-size: 3em;
 }
 
+.push {
+  padding-top: 15px;
+}
 a:focus {
   border: none;
 }
@@ -211,7 +214,7 @@ hr {
   margin-bottom: 100px;
 }
 
-.comment_handle {
+.comment_handle, .score-handle {
   color: rgba(0, 0, 0, 0.3);
 }
 
