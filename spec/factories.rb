@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :comment do
+    association :round
 
   end
   factory :user do

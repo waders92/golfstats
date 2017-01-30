@@ -1,8 +1,15 @@
 <br /><br />
-<div class="text-center col-xs-6 col-xs-offset-3">
-  <h1><%= current_user.name %></h1>
-  <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
-</div>
+
+  <div class="text-center col-xs-6 col-xs-offset-3">
+    <%= image_tag 'user.png', class: 'user' %>
+    <h1><%= current_user.name %></h1>
+    <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
+  </div>
+
+
+
+
+
 <br class="clr" /><br /><br />
 <div class="col-lg-8 col-lg-offset-2">
   <table>
