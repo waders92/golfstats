@@ -1,6 +1,7 @@
 class Round < ActiveRecord::Base
 
   belongs_to :user
+  has_many :comments
 
   validates :course, presence: true, length: { minimum: 1 }
   validates :score, presence: true

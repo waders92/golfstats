@@ -1,13 +1,10 @@
 class RoundsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update]
 
-  def new
-
-  end
 
   def show
-    @round= Round.find(params[:id])
+    @round= Round.find_by_id(params[:id])
   end
 
   def create
@@ -30,12 +27,6 @@ class RoundsController < ApplicationController
      if @round.invalid?
        flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
      end
-     redirect_to dashboard_path
-   end
-
-   def destroy
-     @round = Round.find(params[:id])
-     @round.destroy
      redirect_to dashboard_path
    end
 

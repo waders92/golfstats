@@ -2,14 +2,6 @@ require 'rails_helper'
 
 RSpec.describe RoundsController, type: :controller do
 
-  describe "rounds#new action" do
-    it "should show the new form" do
-
-      get :new
-      expect(response).to redirect_to new_user_session_path
-      end
-    end
-
     describe "rounds#create action" do
       it "should create a new round in the database" do
         user = FactoryGirl.create(:user)

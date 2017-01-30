@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :rounds
   has_many :messages
+  has_many :comments
+
 
   def name
     @name = [first_name, last_name].join(" ")

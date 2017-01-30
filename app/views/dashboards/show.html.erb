@@ -7,6 +7,7 @@
 <div class="col-lg-8 col-lg-offset-2">
   <table>
     <tr class="table-title">
+      <th>Date</th>
       <th>Course</th>
       <th class="scores">Score</th>
       <th>Greens</th>
@@ -15,6 +16,7 @@
     </tr>
   <% current_user.rounds.each do |round| %>
     <tr class="text-center">
+      <td><%= round.created_at.strftime("%m/%y") %></td>
       <td><%= round.course %></td>
       <td class="scores round-link"><%= link_to round.score, edit_round_path(round) %></td>
       <td><%= round.greens %> / <%=round.greenstotal %></td>

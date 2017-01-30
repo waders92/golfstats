@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :comment do
+
+  end
   factory :user do
     sequence :first_name do |n|
       "dummyfirstname#{n}"
@@ -22,6 +25,10 @@ FactoryGirl.define do
     fwystotal "14"
     putts "25"
     association :user
+  end
+
+  factory :message do
+    message "Test message"
   end
 
 end
