@@ -12,4 +12,16 @@ FactoryGirl.define do
     password "secretPassword"
     password_confirmation "secretPassword"
   end
+
+  factory :round do
+    course "Test course"
+    score "72"
+    greens "10"
+    greenstotal "18"
+    fwys "7"
+    fwystotal "14"
+    putts "25"
+    association :user
+  end
+
 end

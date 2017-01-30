@@ -13,10 +13,11 @@ RSpec.describe RoundsController, type: :controller do
     describe "rounds#create action" do
       it "should create a new round in the database" do
         user = FactoryGirl.create(:user)
+        round = FactoryGirl.create(:round)
         sign_in user
 
         post :create, round: { course: 'Test course' }
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to dashboard_path
 
         round = Round.last
         expect(round.course).to eq ("Test course")
