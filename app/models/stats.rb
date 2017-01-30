@@ -1,1 +1,2 @@
-class Stats 
+class Stats
+end 
