@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Hind+Siliguri|NTR');
 
 body {
-  background-color: #3E7D98;
-  color: #E4F1F5;
+  background-color: #C7D1D4;
+  // color: #E4F1F5;
   font-family: 'NTR', sans-serif;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .leaderboard {
-  background:rgba(0,0,0, 0.3) no-repeat center center fixed;
+  background: #0E6E38 no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -70,6 +70,11 @@ body {
   margin-top: 50px;
 }
 
+.recap {
+  margin-top: 100px;
+  background-color: white;
+}
+
 .section {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -78,7 +83,7 @@ body {
 .navbar {
   border-radius: 0;
   border: none;
-  background:rgba(0,0,0, 0.3);
+  background: #235237;
   margin-bottom: 0;
 }
 
@@ -224,6 +229,44 @@ hr {
 
 .chart {
   background: transparent;
+}
+
+.round-link {
+  color: white;
+}
+
+.round-link a:visited {
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+  background-color: #10754D;
+  color: white;
+}
+
+table, th, td {
+  border: 1px solid white;
+}
+
+.table-title th {
+  font-size: 21px;
+  text-align: center;
+}
+
+.scores {
+  background-color: #244147;
+}
+
+.averages {
+  margin-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 780px) {

@@ -3,149 +3,45 @@
   <h1><%= current_user.name %></h1>
   <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
 </div>
-
-<div class="leaderboard-show col-xs-10 col-xs-offset-1">
-  <div class="col-xs-12 text-center">
-    <h1 class="text-center">Scoring Average</h1>
-    --------------
-  <br />
-  </div>
-  <p class="text-center big-score"><%= current_user.scoring_average_rounded %></p>
-  <br />
-
-    <div class="col-sm-6">
-      <h3>Latest Rounds</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-        <h4 class="score-handle"><%= link_to 'Edit', edit_round_path(round) , class: 'btn btn-primary btn-xs' %>&nbsp;&nbsp;&nbsp;&nbsp;<%= round.created_at.strftime("%m/%y") %>&nbsp;&nbsp;<%= round.course %></h4>
-        <% end %>
-    </div>
-    <div class="col-sm-6 text-center push">
-      <h3>Score</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-      <h4><%= round.score %></h4>
-      <% end %>
-    </div>
-
-
-    <div class="col-xs-10 col-xs-offset-1">
-      <h3 class="text-center"></h3>
-      <%= bar_chart current_user.rounds.group(:course).average(:score), colors: ["#9C0808"], xtitle: "Time", ytitle: "Population" %>
-      <br />
-    </div>
-  </div>
-
-<br class="clr" />
-
-<div class="leaderboard-show col-xs-10 col-xs-offset-1">
-  <div class="col-xs-12 text-center">
-    <h1 class="text-center">Greens Hit</h1>
-    --------------
-    <br />
-  </div>
-
-  <p class="text-center big-score"><%= current_user.greens_hit_average_rounded %> %</p>
-
-    <div class="col-sm-6">
-      <h3>Course</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-        <h4 class="score-handle"><%= link_to 'Edit', edit_round_path(round) , class: 'btn btn-primary btn-xs' %>&nbsp;&nbsp;&nbsp;&nbsp;<%= round.created_at.strftime("%m/%y") %>&nbsp;&nbsp;<%= round.course %></h4>
-        <% end %>
-    </div>
-
-    <div class="col-sm-6 text-center push">
-      <h3>Greens Hit</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-      <h4><%= round.greens %> / <%= round.greenstotal %></h4>
-      <% end %>
-    </div>
-
-
-    <div class="col-xs-10 col-xs-offset-1">
-      <!-- <h3 class="text-center">Greens Recap</h3> -->
-      <%= bar_chart current_user.rounds.group(:course).average(:greens), colors: ["#0990BD"] %>
-      <br />
-    </div>
+<br class="clr" /><br /><br />
+<div class="col-lg-8 col-lg-offset-2">
+  <table>
+    <tr class="table-title">
+      <th>Course</th>
+      <th class="scores">Score</th>
+      <th>Greens</th>
+      <th>Fwys</th>
+      <th>Putts</th>
+    </tr>
+  <% current_user.rounds.each do |round| %>
+    <tr class="text-center">
+      <td><%= round.course %></td>
+      <td class="scores round-link"><%= link_to round.score, edit_round_path(round) %></td>
+      <td><%= round.greens %> / <%=round.greenstotal %></td>
+      <td><%= round.fwys %> / <%= round.fwystotal %></td>
+      <td><%= round.putts %></td>
+    </tr>
+  <% end %>
+  </table>
 </div>
 
-<br class="clr" />
+<br />
 
-<div class="leaderboard-show col-xs-10 col-xs-offset-1">
-  <div class="col-xs-12 text-center">
-    <h1 class="text-center">Driving Accuracy</h1>
-    --------------
-    <br />
+<div>
+  <div class="col-xs-3 text-center averages">
+    <p class="big-score"><%= current_user.scoring_average_rounded %></p>
+    <p>Scoring Average</p>
   </div>
-  <p class="text-center big-score"><%= current_user.fwys_hit_average_rounded %> %</p>
-
-
-    <div class="col-sm-6">
-      <h3>Course</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-        <h4 class="score-handle"><%= link_to 'Edit', edit_round_path(round) , class: 'btn btn-primary btn-xs' %>&nbsp;&nbsp;&nbsp;&nbsp;<%= round.created_at.strftime("%m/%y") %>&nbsp;&nbsp;<%= round.course %></h4>
-        <% end %>
-    </div>
-
-    <div class="col-sm-6 text-center push">
-      <h3>Fairways Hit</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-      <h4><%= round.fwys %> / <%= round.fwystotal %></h4>
-      <% end %>
-    </div>
-
-
-    <div class="col-xs-10 col-xs-offset-1">
-      <!-- <h3 class="text-center">Fariway's Hit Recap</h3> -->
-      <%= bar_chart current_user.rounds.group(:course).average(:fwys), colors: ["#3657B3"] %>
-      <br />
-    </div>
-</div>
-
-<br class="clr" />
-
-<div class="leaderboard-show last-stat col-xs-10 col-xs-offset-1">
-  <div class="col-xs-12 text-center">
-    <h1 class="text-center">Putting Average</h1>
-    --------------
-    <br />
+  <div class="col-xs-3 text-center averages">
+    <p class="big-score"><%= current_user.greens_hit_average_rounded %>%</p>
+    <p>Green's Percentage</p>
   </div>
-  <p class="text-center big-score"><%= current_user.putting_average_rounded %></p>
-
-
-    <div class="col-sm-6">
-      <h3>Course</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-        <h4 class="score-handle"><%= link_to 'Edit', edit_round_path(round) , class: 'btn btn-primary btn-xs' %>&nbsp;&nbsp;&nbsp;&nbsp;<%= round.created_at.strftime("%m/%y") %>&nbsp;&nbsp;<%= round.course %></h4>
-        <% end %>
-    </div>
-
-    <div class="col-sm-6 text-center push">
-      <h3>Total Putts</h3>
-      --------------
-      <br />
-      <% current_user.rounds.each do |round| %>
-      <h4><%= round.putts %></h4>
-      <% end %>
-    </div>
-
-
-    <div class="col-xs-10 col-xs-offset-1">
-      <br />
-      <!-- <h3 class="text-center">Total Putts By Course</h3> -->
-      <%= bar_chart current_user.rounds.group(:course).average(:putts), colors: ["green"] %>
-      <br />
-    </div>
+  <div class="col-xs-3 text-center averages">
+    <p class="big-score"><%= current_user.fwys_hit_average_rounded %>%</p>
+    <p>Driving Accuracy</p>
+  </div>
+  <div class="col-xs-3 text-center averages">
+    <p class="big-score"><%= current_user.putting_average_rounded %></p>
+    <p>Putting Average</p>
+  </div>
 </div>

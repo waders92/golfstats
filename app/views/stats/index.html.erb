@@ -1,8 +1,9 @@
 
 <div class="responsive-scale"></div>
 <h3 class="text-center">Saguaro  |  Wekopa - We-Ko-Pa Golf Club</h3>
+
 <div class="leaderboard col-xs-10 col-xs-offset-1">
-  <h2 class="text-center">Last 10 Member Scores</h2>
+  <h2 class="text-center">Recent Scores</h2>
     <hr />
     <div class="col-xs-4 text-center">
       <h3>Name</h3>
@@ -25,10 +26,15 @@
       --------------
       <br />
       <% @rounds.each do |round| %>
+      <% if user_signed_in? %>
+      <h4 class="round-link"><%= link_to round.score, round_path(round) %></h4>
+      <% else %>
       <h4><%= round.score %></h4>
       <% end %>
+      <% end %>
+      </div>
     </div>
-</div>
+
 
 <% if user_signed_in? %>
 <div class="col-xs-12 splitter">
