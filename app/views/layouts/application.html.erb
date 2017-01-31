@@ -56,7 +56,7 @@
         <div class="modal-body" id="signupForm">
           <%= simple_form_for Round.new do |f| %>
           <%= f.error_notification %>
-            <%= f.input :course, required: true, label: 'Course Name?', placeholder: 'Kiawah Ocean Course' %>
+            <%= f.input :course, required: true, label: 'Course Name?', placeholder: 'Holston Hills CC' %>
             <%= f.input :score, required: true, label: 'What score did you shoot?', placeholder: '75' %>
             <%= f.input :greens, required: true, label: 'Greens Hit This Round', placeholder: '8' %>
             <%= f.input :greenstotal, required: true, label: 'Total Greens?', placeholder: '18' %>

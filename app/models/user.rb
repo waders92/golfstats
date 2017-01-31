@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   has_many :messages
   has_many :comments
 
-  include Scoringaverage, Greensaverage, Fwysaverage, Puttingaverage, Name
+  include ScoringAverage, GreensAverage, FwysAverage, PuttingAverage, Name
 
 end

@@ -1,4 +1,4 @@
-module Scoringaverage
+module ScoringAverage
 
   def scoring_average
     rounds.average(:score)
