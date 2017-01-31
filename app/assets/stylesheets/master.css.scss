@@ -20,8 +20,8 @@ body {
 
 .responsive-scale{
 	width:100%;
-	padding-bottom: 33.666666666667%; /* 960px/1440px */
-	background-image:url('saguro.jpg');
+	padding-bottom: 35.666666666667%; /* 960px/1440px */
+	background-image:url('whistling.jpg');
 	background-size:cover;
 	background-position:center; /* IE fix */
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -64,7 +64,7 @@ body {
 }
 
 .leaderboard-edit {
-  background: #09421A no-repeat center center fixed;
+  background: #285C55 no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -72,6 +72,10 @@ body {
   color: white;
   height: auto;
   margin-top: 25px;
+}
+
+.first-chart {
+  margin-top: 100px;
 }
 
 .newpage {
@@ -291,6 +295,11 @@ table, th, td {
 
 .info a:hover a:visited {
   color: black;
+}
+
+.carousel-inner > .item >img, .carousel-inner >.item > a > img {
+  object-fit: cover;
+  overflow: hidden;
 }
 
 @media (max-width: 780px) {
