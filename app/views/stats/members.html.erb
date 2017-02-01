@@ -1,6 +1,7 @@
 <br />
 <h1 class="text-center">Rankings</h1>
 <br />
+
 <div class="member-stats">
   <div class="col-xs-6 member-stats">
     <table>
@@ -8,10 +9,14 @@
         <th class="scores">Name</th>
         <th class="scores">Scoring Average</th>
       </tr>
-    <% @users.each do |user| %>
+      <% @users.each do |user| %>
       <tr class="text-center">
         <td><%= user.name %></td>
+        <% if user.rounds.present? %>
         <td><%= user.scoring_average_rounded %></td>
+        <% else %>
+        <td>0</td>
+        <% end %>
       </tr>
     <% end %>
     </table>
@@ -26,7 +31,11 @@
     <% @users.each do |user| %>
       <tr class="text-center">
         <td><%= user.name %></td>
+        <% if user.rounds.present? %>
         <td><%= user.greens_hit_average_rounded %>%</td>
+        <% else %>
+        <td>0%</td>
+        <% end %>
       </tr>
     <% end %>
     </table>
@@ -43,7 +52,11 @@
     <% @users.each do |user| %>
       <tr class="text-center">
         <td><%= user.name %></td>
+        <% if user.rounds.present? %>
         <td><%= user.fwys_hit_average_rounded %>%</td>
+        <% else %>
+        <td>0%</td>
+        <% end %>
       </tr>
     <% end %>
     </table>
@@ -58,9 +71,17 @@
     <% @users.each do |user| %>
       <tr class="text-center">
         <td><%= user.name %></td>
+        <% if user.rounds.present? %>
         <td><%= user.putting_average_rounded %></td>
+        <% else %>
+        <td>0</td>
+        <% end %>
       </tr>
     <% end %>
     </table>
   </div>
+</div>
+
+<div class="col-xs-6 col-xs-offset-3 text-center">
+  <h2>You need to enter a round to see your ranking!</h2>
 </div>

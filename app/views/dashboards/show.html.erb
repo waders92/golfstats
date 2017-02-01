@@ -21,6 +21,8 @@
       <th>Fwys</th>
       <th>Putts</th>
     </tr>
+
+
   <% current_user.rounds.each do |round| %>
     <tr class="text-center">
       <td><%= round.created_at.strftime("%m/%y") %></td>
@@ -36,6 +38,7 @@
 
 <br />
 
+<% if current_user.rounds.present? %>
 <div>
   <div class="col-xs-3 text-center averages">
     <p class="big-score"><%= current_user.scoring_average_rounded %></p>
@@ -54,3 +57,8 @@
     <p>Putting Average</p>
   </div>
 </div>
+<% else %>
+<div class="col-xs-6 col-xs-offset-3 text-center">
+  <h2>You need to enter a round to see your stats!</h2>
+</div>
+<% end %>
