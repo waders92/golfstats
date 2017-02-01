@@ -1,4 +1,4 @@
-module GreensAverage
+module Greensaverage
 
   def greens_hit_total
     rounds.sum(:greens)

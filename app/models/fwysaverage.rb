@@ -1,4 +1,4 @@
-module FwysAverage
+module Fwysaverage
 
   def fwy_hit_total
     rounds.sum(:fwys)

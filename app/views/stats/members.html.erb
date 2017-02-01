@@ -1,0 +1,66 @@
+<br />
+<h1 class="text-center">Rankings</h1>
+<br />
+<div class="member-stats">
+  <div class="col-xs-6 member-stats">
+    <table>
+      <tr class="table-title">
+        <th class="scores">Name</th>
+        <th class="scores">Scoring Average</th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr class="text-center">
+        <td><%= user.name %></td>
+        <td><%= user.scoring_average_rounded %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+
+  <div class="col-xs-6 member-stats">
+    <table>
+      <tr class="table-title">
+        <th class="scores">Name</th>
+        <th class="scores">Greens Avg</th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr class="text-center">
+        <td><%= user.name %></td>
+        <td><%= user.greens_hit_average_rounded %>%</td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="member-stats">
+  <div class="col-xs-6 member-stats">
+    <table>
+      <tr class="table-title">
+        <th class="scores">Name</th>
+        <th class ="scores">Fwys Avg</th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr class="text-center">
+        <td><%= user.name %></td>
+        <td><%= user.fwys_hit_average_rounded %>%</td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+
+  <div class="col-xs-6 member-stats">
+    <table>
+      <tr class="table-title">
+        <th class="scores">Name</th>
+        <th class="scores">Putts Avg</th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr class="text-center">
+        <td><%= user.name %></td>
+        <td><%= user.putting_average_rounded %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>

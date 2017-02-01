@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'stats#index'
   get '/about', to: 'stats#about'
   get '/tips', to: 'stats#tips'
+  get '/members', to: 'stats#members' 
   resources :rounds do
     resources :comments, only: :create
   end

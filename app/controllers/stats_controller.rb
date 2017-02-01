@@ -12,11 +12,13 @@ class StatsController < ApplicationController
  end
 
  def about
-
  end
 
  def tips
+ end
 
+ def members
+   @users = User.all
  end
 
 end

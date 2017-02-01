@@ -1,4 +1,4 @@
-module PuttingAverage
+module Puttingaverage
 
   def putting_average
     rounds.average(:putts)
