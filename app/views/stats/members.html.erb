@@ -6,11 +6,13 @@
   <div class="col-xs-6 member-stats">
     <table>
       <tr class="table-title">
+        <th class="rank">Rank</th>
         <th class="scores">Name</th>
         <th class="scores">Scoring Average</th>
       </tr>
       <% @users.each do |user| %>
       <tr class="text-center">
+        <td>1</td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.scoring_average_rounded %></td>
@@ -25,11 +27,13 @@
   <div class="col-xs-6 member-stats">
     <table>
       <tr class="table-title">
+        <th class="rank">Rank</th>
         <th class="scores">Name</th>
         <th class="scores">Greens Avg</th>
       </tr>
     <% @users.each do |user| %>
       <tr class="text-center">
+        <td>1</td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.greens_hit_average_rounded %>%</td>
@@ -46,11 +50,13 @@
   <div class="col-xs-6 member-stats">
     <table>
       <tr class="table-title">
+        <th class="rank">Rank</th>
         <th class="scores">Name</th>
         <th class ="scores">Fwys Avg</th>
       </tr>
     <% @users.each do |user| %>
       <tr class="text-center">
+        <td>1</td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.fwys_hit_average_rounded %>%</td>
@@ -65,11 +71,13 @@
   <div class="col-xs-6 member-stats">
     <table>
       <tr class="table-title">
+        <th class="rank">Rank</th>
         <th class="scores">Name</th>
         <th class="scores">Putts Avg</th>
       </tr>
     <% @users.each do |user| %>
       <tr class="text-center">
+        <td>1</td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.putting_average_rounded %></td>
