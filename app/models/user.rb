@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  include Scoringaverage, Greensaverage, Fwysaverage, Puttingaverage, Name
+  include ScoringAverage, GreensAverage, FwysAverage, PuttingAverage, Name
 
 end
