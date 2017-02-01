@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :rounds, dependent: :destroy
-  has_many :messages, dependent: :desrtoy
+  has_many :messages, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   include Scoringaverage, Greensaverage, Fwysaverage, Puttingaverage, Name
