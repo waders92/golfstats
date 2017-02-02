@@ -16,7 +16,7 @@
         <td><%= index %></td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
-        <td><%= user.scoring_average_rounded %></td>
+        <td><%= user.best_user_scoring_average %></td>
         <% else %>
         <td>0</td>
         <% end %>
