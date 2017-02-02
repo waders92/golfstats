@@ -9,4 +9,6 @@ class Round < ActiveRecord::Base
   validates :fwys, presence: true
   validates :fwystotal, presence: true
   validates :putts, presence: true
+  validates :birdies, presence: true
+  validates :pars, presence: true
 end

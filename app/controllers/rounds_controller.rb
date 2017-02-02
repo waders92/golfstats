@@ -31,6 +31,6 @@ class RoundsController < ApplicationController
   private
 
   def round_params
-    params.require(:round).permit(:course, :score, :greens, :fwys, :fwystotal, :putts)
+    params.require(:round).permit(:course, :score, :greens, :fwys, :fwystotal, :putts, :birdies, :pars)
   end
 end

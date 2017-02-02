@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130200531) do
+ActiveRecord::Schema.define(version: 20170202211256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20170130200531) do
     t.integer  "fwys"
     t.integer  "fwystotal"
     t.integer  "putts"
+    t.integer  "birdies"
+    t.integer  "pars"
   end
 
   add_index "rounds", ["user_id"], name: "index_rounds_on_user_id", using: :btree

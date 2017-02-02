@@ -9,6 +9,8 @@
   <%= f.input :fwys, required: true, label: 'Fairways Hit Today?' %>
   <%= f.input :fwystotal, required: true, label: 'Total Fairways Possible? Do not include Par 3 holes' %>
   <%= f.input :putts,required: true, label: 'Putts Total' %>
+  <%= f.input :birdies, required: true, label: 'How many birdies this round?', placeholder: '3' %>
+  <%= f.input :pars, required: true, label: 'How many pars this round?', placeholder: '10' %>
     <br />
     <%= f.submit 'Update', class: 'btn btn-success btn-xs' %>
     <% end %>

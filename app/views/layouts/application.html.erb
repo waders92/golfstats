@@ -62,7 +62,9 @@
             <%= f.input :greens, required: true, label: 'Greens hit this round?', placeholder: '8' %>
             <%= f.input :fwys, required: true, placeholder: '7', label: 'Fairways hit today?' %>
             <%= f.input :fwystotal, required: true, label: 'Total fairways possible? Do not include Par 3 holes', placeholder: '14' %>
-            <%= f.input :putts,required: true, label: 'Putts Total', placeholder: '31' %>
+            <%= f.input :putts, required: true, label: 'Putts Total', placeholder: '31' %>
+            <%= f.input :birdies, required: true, label: 'How many birdies this round?', placeholder: '3' %>
+            <%= f.input :pars, required: true, label: 'How many pars this round?', placeholder: '10' %> 
             <div id="errors"></div>
         </div>
         <div class="modal-footer">

@@ -7,8 +7,6 @@ class StatsController < ApplicationController
   end
 
   def show
-   @round = Round.find(params[:id])
-   @user = User.find(params[:id])
   end
 
   def about
@@ -18,7 +16,7 @@ class StatsController < ApplicationController
   end
 
   def members
-   @users = User.all
+    @users = User.order('created_at ASC')
   end
 
 end

@@ -93,3 +93,49 @@
     </table>
   </div>
 </div>
+
+<div class="member-stats">
+  <div class="col-xs-6 member-stats">
+    <h2 class="text-center">Birdie Average</h2>
+    <table>
+      <tr class="table-title">
+        <th class="rank">Rank</th>
+        <th class="scores">Name</th>
+        <th class="scores">Birdie Average</th>
+      </tr>
+      <% @users.each.with_index(1) do |user, index| %>
+      <tr class="text-center">
+        <td><%= index %></td>
+        <td><%= user.name %></td>
+        <% if user.rounds.present? %>
+        <td><%= user.birdie_average_rounded %></td>
+        <% else %>
+        <td>0</td>
+        <% end %>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+
+  <div class="col-xs-6 member-stats">
+    <h2 class="text-center">Par Average</h2>
+    <table>
+      <tr class="table-title">
+        <th class="rank">Rank</th>
+        <th class="scores">Name</th>
+        <th class="scores">Par Avg</th>
+      </tr>
+    <% @users.each.with_index(1) do |user, index| %>
+      <tr class="text-center">
+        <td><%= index %></td>
+        <td><%= user.name %></td>
+        <% if user.rounds.present? %>
+        <td><%= user.par_average_rounded %></td>
+        <% else %>
+        <td>0%</td>
+        <% end %>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
