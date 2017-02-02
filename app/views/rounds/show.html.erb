@@ -1,24 +1,42 @@
-<div class="col-xs-8 col-xs-offset-2 recap">
+<div class="col-xs-10 col-xs-offset-1 recap">
   <h1 class="text-center"><%= @round.course %></h1>
   <h4 class="text-center comment_handle"><%= @round.user.name %> | <%= @round.created_at.strftime("%m-%d-%Y") %></h4>
     <br /><br /><br />
-    <div class="col-xs-3 text-center big-score">
+
+  <div class="show-stats">
+    <div class="col-xs-4 text-center big-score show-stats">
         <h4 class="comment_handle">Score</h4>
         <%= @round.score %>
     </div>
-    <div class="col-xs-3 text-center big-score">
+
+    <div class="col-xs-4 text-center big-score show-stats">
         <h4 class="comment_handle">Greens Hit</h4>
         <%= @round.greens %> / 18
     </div>
-    <div class="col-xs-3 text-center big-score">
+
+    <div class="col-xs-4 text-center big-score show-stats">
         <h4 class="comment_handle">Driving Accuracy</h4>
         <%= @round.fwys %> / <%= @round.fwystotal %>
     </div>
-    <div class="col-xs-3 text-center big-score">
+  </div>
+
+  <div class="show-stats">
+      <div class="col-xs-4 text-center big-score">
         <h4 class="comment_handle">Putts</h4>
       <%= @round.putts %>
-    </div>
-</div>
+      </div>
+
+      <div class="col-xs-4 text-center big-score">
+        <h4 class="comment_handle">Birdies</h4>
+        <%= @round.birdies %>
+      </div>
+
+      <div class="col-xs-4 text-center big-score">
+        <h4 class="comment_handle">Pars</h4>
+        <%= @round.pars %>
+      </div>
+  </div>
+
 
 <div class="col-xs-12 splitter">
   <div class="last-stat col-xs-12">
@@ -35,8 +53,6 @@
       </div>
   </div>
 
-
-
 <div class="col-xs-6">
   <br />
   <h4>Add a comment</h4>
@@ -45,4 +61,5 @@
         <br />
         <%= f.submit 'Add Comment', class: 'my-btn' %>
       <% end %>
+</div>
 </div>
