@@ -6,12 +6,8 @@
     <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
   </div>
 
-
-
-
-
 <br class="clr" /><br /><br />
-<div class="col-lg-8 col-lg-offset-2">
+<div class="col-lg-8 col-lg-offset-2 user-table">
   <table>
     <tr class="table-title">
       <th>Date</th>
@@ -23,7 +19,6 @@
       <th>Birdies</th>
       <th>Pars</th>
     </tr>
-
 
   <% current_user.rounds.each do |round| %>
     <tr class="text-center">
@@ -72,8 +67,8 @@
       <p class="big-score"><%= current_user.par_average_rounded %></p>
       <p>Par Average</p>
     </div>
-
   </div>
+
 
 <% else %>
   <div class="col-xs-6 col-xs-offset-3 text-center">
