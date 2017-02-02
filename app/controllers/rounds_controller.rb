@@ -13,12 +13,10 @@ class RoundsController < ApplicationController
          flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
        end
          redirect_to dashboard_path
-
-
    end
 
    def edit
-     @round = Round.find(params[:id])
+     @round = Round.find_by_id(params[:id])
    end
 
    def update
@@ -33,6 +31,6 @@ class RoundsController < ApplicationController
   private
 
   def round_params
-    params.require(:round).permit(:course, :score, :greens, :greenstotal, :fwys, :fwystotal, :putts)
+    params.require(:round).permit(:course, :score, :greens, :fwys, :fwystotal, :putts)
   end
 end

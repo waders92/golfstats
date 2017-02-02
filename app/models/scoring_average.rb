@@ -11,6 +11,12 @@ module ScoringAverage
   end
 
   def best_scoring_average
+    x = []
+    scoring_average_rounded.each do |avg|
+      x << avg
+      x.sort
+      x.pluck
+    end
 
   end
 

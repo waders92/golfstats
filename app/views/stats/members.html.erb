@@ -11,9 +11,9 @@
         <th class="scores">Name</th>
         <th class="scores">Scoring Average</th>
       </tr>
-      <% @users.each_with_index do |user, index| %>
+      <% @users.each.with_index(1) do |user, index| %>
       <tr class="text-center">
-        <td><%= index + 1 %></td>
+        <td><%= index %></td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.scoring_average_rounded %></td>
@@ -33,9 +33,9 @@
         <th class="scores">Name</th>
         <th class="scores">Greens Avg</th>
       </tr>
-    <% @users.each_with_index do |user, index| %>
+    <% @users.each.with_index(1) do |user, index| %>
       <tr class="text-center">
-        <td><%= index + 1 %></td>
+        <td><%= index %></td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.greens_hit_average_rounded %>%</td>
@@ -57,9 +57,9 @@
         <th class="scores">Name</th>
         <th class ="scores">Fwys Avg</th>
       </tr>
-    <% @users.each_with_index do |user, index| %>
+    <% @users.each.with_index(1) do |user, index| %>
       <tr class="text-center">
-        <td><%= index + 1 %></td>
+        <td><%= index %></td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.fwys_hit_average_rounded %>%</td>
@@ -79,9 +79,9 @@
         <th class="scores">Name</th>
         <th class="scores">Putts Avg</th>
       </tr>
-    <% @users.each_with_index do |user, index| %>
+    <% @users.each.with_index(1) do |user, index| %>
       <tr class="text-center">
-        <td><%= index + 1 %></td>
+        <td><%= index %></td>
         <td><%= user.name %></td>
         <% if user.rounds.present? %>
         <td><%= user.putting_average_rounded %></td>

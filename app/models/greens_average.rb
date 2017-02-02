@@ -5,7 +5,8 @@ module GreensAverage
   end
 
   def total_greens_possible
-    rounds.sum(:greenstotal)
+    # rounds.sum(:greenstotal)
+    rounds.count * 18
   end
 
   def greens_hit_average

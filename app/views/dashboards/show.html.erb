@@ -28,7 +28,7 @@
       <td><%= round.created_at.strftime("%m/%y") %></td>
       <td><%= round.course %></td>
       <td class="scores round-link"><%= link_to round.score, edit_round_path(round) %></td>
-      <td><%= round.greens %> / <%=round.greenstotal %></td>
+      <td><%= round.greens %> / 18</td>
       <td><%= round.fwys %> / <%= round.fwystotal %></td>
       <td><%= round.putts %></td>
     </tr>
@@ -39,26 +39,26 @@
 <br />
 
 <% if current_user.rounds.present? %>
-<div>
-  <div class="col-xs-3 text-center averages">
-    <p class="big-score"><%= current_user.scoring_average_rounded %></p>
-    <p>Scoring Average</p>
+  <div>
+    <div class="col-xs-3 text-center averages">
+      <p class="big-score"><%= current_user.scoring_average_rounded %></p>
+      <p>Scoring Average</p>
+    </div>
+    <div class="col-xs-3 text-center averages">
+      <p class="big-score"><%= current_user.greens_hit_average_rounded %>%</p>
+      <p>Green's Percentage</p>
+    </div>
+    <div class="col-xs-3 text-center averages">
+      <p class="big-score"><%= current_user.fwys_hit_average_rounded %>%</p>
+      <p>Driving Accuracy</p>
+    </div>
+    <div class="col-xs-3 text-center averages">
+      <p class="big-score"><%= current_user.putting_average_rounded %></p>
+      <p>Putting Average</p>
+    </div>
   </div>
-  <div class="col-xs-3 text-center averages">
-    <p class="big-score"><%= current_user.greens_hit_average_rounded %>%</p>
-    <p>Green's Percentage</p>
-  </div>
-  <div class="col-xs-3 text-center averages">
-    <p class="big-score"><%= current_user.fwys_hit_average_rounded %>%</p>
-    <p>Driving Accuracy</p>
-  </div>
-  <div class="col-xs-3 text-center averages">
-    <p class="big-score"><%= current_user.putting_average_rounded %></p>
-    <p>Putting Average</p>
-  </div>
-</div>
 <% else %>
-<div class="col-xs-6 col-xs-offset-3 text-center">
-  <h2>You need to enter a round to see your stats!</h2>
-</div>
+  <div class="col-xs-6 col-xs-offset-3 text-center">
+    <h2>You need to enter a round to see your stats!</h2>
+  </div>
 <% end %>

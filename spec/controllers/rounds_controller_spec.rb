@@ -13,6 +13,7 @@ RSpec.describe RoundsController, type: :controller do
 
         round = Round.last
         expect(round.course).to eq ("Test course")
+        expect(round.user).to eq(round.user)
       end
 
       it "should deal with errors correctly" do
