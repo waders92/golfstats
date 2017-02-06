@@ -10,11 +10,10 @@ module ScoringAverage
 
   def best_user_scoring_average
     x = []
-    user.scoring_average_rounded.each do |score|
+    scoring_average_rounded.each do |score|
       x << score
     end
-    x.sort
-    x.pluck
+      x.sort.pop
   end
 
 end
