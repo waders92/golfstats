@@ -41,6 +41,8 @@ gem 'chartkick', '1.2.4'
 gem 'groupdate', '2.1.1'
 gem 'active_median', '~> 0.1.0'
 
+gem "figaro", ">= 1.0.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
