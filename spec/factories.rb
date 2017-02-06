@@ -25,6 +25,8 @@ FactoryGirl.define do
     fwys "7"
     fwystotal "14"
     putts "25"
+    birdies "2"
+    pars "2"
     association :user
   end
 
