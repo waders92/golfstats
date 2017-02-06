@@ -3,3 +3,6 @@ A scratch hits an average of 12 greens, 81% of the fairways, has 29.0 putts, 3.2
 A golfer that averages a score of 85 hits 5 greens in regulation, 46% of fairways, has 33.7 total putts, 0.8 birdies per round, and 6.6 pars.
 
 A golfer that averages a score of 100 hits 0 greens in regulation, 11% of fairways, has 38.3 putts, 0 birdies, and 1.3 pars.
+
+
+  <% Round.group(:user).average(:score).sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i| %>
