@@ -2,6 +2,7 @@ class Round < ActiveRecord::Base
 
   belongs_to :user
   has_many :comments
+  after_create :send_round_email
 
   validates :course, presence: true, length: { minimum: 1 }
   validates :score, presence: true
@@ -11,4 +12,8 @@ class Round < ActiveRecord::Base
   validates :putts, presence: true
   validates :birdies, presence: true
   validates :pars, presence: true
+
+  def send_round_email
+    NotificationMailer.round_added(self).deliver
+  end
 end
