@@ -42,22 +42,22 @@
 <br /><br />
   <h2 class="text-center">Welcome, <%= current_user.name %>!</h2>
   <% end %>
-    <div class="first-chart col-lg-8 col-lg-offset-2">
+    <div class="first-chart col-xs-10 col-xs-offset-1">
         <h3> - Latest Scores - </h3>
-      <table>
+      <table class="table1">
         <tr class="table-title">
           <th>Name</th>
           <th>Course</th>
-          <th class="scores">Score</th>
+          <th>Score</th>
         </tr>
       <% @rounds.each do |round| %>
         <tr class="text-center">
           <td><%= round.user.name %></td>
           <td><%= round.course %></td>
           <% if user_signed_in? %>
-          <td class="scores round-link"><%= link_to round.score, round_path(round) %></td>
+          <td class="round-link"><%= link_to round.score, round_path(round) %></td>
           <% else %>
-          <td class="scores"><%= round.score %></td>
+          <td><%= round.score %></td>
           <% end %>
         </tr>
       <% end %>

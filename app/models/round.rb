@@ -16,4 +16,5 @@ class Round < ActiveRecord::Base
   def send_round_email
     NotificationMailer.round_added(self).deliver
   end
+
 end

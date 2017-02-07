@@ -1,48 +1,41 @@
 <br />
-<h1 class="text-center"> Player Rankings</h1>
-<br />
-
 <div class="member-stats">
   <div class="col-xs-6 member-stats">
-    <h2 class="text-center">Scoring Average</h2>
-    <table>
+    <h2>Scoring Average</h2>
+    <table class="table1">
       <tr class="table-title">
         <th class="rank">Rank</th>
         <th class="scores">Name</th>
-        <th class="scores">Scoring Average</th>
+        <th class="scores">Avg</th>
+        <th class="scores">Rnds</th>
       </tr>
 
       <% Round.group(:user).average(:score).sort_by{|k, v|}.each.with_index(1) do |(user, avg), i| %>
       <tr class="text-center">
         <td><%= i %></td>
         <td><%= user.name %></td>
-        <% if user.rounds.present? %>
         <td><%= avg %></td>
-        <% else %>
-        <td>0</td>
-        <% end %>
+        <td><%= user.total_rounds %></td>
       </tr>
     <% end %>
     </table>
   </div>
 
   <div class="col-xs-6 member-stats">
-    <h2 class="text-center">Greens in Reg</h2>
-    <table>
+    <h2>Greens in Reg</h2>
+    <table class="table1">
       <tr class="table-title">
         <th class="rank">Rank</th>
         <th class="scores">Name</th>
-        <th class="scores">Greens Avg</th>
+        <th class="scores">Avg</th>
+        <th class="scores">Rnds</th>
       </tr>
     <% Round.group(:user).average(:greens).sort_by{|k, v|}.each.with_index(1) do |(user, avg), i| %>
       <tr class="text-center">
         <td><%= i %></td>
         <td><%= user.name %></td>
-        <% if user.rounds.present? %>
         <td><%= avg %></td>
-        <% else %>
-        <td>0%</td>
-        <% end %>
+        <td><%= user.total_rounds %></td>
       </tr>
     <% end %>
     </table>
@@ -51,44 +44,40 @@
 
 <div class="member-stats">
   <div class="col-xs-6 member-stats">
-    <h2 class="text-center">Driving Accuracy</h2>
-    <table>
+    <h2>Driving Accuracy</h2>
+    <table class="table1">
       <tr class="table-title">
         <th class="rank">Rank</th>
         <th class="scores">Name</th>
-        <th class ="scores">Fwys Avg</th>
+        <th class ="scores">Avg</th>
+        <th class="scores">Rnds</th>
       </tr>
     <% Round.group(:user).average(:fwys).sort_by{|k, v|}.each.with_index(1) do |(user, avg), i| %>
       <tr class="text-center">
         <td><%= i %></td>
         <td><%= user.name %></td>
-        <% if user.rounds.present? %>
         <td><%= avg %></td>
-        <% else %>
-        <td>0%</td>
-        <% end %>
+        <td><%= user.total_rounds %></td>
       </tr>
     <% end %>
     </table>
   </div>
 
   <div class="col-xs-6 member-stats">
-    <h2 class="text-center">Putting</h2>
-    <table>
+    <h2>Putting</h2>
+    <table class="table1">
       <tr class="table-title">
         <th class="rank">Rank</th>
         <th class="scores">Name</th>
-        <th class="scores">Putts Avg</th>
+        <th class="scores">Avg</th>
+        <th class="scores">Rnds</th>
       </tr>
     <% Round.group(:user).average(:putts).sort_by{|k, v|}.each.with_index(1) do |(user, avg), i| %>
       <tr class="text-center">
         <td><%= i %></td>
         <td><%= user.name %></td>
-        <% if user.rounds.present? %>
         <td><%= avg %></td>
-        <% else %>
-        <td>0</td>
-        <% end %>
+        <td><%= user.total_rounds %></td>
       </tr>
     <% end %>
     </table>
@@ -97,44 +86,40 @@
 
 <div class="member-stats">
   <div class="col-xs-6 member-stats">
-    <h2 class="text-center">Birdie Average</h2>
-    <table>
+    <h2>Birdie Average</h2>
+    <table class="table1">
       <tr class="table-title">
         <th class="rank">Rank</th>
         <th class="scores">Name</th>
-        <th class="scores">Birdie Average</th>
+        <th class="scores">Avg</th>
+        <th class="scores">Rnds</th>
       </tr>
       <% Round.group(:user).average(:birdies).sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i| %>
       <tr class="text-center">
         <td><%= i %></td>
         <td><%= user.name %></td>
-        <% if user.rounds.present? %>
         <td><%= avg %></td>
-        <% else %>
-        <td>0</td>
-        <% end %>
+        <td><%= user.total_rounds %></td>
       </tr>
     <% end %>
     </table>
   </div>
 
   <div class="col-xs-6 member-stats">
-    <h2 class="text-center">Par Average</h2>
-    <table>
+    <h2>Par Average</h2>
+    <table class="table1">
       <tr class="table-title">
         <th class="rank">Rank</th>
         <th class="scores">Name</th>
-        <th class="scores">Par Avg</th>
+        <th class="scores">Avg</th>
+        <th class="scores">Rnds</th>
       </tr>
     <% Round.group(:user).average(:pars).sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i| %>
       <tr class="text-center">
         <td><%= i %></td>
         <td><%= user.name %></td>
-        <% if user.rounds.present? %>
-        <td><%= user.par_average_rounded %></td>
-        <% else %>
-        <td>0</td>
-        <% end %>
+        <td><%= avg %></td>
+        <td><%= user.total_rounds %></td>
       </tr>
     <% end %>
     </table>

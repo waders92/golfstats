@@ -164,7 +164,7 @@ body {
 .big-score2 {
   font-size: 3em;
   border: 2px solid black;
-  background-color: #235237;
+  background-color: #0EA167;
   color: white;
 }
 
@@ -294,12 +294,21 @@ a {
   color: white;
 }
 
+tr:nth-child(even) {
+  background-color: #0EA167;
+}
+
 th, td {
   padding: 10px;
   font-size: 18px;
 }
 
-table {
+.table1 tr:first-child{
+  background-color: #244147;
+}
+
+
+.table1 {
   width: 100%;
   background-color: #10754D;
   color: white;
@@ -316,10 +325,6 @@ table, th, td {
 
 .scores {
   background-color: #244147;
-}
-
-.rank {
-  background-color: darkred;
 }
 
 .averages {
