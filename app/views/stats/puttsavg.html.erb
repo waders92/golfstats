@@ -4,12 +4,12 @@
   <br />
   <table class="table1">
     <tr class="table-title">
-      <th class="rank">Rank</th>
-      <th class="scores">Name</th>
-      <th class="scores">Avg</th>
-      <th class="scores">Rnds</th>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Avg</th>
+      <th>Rnds</th>
     </tr>
-  <% Round.group(:user).average(:putts).sort_by{|k, v|}.each.with_index(1) do |(user, avg), i| %>
+  <% putting_rank.sort_by{|k, v|}.each.with_index(1) do |(user, avg), i| %>
     <tr class="text-center">
       <td><%= i %></td>
       <td><%= user.name %></td>
