@@ -72,22 +72,66 @@
 <hr />
 <div>
   <div class="col-xs-10 col-xs-offset-1">
-    <p>
-      Use this formula to determine what length course you should be playing -
-      This was taken from the golf channel.  You typically hit 14 drives per round and you will have 18 approach shots with an iron.
-      Average Drive (YDS) * 14
-      +
-      Average 7 Iron distance (YDS) * 18
-    </p>
-    <br />
-    <p>
-      Example - I drive the ball 260 on average and I hit my 7 iron 160yds.
-      (260 * 14) + (160 * 18) = 3640 + 2880 = 6520
-    </p>
-    <br />
-    <p>
-      What length course should you be playing?
+
 
     </p>
   </div>
 </div>
+<br class="clr" />
+<div>
+  <div class="col-xs-6 text-center bottom">
+    <form id="courseYardage" action="" class="info">
+    <fieldset>
+    	<legend>Course Yardage Calculator</legend>
+    	<p>
+    		<label for="length">Avg Driver Distance (yds)</label>
+    		<input id="length" name="length" type="number" />
+    	</p>
+    	<p>
+    		<label for="iron">Avg 7 Iron Distance (yds)</label>
+    		<input id="iron" name="iron" type="number" />
+    	</p>
+    	<p>
+    		<input type="submit" value="Calculate yardage" />
+    		or
+    		<input type="reset" value="Reset" />
+    	</p>
+    	<p>
+    		<label for="distance">Target Course Yardage (Yds)</label>
+    		<input id="distance" name="distance" type="number" />
+    	</p>
+    </fieldset>
+    </form>
+  </div>
+  <div class="col-xs-6 bottom what">
+    <h1 class="text-center">What length course should I play?</h1>
+    <br />
+    <p class="info2">
+      Use the calculator to determine what length course you should be playing -
+      This formula was taken from the golf channel.  You typically hit 14 drives per round and you will have 18 approach shots with an iron.
+    </p>
+    <br />
+    <h3>(Avg Drive * 14) + (Avg 7i * 18) = Recommended Course Yardage</h3>
+    <br />
+    <p class="info2">
+      What length course are you playing?
+  </div>
+</div>
+
+<script>
+(function () {
+	function calculateCourseYardage(length, iron) {
+		length = parseFloat(length);
+		iron = parseFloat(iron);
+		return (length * 14 + iron * 18);
+	}
+
+	var courseYardage = document.getElementById("courseYardage");
+	if (courseYardage) {
+		courseYardage.onsubmit = function () {
+			this.distance.value = calculateCourseYardage(this.length.value, this.iron.value);
+			return false;
+		};
+	}
+}());
+</script>
