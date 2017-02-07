@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   root 'stats#index'
   get '/about', to: 'stats#about'
   get '/tips', to: 'stats#tips'
-  get '/members', to: 'stats#members' 
+  get '/scoringavg', to: 'stats#scoringavg'
+  get '/greensavg', to: 'stats#greensavg'
+  get '/fwysavg', to: 'stats#fwysavg'
+  get '/birdieavg', to: 'stats#birdieavg'
+  get '/paravg', to: 'stats#paravg'
+  get '/puttsavg', to: 'stats#puttsavg'
   resources :rounds do
     resources :comments, only: :create
   end

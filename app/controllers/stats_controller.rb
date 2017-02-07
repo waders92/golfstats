@@ -6,17 +6,29 @@ class StatsController < ApplicationController
     @comments = Comment.all
   end
 
-  def show
-  end
-
   def about
   end
 
   def tips
   end
 
-  def members
-    @users = User.order('created_at ASC')
+  def scoringavg
   end
+
+  def greensavg
+  end
+
+  def fwysavg
+  end
+
+  def birdieavg
+  end
+
+  def paravg
+  end
+
+  def puttsavg
+  end
+
 
 end

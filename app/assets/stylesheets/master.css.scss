@@ -157,6 +157,24 @@ body {
   font-size: 22px;
 }
 
+.linkavg {
+  font-size: 25px;
+}
+
+.linkavg a {
+  color: black;
+  padding: 15px;
+}
+
+.linkavg a:visited {
+  color: black;
+}
+
+.linkavg a:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .big-score {
   font-size: 3em;
 }
