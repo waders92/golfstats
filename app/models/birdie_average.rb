@@ -1,5 +1,4 @@
 module BirdieAverage
-
   def birdie_average
     rounds.average(:birdies)
   end

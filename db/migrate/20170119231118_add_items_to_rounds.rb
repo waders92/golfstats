@@ -5,6 +5,5 @@ class AddItemsToRounds < ActiveRecord::Migration
     add_column :rounds, :fwys, :integer
     add_column :rounds, :fwystotal, :integer
     add_column :rounds, :putts, :integer
-
   end
 end

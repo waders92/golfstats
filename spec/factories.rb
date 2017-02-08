@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :comment do
     association :round
-
   end
   factory :user do
     sequence :first_name do |n|
@@ -13,25 +12,24 @@ FactoryGirl.define do
     sequence :email do |n|
       "dummyEmail#{n}@gmail.com"
     end
-    password "secretPassword"
-    password_confirmation "secretPassword"
+    password 'secretPassword'
+    password_confirmation 'secretPassword'
   end
 
   factory :round do
-    course "Test course"
-    score "72"
-    greens "10"
-    greenstotal "18"
-    fwys "7"
-    fwystotal "14"
-    putts "25"
-    birdies "2"
-    pars "2"
+    course 'Test course'
+    score '72'
+    greens '10'
+    greenstotal '18'
+    fwys '7'
+    fwystotal '14'
+    putts '25'
+    birdies '2'
+    pars '2'
     association :user
   end
 
   factory :message do
-    message "Test message"
+    message 'Test message'
   end
-
 end

@@ -11,5 +11,4 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe StatsHelper, type: :helper do
-
 end

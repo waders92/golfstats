@@ -1,5 +1,4 @@
 module ScoringAverage
-
   def scoring_average
     rounds.average(:score)
   end
@@ -7,5 +6,4 @@ module ScoringAverage
   def scoring_average_rounded
     scoring_average.round(2)
   end
-
 end

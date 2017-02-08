@@ -5,7 +5,5 @@ class RemoveItemsFromRounds < ActiveRecord::Migration
     remove_column :rounds, :fwyhit
     remove_column :rounds, :fwytotal
     remove_column :rounds, :putts
-
-
   end
 end

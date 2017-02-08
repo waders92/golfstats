@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  include ScoringAverage, GreensAverage, FwysAverage, PuttingAverage, Name, BirdieAverage, ParAverage, TotalRounds
+  def name
+    @name ||= [first_name, last_name].join(' ')
+  end
 
+  include ScoringAverage, GreensAverage, FwysAverage, PuttingAverage, BirdieAverage, ParAverage, TotalRounds
 end

@@ -1,5 +1,4 @@
 module RoundsHelper
-
   def scoring_rank
     Round.group(:user).average(:score)
   end
@@ -21,7 +20,6 @@ module RoundsHelper
   end
 
   def pars_rank
-     Round.group(:user).average(:pars)
+    Round.group(:user).average(:pars)
   end
-
 end

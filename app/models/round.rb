@@ -1,5 +1,4 @@
 class Round < ActiveRecord::Base
-
   belongs_to :user
   has_many :comments
   after_create :send_round_email
@@ -16,5 +15,4 @@ class Round < ActiveRecord::Base
   def send_round_email
     NotificationMailer.round_added(self).deliver
   end
-  
 end

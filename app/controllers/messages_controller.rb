@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
@@ -21,5 +20,4 @@ end
   def message_params
     params.require(:message).permit(:message)
   end
-
 end

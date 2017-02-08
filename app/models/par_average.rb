@@ -1,5 +1,4 @@
 module ParAverage
-
   def par_average
     rounds.average(:pars)
   end
