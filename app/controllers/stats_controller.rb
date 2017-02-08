@@ -9,7 +9,9 @@ class StatsController < ApplicationController
 
   def tips; end
 
-  def scoringavg; end
+  def scoringavg
+    @rounds = Round.order(scoring_rank: :asc)
+  end
 
   def greensavg; end
 
