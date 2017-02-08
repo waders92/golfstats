@@ -7,12 +7,14 @@
         <h3> - Latest Scores - </h3>
       <table class="table1">
         <tr class="table-title">
+          <th>Date</th>
           <th>Name</th>
           <th>Course</th>
           <th>Score</th>
         </tr>
       <% @rounds.each do |round| %>
         <tr class="text-center">
+          <td><%= round.created_at.strftime("%m/%d/%y") %></td>
           <td><%= round.user.name %></td>
           <td><%= round.course %></td>
           <% if user_signed_in? %>
