@@ -38,6 +38,9 @@
 <br />
 
 <% if current_user.rounds.present? %>
+<div class="col-xs-6 col-xs-offset-3">
+  <h1 class="text-center">Total Rounds : <%= current_user.total_rounds %></h1>
+</div>
   <div>
     <div class="col-xs-4 text-center averages">
       <p class="big-score"><%= current_user.scoring_average_rounded %></p>
