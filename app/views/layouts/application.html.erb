@@ -2,11 +2,12 @@
 <html>
 <head>
   <title>TrakStats</title>
-  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -42,9 +43,6 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
-  <!-- Button trigger modal -->
-
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -75,23 +73,13 @@
       </div>
     </div>
   </div>
-
-
-
   <!-- <div class="pull-left errors"> -->
-
     <% if flash[:error].present? %>
     <div class="alert alert-danger text-center">
       <%= flash[:error].html_safe %>
     </div>
-      <% end %>
+    <% end %>
   <!-- </div> -->
-
-
 <%= yield %>
-
-
-
-
 </body>
 </html>
