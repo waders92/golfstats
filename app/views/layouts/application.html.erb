@@ -73,13 +73,11 @@
       </div>
     </div>
   </div>
-  <!-- <div class="pull-left errors"> -->
     <% if flash[:error].present? %>
-    <div class="alert alert-danger text-center">
-      <%= flash[:error].html_safe %>
-    </div>
+      <div class="alert alert-danger text-center">
+        <%= flash[:error].html_safe %>
+      </div>
     <% end %>
-  <!-- </div> -->
 <%= yield %>
 </body>
 </html>
