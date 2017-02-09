@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Codystar|Yantramanav:100,300,400');
 
+p {
+  font-size: 18px;
+}
+
 body {
   background-color: #C7D1D4;
   font-family: 'Yantramanav', sans-serif;
@@ -428,5 +432,9 @@ and (max-device-width : 1024px){
   .convo {
     height: 30px;
     font-size: 1.25em;
+  }
+
+  .info {
+    font-size: 25px;
   }
 }
