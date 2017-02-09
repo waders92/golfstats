@@ -392,18 +392,14 @@ legend {
   font-size: 22px;
 }
 
-@media (max-width: 780px) {
-  hr {
-    width: 100px;
-  }
-}
-
-@media (max-width: 780px) {
-  .links a {
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px){
+  .navbar-default .navbar-nav > li > a {
     color: white;
-    padding: 5px;
-    margin: 5px;
-    margin-bottom: 50px;
-    font-size: 15px;
+    font-size: 30px;
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 100;
+    display: inline-block;
   }
 }
