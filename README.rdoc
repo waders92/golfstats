@@ -1,15 +1,12 @@
 == README
 
-Golfstats
-* Ruby version 2.3.0
-
-Golfstats is a golf stat tracking applicaton created in Ruby.
+Golfstats is a golf stat tracking application created with Ruby.
 
 Here are some of the key features -
 
-Created using Test Driven Development (RSpec & FactoryGirl)
-Devise (authentication)
-Users linked to Rounds /  Messages / Comments
+- Created using Test Driven Development (RSpec, FactoryGirl & Shoulda Matchers)
+- Devise for authentication
+- Notification Mailer after round is created 
 
 Rounds track -
 * course
@@ -17,7 +14,14 @@ Rounds track -
 * fairways hit
 * greens hit
 * putting
-* commments
+* specific score metrics (birdies / pars)
 
-Views contain a dashboard that keeps track of the users stats.  Users can edit and modify rounds.
-Video Lessons for improvement
+Players are Ranked -
+* by scoring averages and other key metrics
+
+Views contain a user dashboard that keeps track of the users stats.
+Users can edit and modify rounds.
+Users can view and comment on other users rounds
+
+JQuery plugin in added to show or hide messages
+JavaScript calculator added to help golfers pick the correct length course
