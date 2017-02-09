@@ -404,8 +404,8 @@ and (max-device-width : 1024px){
 
   .navbar .navbar-brand {
     color: white;
-    font-family: 'Yantramanav', sans-serif;
-    font-size: 25px;
+    font-family: 'Codystar', cursive;
+    font-size: 29px;
   }
 
   .navbar .navbar-brand:visited {
@@ -423,5 +423,10 @@ and (max-device-width : 1024px){
 
   .comment {
     font-size: 25px;
+  }
+
+  .convo {
+    height: 30px;
+    font-size: 1.25em;
   }
 }
