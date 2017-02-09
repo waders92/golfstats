@@ -404,8 +404,12 @@ and (max-device-width : 1024px){
 
   .navbar .navbar-brand {
     color: white;
-    font-family: 'Codystar', cursive;
+    font-family: 'Yantramanav', sans-serif;
     font-size: 25px;
+  }
+
+  .navbar .navbar-brand:visited {
+    color: white;
   }
 
   th, td {
