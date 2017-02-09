@@ -2,7 +2,6 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Codystar|Yantramanav:100,300,400');
 
-
 body {
   background-color: #C7D1D4;
   font-family: 'Yantramanav', sans-serif;
@@ -407,5 +406,14 @@ and (max-device-width : 1024px){
     color: white;
     font-family: 'Codystar', cursive;
     font-size: 25px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 23px;
+  }
+
+  p {
+    font-size: 20px;
   }
 }
