@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'stats#index'
   get '/about', to: 'stats#about'
   get '/tips', to: 'stats#tips'
+  get '/premium', to: 'stats#premium'
   get '/scoringavg', to: 'stats#scoringavg'
   get '/greensavg', to: 'stats#greensavg'
   get '/fwysavg', to: 'stats#fwysavg'
