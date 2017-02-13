@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213232107) do
+ActiveRecord::Schema.define(version: 20170213234723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20170213232107) do
 
   add_index "comments", ["round_id"], name: "index_comments_on_round_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "memberships", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.string   "message"
@@ -52,12 +60,6 @@ ActiveRecord::Schema.define(version: 20170213232107) do
   end
 
   add_index "rounds", ["user_id"], name: "index_rounds_on_user_id", using: :btree
-
-  create_table "subscriptions", force: true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

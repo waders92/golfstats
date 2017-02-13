@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :membership do
+    
+  end
   factory :comment do
     association :round
   end
