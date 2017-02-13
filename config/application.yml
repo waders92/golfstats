@@ -12,3 +12,5 @@
 
 GMAIL_ADDRESS: "wcfirehose@gmail.com"
 GMAIL_PASSWORD: "lawlesss"
+SECRET_KEY: sk_test_CA95l6GaCzxV9fVIfxod49cF
+PUBLISHABLE_KEY: pk_test_2Ly9iwVAcjbaNOczFWblGx9M

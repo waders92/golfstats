@@ -42,6 +42,8 @@ gem 'groupdate', '2.1.1'
 
 gem 'figaro', '>= 1.0.0'
 
+gem 'stripe'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
