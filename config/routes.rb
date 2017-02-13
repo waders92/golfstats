@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get '/birdieavg', to: 'stats#birdieavg'
   get '/paravg', to: 'stats#paravg'
   get '/puttsavg', to: 'stats#puttsavg'
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
   resources :rounds do
     resources :comments, only: :create
   end
-  resources :subscriptions
   resources :charges
   resources :messages
   resource :dashboard, only: :show

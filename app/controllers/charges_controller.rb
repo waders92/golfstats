@@ -1,5 +1,10 @@
 class ChargesController < ApplicationController
+  before_action :authenticate_user!
+
   def new
+  end
+
+  def thanks
   end
 
   def create
@@ -18,7 +23,7 @@ class ChargesController < ApplicationController
     :currency    => 'usd'
   )
 
-  redirect_to subscriptions_path
+  redirect_to thanks_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
