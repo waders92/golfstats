@@ -1,7 +1,7 @@
 <br />
 <div class="col-xs-12">
   <h2 class="text-center">Premium Membership</h2>
-  <div class="col-xs-6">
+  <div class="col-xs-6 bottom">
     <br /><br />
     <p class="info">
       Want more from TrakStats?  Upgrade to a Premium Membership!  Your Premium Membership includes
@@ -27,6 +27,18 @@
             <p><%= flash[:error] %></p>
           </div>
         <% end %>
+        <% if current_user.subscribed? %>
+        <h1>Thanks for being a Member!</h1>
+        <h3>Rankings</h3>
+        <ul class="info">
+          <li><%= link_to 'Scoring Average', scoringavg_path %></li>
+          <li><%= link_to 'Greens Avg', greensavg_path %></li>
+          <li><%= link_to 'Driving Avg', fwysavg_path %></li>
+          <li><%= link_to 'Putting Avg', puttsavg_path %></li>
+          <li><%= link_to 'Birdie Avg', birdieavg_path %></li>
+          <li><%= link_to 'Par Avg', paravg_path %></li>
+        </ul>
+        <% else %>
         <label class="amount">
           <span class="info">Amount: $5.00</span>
         </label>
@@ -38,7 +50,8 @@
               data-locale="auto"></script>
     <% end %>
   </div>
-  <div class="col-xs-6">
+  <% end %>
+  <div class="col-xs-6 bottom">
     <%= image_tag 'stat1.png', class: 'img-responsive' %>
     <br class="clr" />
     <%= image_tag 'stat2.png', class: 'img-responsive' %>

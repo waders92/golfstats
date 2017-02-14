@@ -1,6 +1,8 @@
+<br /><br /><br /><br />
 <div class="col-xs-6 col-xs-offset-3 receipt">
-  <h2 class="text-center">Thanks, you paid <strong>$5.00</strong>!</h2>
+  <h2 class="text-center">Thanks <%= current_user.name %>!</h2>
   <p class="info text-center">
+    Your membership is active.  You paid $5.00 on <%= Time.now.strftime("%m-%d-%Y") %>.
     Please print this page for your records.
   </p>
   <br />
