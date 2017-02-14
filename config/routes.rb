@@ -4,17 +4,11 @@ Rails.application.routes.draw do
   get '/about', to: 'stats#about'
   get '/tips', to: 'stats#tips'
   get '/premium', to: 'stats#premium'
-  get '/scoringavg', to: 'stats#scoringavg'
-  get '/greensavg', to: 'stats#greensavg'
-  get '/fwysavg', to: 'stats#fwysavg'
-  get '/birdieavg', to: 'stats#birdieavg'
-  get '/paravg', to: 'stats#paravg'
-  get '/puttsavg', to: 'stats#puttsavg'
   get 'thanks', to: 'memberships#thanks', as: 'thanks'
   resources :rounds do
     resources :comments, only: :create
   end
-  resources :memberships
+  resource :memberships
   resources :messages
   resource :dashboard, only: :show
   # The priority is based upon order of creation: first created -> highest priority.

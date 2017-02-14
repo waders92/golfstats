@@ -6,6 +6,13 @@ class MembershipsController < ApplicationController
     def thanks
     end
 
+    def show
+      if !current_user.subscribed?
+        redirect_to premium_path
+        flash[:error] = 'You must be a member to view premium content!'
+      end
+    end
+
     def create
       # Amount in cents
     @amount = 500
