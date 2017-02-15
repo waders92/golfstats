@@ -29,15 +29,7 @@
         <% end %>
         <% if current_user.subscribed? %>
         <h1>Thanks for being a Member!</h1>
-        <h3>View all the rankings -</h3>
-        <ul class="info">
-          <li><%= link_to 'Scoring Average', memberships_path %></li>
-          <li><%= link_to 'Greens Avg', memberships_path %></li>
-          <li><%= link_to 'Driving Avg', memberships_path %></li>
-          <li><%= link_to 'Putting Avg', memberships_path %></li>
-          <li><%= link_to 'Birdie Avg', memberships_path %></li>
-          <li><%= link_to 'Par Avg', memberships_path %></li>
-        </ul>
+        <h3>View all the <%= link_to 'RANKINGS', memberships_path, class: 'links' %></h3>
         <% else %>
         <label class="amount">
           <span class="info">Amount: $5.00</span>
