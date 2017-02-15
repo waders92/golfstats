@@ -9,4 +9,10 @@ class StatsController < ApplicationController
     @rounds = Round.order(scoring_rank: :asc)
   end
 
+  def premium
+    if !user_signed_in?
+      redirect_to new_user_session_path
+      flash[:error] = 'You must be signed-in!'
+    end
+  end
 end

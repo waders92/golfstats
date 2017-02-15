@@ -27,6 +27,7 @@
             <p><%= flash[:error] %></p>
           </div>
         <% end %>
+
         <% if current_user.subscribed? %>
         <h1>Thanks for being a Member!</h1>
         <h3>View all the <%= link_to 'RANKINGS', memberships_path, class: 'links' %></h3>
