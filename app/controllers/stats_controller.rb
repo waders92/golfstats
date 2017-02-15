@@ -5,21 +5,8 @@ class StatsController < ApplicationController
     @comments = Comment.all
   end
 
-  def about; end
-
-  def tips; end
-
   def scoringavg
     @rounds = Round.order(scoring_rank: :asc)
   end
 
-  def greensavg; end
-
-  def fwysavg; end
-
-  def birdieavg; end
-
-  def paravg; end
-
-  def puttsavg; end
 end
