@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   get '/about', to: 'stats#about'
   get '/tips', to: 'stats#tips'
   get '/premium', to: 'stats#premium'
+  get '/scoringavg', to: 'memberships#scoringavg'
+  get '/fwysavg', to: 'memberships#fwysavg'
+  get '/greensavg', to: 'memberships#greensavg'
+  get '/puttsavg', to: 'memberships#puttsavg'
+  get '/birdieavg', to: 'memberships#birdieavg'
+  get '/paravg', to: 'memberships#paravg'
   get 'thanks', to: 'memberships#thanks', as: 'thanks'
   resources :rounds do
     resources :comments, only: :create

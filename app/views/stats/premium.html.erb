@@ -4,7 +4,7 @@
   <div class="col-xs-6 bottom">
     <br /><br />
     <p class="info">
-      Want more from TrakStats?  Upgrade to a Premium Membership!  Your Premium Membership includes
+      Want more from TrakStats?  Upgrade to a Premium Membership!  Your Premium Membership is a one time fee and includes
       a rankings section that let's you see how you stack up against other TrakStats users.
     </p>
     <br />
@@ -29,8 +29,16 @@
         <% end %>
 
         <% if current_user.subscribed? %>
-        <h1>Thanks for being a Member!</h1>
-        <h3>View all the <%= link_to 'RANKINGS', memberships_path, class: 'links' %></h3>
+        <div class="col-xs-6 text-center">
+          <h2>Thanks for being a member!</h2>
+          <br />
+        <%= link_to scoringavg_path do %>
+          <%= image_tag 'showme.png', class: 'icons' %>
+        <% end %>
+        <p class="info">
+          Show me the rankings!
+        </p>
+        </div>
         <% else %>
         <label class="amount">
           <span class="info">Amount: $5.00</span>
