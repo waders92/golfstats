@@ -15,4 +15,12 @@ class Round < ActiveRecord::Base
   def send_round_email
     NotificationMailer.round_added(self).deliver
   end
+
+  def year
+    self.created_at.strftime('%Y')
+  end
+
+  def month
+    self.created_at.strftime('%m/%y')
+  end
 end

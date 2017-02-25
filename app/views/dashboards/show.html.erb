@@ -6,7 +6,7 @@
     <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
   </div>
 
-<br class="clr" /><br /><br />
+<br class="clr" /><br />
 <div class="col-lg-8 col-lg-offset-2 user-table">
   <table class="table1">
     <tr class="table-title">
@@ -34,7 +34,38 @@
   <% end %>
   </table>
 </div>
+<!-------------------TEST CHART ---------------------------------->
 
+  <% @monthly_rounds.each do |month, round| %>
+  <div class="col-lg-8 col-lg-offset-2 user-table">
+    <table class="table1">
+      <tr class="table-title">
+        <th>Date</th>
+        <th>Course</th>
+        <th>Score</th>
+        <th>Greens</th>
+        <th>Fwys</th>
+        <th>Putts</th>
+        <th>Birdies</th>
+        <th>Pars</th>
+      </tr>
+    <tr class="text-center">
+      <% round.each do |course, score, greens, fwys, putts, birdies, pars| %>
+      <td><%= month %></td>
+      <td><%= course %></td>
+      <td><%= score %></td>
+      <td><%= greens %></td>
+      <td><%= fwys %></td>
+      <td><%= putts %></td>
+      <td><%= birdies %></td>
+      <td><%= pars %></td>
+    </tr>
+  <br class="clr" /><br />
+  <% end %>
+  </table>
+  <% end %>
+</div>
+<!---------------------TEST CHART -------------------------------->
 <br />
 
 <% if current_user.rounds.present? %>
@@ -55,6 +86,7 @@
       <p>Driving Accuracy</p>
     </div>
   </div>
+
 
   <br class= "clr" />
   <div>
