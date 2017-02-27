@@ -21,6 +21,6 @@ class Round < ActiveRecord::Base
   end
 
   def month
-    self.created_at.strftime('%m/%y')
+    self.created_at.strftime('%B')
   end
 end

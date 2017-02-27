@@ -35,9 +35,10 @@
   </table>
 </div>
 <!-------------------TEST CHART ---------------------------------->
-
-  <% @monthly_rounds.each do |month, round| %>
-  <div class="col-lg-8 col-lg-offset-2 user-table">
+  <br class="clr" />
+  <% @monthly_rounds.sort.each do |month, round| %>
+  <h1 class="text-center"><%= month %></h1>
+  <div class="user-table">
     <table class="table1">
       <tr class="table-title">
         <th>Date</th>
@@ -50,17 +51,16 @@
         <th>Pars</th>
       </tr>
     <tr class="text-center">
-      <% round.each do |course, score, greens, fwys, putts, birdies, pars| %>
-      <td><%= month %></td>
-      <td><%= course %></td>
-      <td><%= score %></td>
-      <td><%= greens %></td>
-      <td><%= fwys %></td>
-      <td><%= putts %></td>
-      <td><%= birdies %></td>
-      <td><%= pars %></td>
+      <% round.sort.each do |round| %>
+      <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %></td>
+      <td class="text-center"><%= round.course %></td>
+      <td class="text-center"><%= round.score %></td>
+      <td class="text-center"><%= round.greens %> / 18</td>
+      <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
+      <td class="text-center"><%= round.putts %></td>
+      <td class="text-center"><%= round.birdies %></td>
+      <td class="text-center"><%= round.pars %></td>
     </tr>
-  <br class="clr" /><br />
   <% end %>
   </table>
   <% end %>
