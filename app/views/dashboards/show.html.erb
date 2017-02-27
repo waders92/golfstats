@@ -4,68 +4,41 @@
     <%= image_tag 'user.png', class: 'user' %>
     <h1><%= current_user.name %></h1>
     <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
+    <hr class="hr" />
   </div>
 
-<br class="clr" /><br />
-<div class="col-lg-8 col-lg-offset-2 user-table">
-  <table class="table1">
-    <tr class="table-title">
-      <th>Date</th>
-      <th>Course</th>
-      <th>Score</th>
-      <th>Greens</th>
-      <th>Fwys</th>
-      <th>Putts</th>
-      <th>Birdies</th>
-      <th>Pars</th>
-    </tr>
-
-  <% current_user.rounds.each do |round| %>
-    <tr class="text-center">
-      <td><%= round.created_at.strftime("%m/%y") %></td>
-      <td><%= round.course %></td>
-      <td class="round-link"><%= link_to round.score, edit_round_path(round) %></td>
-      <td><%= round.greens %> / 18</td>
-      <td><%= round.fwys %> / <%= round.fwystotal %></td>
-      <td><%= round.putts %></td>
-      <td><%= round.birdies %></td>
-      <td><%= round.pars %></td>
-    </tr>
-  <% end %>
-  </table>
-</div>
-<!-------------------TEST CHART ---------------------------------->
   <br class="clr" />
   <% @monthly_rounds.sort.each do |month, round| %>
   <h1 class="text-center"><%= month %></h1>
-  <div class="user-table">
-    <table class="table1">
-      <tr class="table-title">
-        <th>Date</th>
-        <th>Course</th>
-        <th>Score</th>
-        <th>Greens</th>
-        <th>Fwys</th>
-        <th>Putts</th>
-        <th>Birdies</th>
-        <th>Pars</th>
-      </tr>
-    <tr class="text-center">
-      <% round.sort.each do |round| %>
-      <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %></td>
-      <td class="text-center"><%= round.course %></td>
-      <td class="text-center"><%= round.score %></td>
-      <td class="text-center"><%= round.greens %> / 18</td>
-      <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
-      <td class="text-center"><%= round.putts %></td>
-      <td class="text-center"><%= round.birdies %></td>
-      <td class="text-center"><%= round.pars %></td>
-    </tr>
-  <% end %>
-  </table>
-  <% end %>
-</div>
-<!---------------------TEST CHART -------------------------------->
+    <div class="user-table">
+      <table class="col-xs-10 col-xs-offset-1 table2">
+        <tr class="table-title">
+          <th>Date</th>
+          <th>Course</th>
+          <th>Score</th>
+          <th>Greens</th>
+          <th>Fwys</th>
+          <th>Putts</th>
+          <th>Birdies</th>
+          <th>Pars</th>
+        </tr>
+        <tr class="text-center">
+          <% round.sort.each do |round| %>
+          <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %></td>
+          <td class="text-center"><%= round.course %></td>
+          <td class="text-center"><%= round.score %></td>
+          <td class="text-center"><%= round.greens %> / 18</td>
+          <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
+          <td class="text-center"><%= round.putts %></td>
+          <td class="text-center"><%= round.birdies %></td>
+          <td class="text-center"><%= round.pars %></td>
+        </tr>
+    <% end %>
+    </table>
+    <br class="clr" />
+    <% end %>
+  </div>
+
 <br />
 
 <% if current_user.rounds.present? %>
@@ -75,15 +48,15 @@
   <div>
     <div class="col-xs-4 text-center averages">
       <p class="big-score"><%= current_user.scoring_average_rounded %></p>
-      <p>Scoring Average</p>
+      <%= image_tag 's.png', class: 'avgs' %>coring Average
     </div>
     <div class="col-xs-4 text-center averages">
       <p class="big-score"><%= current_user.greens_hit_average_rounded %>%</p>
-      <p>Green's Percentage</p>
+      <%= image_tag 'g.png', class: 'avgs' %>reen's Percentage
     </div>
     <div class="col-xs-4 text-center averages">
       <p class="big-score"><%= current_user.fwys_hit_average_rounded %>%</p>
-      <p>Driving Accuracy</p>
+      <%= image_tag 'd.png', class: 'avgs' %>riving Accuracy
     </div>
   </div>
 
@@ -92,15 +65,15 @@
   <div>
     <div class="col-xs-4 text-center averages2">
       <p class="big-score"><%= current_user.putting_average_rounded %></p>
-      <p>Putting Average</p>
+      <%= image_tag 'p.png', class: 'avgs' %>utting Average
     </div>
     <div class="col-xs-4 text-center averages2">
       <p class="big-score"><%= current_user.birdie_average_rounded %></p>
-      <p>Birdie Average</p>
+      <%= image_tag 'bird.png', class: 'avgs' %>irdie Average
     </div>
     <div class="col-xs-4 text-center averages2">
       <p class="big-score"><%= current_user.par_average_rounded %></p>
-      <p>Par Average</p>
+      <%= image_tag 'par.png', class: 'avgs' %>ar Average
     </div>
   </div>
 

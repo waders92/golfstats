@@ -68,6 +68,18 @@ body {
   font-size: 1.25em;
 }
 
+
+.averages {
+  margin-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.averages2 {
+  margin-top: 25px;
+  padding-bottom: 50px;
+}
+
 .first-chart {
   margin-top: 25px;
 }
@@ -336,9 +348,20 @@ th, td {
 }
 
 .table1 {
-  width: 100%;
   background-color: #10754D;
   color: white;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.table2 {
+  background-color: #10754D;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.table2 tr:first-child{
+  background-color: #244147;
 }
 
 table, th, td {
@@ -352,17 +375,6 @@ table, th, td {
 
 .scores {
   background-color: #244147;
-}
-
-.averages {
-  margin-top: 25px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.averages2 {
-  margin-top: 25px;
-  padding-bottom: 50px;
 }
 
 .user-table {
@@ -409,6 +421,18 @@ legend {
 .receipt {
   background-color: #81A6B3;
   color: white;
+}
+
+.avgs {
+  height: 30px;
+}
+
+.avgs2 {
+  height: 20px;
+}
+
+averages#text {
+  font-size: 20px;
 }
 
 @media only screen
