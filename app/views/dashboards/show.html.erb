@@ -8,8 +8,8 @@
   </div>
 
   <br class="clr" />
-  <% @monthly_rounds.sort.each do |month, round| %>
-  <h1 class="text-center"><%= month %></h1>
+  <% @yearly_rounds.each do |year, round| %>
+  <h1 class="text-center"><%= year %></h1>
     <div class="user-table">
       <table class="col-xs-10 col-xs-offset-1 table2">
         <tr class="table-title">
@@ -26,7 +26,7 @@
           <% round.sort.each do |round| %>
           <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %></td>
           <td class="text-center"><%= round.course %></td>
-          <td class="text-center"><%= round.score %></td>
+          <td class="text-center"><%= link_to round.score, edit_round_path(round), class: 'edits' %></td>
           <td class="text-center"><%= round.greens %> / 18</td>
           <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
           <td class="text-center"><%= round.putts %></td>
