@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :rounds do
     resources :comments, only: :create
   end
+  resources :lessons
+  resources :photos, only: :create
   resource :memberships
   resources :messages
   resource :dashboard, only: :show

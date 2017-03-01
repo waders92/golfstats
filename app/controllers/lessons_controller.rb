@@ -1,20 +1,21 @@
 class LessonsController < ApplicationController
   before_action :authenticate_user!
 
-  def member_required
+  def payment_required
     unless current_user.subscribed?
-      redirect_to root_path
-      flash[:error] = 'You must be a member to view premium content!'
+      redirect_to lessons_path
+      flash[:error] = 'You must complete the checkout process to submit an online lesson!'
     end
   end
 
-  def new; end
-
-  def thanks; end
+  def new
+    payment_required
+    @lesson = Lesson.new
+  end
 
   def create
     # Amount in cents
-    @amount = 500
+    @amount = 4000
 
     customer = Stripe::Customer.create(
       email: current_user.email,
@@ -24,11 +25,11 @@ class LessonsController < ApplicationController
     charge = Stripe::Charge.create(
       customer: customer.id,
       amount: @amount,
-      description: 'TrakStats Premium Membership',
+      description: 'TrakStats Lesson',
       currency: 'usd'
     )
     current_user.update(subscribed: true)
-    redirect_to thanks_path
+    redirect_to new_lesson_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

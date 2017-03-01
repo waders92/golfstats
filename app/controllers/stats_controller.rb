@@ -6,22 +6,38 @@ class StatsController < ApplicationController
     @comments = Comment.all
   end
 
-  def premium
+  def member_required
     unless user_signed_in?
       redirect_to new_user_session_path
       flash[:error] = 'You must be signed-in!'
     end
   end
 
-  def scoringavg; end
+  def lessons
+    member_required
+  end
 
-  def greensavg; end
+  def scoringavg
+    member_required
+  end
 
-  def fwysavg; end
+  def greensavg
+    member_required
+  end
 
-  def puttsavg; end
+  def fwysavg
+    member_required
+  end
 
-  def birdieavg; end
+  def puttsavg
+    member_required
+  end
 
-  def paravg; end
+  def birdieavg
+    member_required
+  end
+
+  def paravg
+    member_required
+  end
 end
