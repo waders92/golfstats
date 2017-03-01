@@ -3,7 +3,7 @@ class MembershipsController < ApplicationController
 
     def member_required
       if !current_user.subscribed?
-        redirect_to premium_path
+        redirect_to root_path
         flash[:error] = 'You must be a member to view premium content!'
       end
     end
@@ -38,26 +38,26 @@ class MembershipsController < ApplicationController
     end
 
     def scoringavg
-      member_required
+      
     end
 
     def greensavg
-      member_required
+
     end
 
     def fwysavg
-      member_required
+
     end
 
     def puttsavg
-      member_required
+
     end
 
     def birdieavg
-      member_required
+
     end
 
     def paravg
-      member_required
+
     end
 end
