@@ -12,6 +12,8 @@ class Round < ActiveRecord::Base
   validates :birdies, presence: true
   validates :pars, presence: true
 
+  scope :by_year, lambda { |year| where('extract(year from created_at) = ?', year) }
+
   def send_round_email
     NotificationMailer.round_added(self).deliver
   end

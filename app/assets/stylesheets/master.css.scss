@@ -261,7 +261,6 @@ a:visited {
 
 hr {
   width: 500px;
-  padding: 25px;
 }
 
 .title {
@@ -441,6 +440,10 @@ averages#text {
 
 .edits:visited {
   color: white;
+}
+
+.bigdate {
+  font-size: 35px;
 }
 
 @media only screen

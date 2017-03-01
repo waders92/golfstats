@@ -4,12 +4,19 @@
     <%= image_tag 'user.png', class: 'user' %>
     <h1><%= current_user.name %></h1>
     <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
-    <hr class="hr" />
+    <hr class="hr2" />
+  </div>
+  <br class="clr" />
+  <div class="container">
+    <p class="bigdate">
+      2017 -
+    </p>
   </div>
 
+
   <br class="clr" />
-  <% @yearly_rounds.each do |year, round| %>
-  <h1 class="text-center"><%= year %></h1>
+  <% @monthly_rounds.sort.each do |month, round| %>
+  <h1 class="text-center"><%= month %></h1>
     <div class="user-table">
       <table class="col-xs-10 col-xs-offset-1 table2">
         <tr class="table-title">
