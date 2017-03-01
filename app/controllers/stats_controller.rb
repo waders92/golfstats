@@ -4,7 +4,6 @@ class StatsController < ApplicationController
     @rounds = Round.all
     @messages = Message.limit(20).order('created_at DESC')
     @comments = Comment.all
-    @monthly_rounds = @rounds.group_by { |i| i.month }
   end
 
   def premium
