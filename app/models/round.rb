@@ -12,17 +12,17 @@ class Round < ActiveRecord::Base
   validates :birdies, presence: true
   validates :pars, presence: true
 
-  scope :by_year, lambda { |year| where('extract(year from created_at) = ?', year) }
+  scope :by_year, ->(year) { where('extract(year from created_at) = ?', year) }
 
   def send_round_email
     NotificationMailer.round_added(self).deliver
   end
 
   def year
-    self.created_at.strftime('%Y')
+    created_at.strftime('%Y')
   end
 
   def month
-    self.created_at.strftime('%B')
+    created_at.strftime('%B')
   end
 end

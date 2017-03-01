@@ -1,6 +1,11 @@
 FactoryGirl.define do
-  factory :membership do
+  factory :photo do
     
+  end
+  factory :lesson do
+    
+  end
+  factory :membership do
   end
   factory :comment do
     association :round
