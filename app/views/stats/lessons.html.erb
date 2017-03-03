@@ -37,7 +37,7 @@
     <br class="clr" />
     <% current_user.lessons.each do |lesson| %>
     <div class="each-lesson">
-      <%= lesson.picture %>
+      <%= image_tag lesson.picture %>
       <%= lesson.caption %>
     </div>
       <% end %>
