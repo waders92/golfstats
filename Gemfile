@@ -45,6 +45,7 @@ gem 'stripe'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3.1'
 gem 'fog'
+gem 'carrierwave-aws'
 
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'

@@ -7,7 +7,7 @@ Here are some of the key features -
 - Created using Test Driven Development (RSpec, FactoryGirl & Shoulda Matchers)
 - Devise for authentication
 - Notification Mailer after round is created
-- STRIPE payment integrated for Premium Member
+- STRIPE payments for Online Lessons
 
 Rounds track -
 * course
