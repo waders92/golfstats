@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one :membership
+  has_many :lessons
 
   def name
     @name ||= [first_name, last_name].join(' ')

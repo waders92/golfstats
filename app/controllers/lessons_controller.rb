@@ -14,25 +14,19 @@ class LessonsController < ApplicationController
   end
 
   def create
-    # Amount in cents
-    @amount = 4000
-
-    customer = Stripe::Customer.create(
-      email: current_user.email,
-      source: params[:stripeToken]
-    )
-
-    charge = Stripe::Charge.create(
-      customer: customer.id,
-      amount: @amount,
-      description: 'TrakStats Lesson',
-      currency: 'usd'
-    )
-    current_user.update(subscribed: true)
-    redirect_to new_lesson_path
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
+    @lesson = current_user.lessons.create(lesson_params)
+    if @lesson.valid?
+    current_user.update(subscribed: false)
     redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
+  private
+
+  def lesson_params
+    params.require(:lesson).permit(:picture, :caption)
+  end
+
 end

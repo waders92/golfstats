@@ -2,54 +2,45 @@
 <h1 class="text-center">TrakStats Lessons</h1>
 <br /><br />
 <div class="container">
-<div class="col-xs-10 col-xs-offset-1">
-<%= image_tag 'pga.png', class: 'pgalogo' %>
-<br />
-<p class="info">
-  Wade Carlson has been a PGA professional since 2003. After graduating from MSU's PGA/PGM Program, he went on to serve as the Head Golf Professional
-  at Limestone Springs (Oneonta, AL) and The Highlands (Starkville, MS). An expert clubfitter and accomplished teacher, Wade has given over 2000 hours of
-  instruction with approximately 125 students.
-  <br /><br />
-  Wade has taught students of all abilities.  If you would like him to take a look at your swing online, click to sign-up for a video lesson. You will
-  be prompted to upload a video of your swing (mp4 format).  You can upload a face on view and one from behind or "down the line". Make sure that the club is visible during the entire swing.  Feel free
-  to leave some comments about what you struggle with and we can take it from there. Thanks for your interest in TrakStats lessons!
-</p>
-<br />
-<%= image_tag 'lesson1.PNG', class: 'lessonimgs' %>
-<%= image_tag 'lesson2.PNG', class: 'lessonimgs' %>
-<%= image_tag 'lesson4.jpg', class: 'lessonimgs' %>
-<%= image_tag 'lesson3.jpg', class: 'lessonimgs' %>
-<%= image_tag 'lesson5.jpg', class: 'lessonimgs' %>
-<br />
-<p class="info tagline">
-<br />
-"I pride myself on teaching proper form and good fundamentals." &nbsp;&nbsp;&nbsp;-W.C.
-</p>
-<br />
-<div class="col-xs-10 bottom">
-  <h2>Sign me up for a video lesson!</h2>
-  <p class="info">
-    Once you complete the payment process, a receipt will be emailed to you. Then you can upload your videos!
-  </p>
-  <br />
-  <%= form_tag lessons_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-      <% end %>
-      <label class="amount">
-        <span class="cost">Amount: $40.00</span>
-      </label>
-    </article>
-
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description="TrakStats Lesson"
-        data-amount="4000"
-        data-locale="auto"></script>
-        <% end %>
-    </div>
+    <div class="col-xs-10 col-xs-offset-1 bottom">
+    <%= image_tag 'pga.png', class: 'pgalogo' %>
+    <br />
+        <p class="info">
+          Wade Carlson has been a PGA professional since 2003. After graduating from MSU's PGA/PGM Program, he went on to serve as the Head Golf Professional
+          at Limestone Springs (Oneonta, AL) and The Highlands (Starkville, MS). An expert clubfitter and accomplished teacher, Wade has given over 2000 hours of
+          instruction to approximately 125 students.
+          <br /><br />
+          Wade is a full time Ruby on Rails Developer, but still teaches in his spare time.  If you would like him to take a look at your swing online, click to sign-up for a video lesson. You will
+          be prompted to upload a video of your swing (mp4 format).  You can upload a face on view and one from behind or "down the line". Make sure that the club is visible during the entire swing.  Feel free
+          to leave some comments about what you struggle with and we can take it from there. Thanks for your interest in TrakStats lessons!
+        </p>
+    <br />
+      <%= image_tag 'lesson1.PNG', class: 'lessonimgs' %>
+      <%= image_tag 'lesson2.PNG', class: 'lessonimgs' %>
+      <%= image_tag 'lesson4.jpg', class: 'lessonimgs' %>
+      <%= image_tag 'lesson3.jpg', class: 'lessonimgs' %>
+      <%= image_tag 'lesson5.jpg', class: 'lessonimgs' %>
+    <br />
+      <p class="info tagline">
+    <br />
+    "I pride myself on teaching proper form and good fundamentals." &nbsp;&nbsp;&nbsp;-W.C.
+    </p>
+    <br />
+    <%= button_to "I want a lesson!", { :action => "new", :controller =>"charges" }, :method => :get %>
   </div>
 </div>
+<% if current_user.lessons.present? %>
+  <hr class="hr" />
+<div class="container">
+  <div class="col-xs-10 col-xs-offset-1 lessons">
+    <h2 class="text-center">Your Lessons</h2>
+    <br class="clr" />
+    <% current_user.lessons.each do |lesson| %>
+    <div class="each-lesson">
+      <%= lesson.picture %>
+      <%= lesson.caption %>
+    </div>
+      <% end %>
+  </div>
+</div>
+<% end %>

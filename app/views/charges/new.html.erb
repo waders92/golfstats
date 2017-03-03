@@ -1,0 +1,26 @@
+<br /><br />
+<div class="col-xs-10 col-xs-offset-1">
+  <h2>Sign me up for a video lesson!</h2>
+  <p class="info">
+    Once you complete the payment process, a receipt will be emailed to you. Then you can upload your videos!
+  </p>
+  <br />
+  <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+      <% end %>
+      <label class="amount">
+        <span class="cost">Amount: $50.00</span>
+      </label>
+    </article>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="TrakStats Lesson"
+        data-amount="5000"
+        data-locale="auto"></script>
+        <% end %>
+    </div>
