@@ -17,7 +17,7 @@ class LessonsController < ApplicationController
     @lesson = current_user.lessons.create(lesson_params)
     if @lesson.valid?
     current_user.update(subscribed: false)
-    redirect_to root_path
+    redirect_to lessons_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:picture, :caption)
+    params.require(:lesson).permit(:video, :caption)
   end
 
 end
