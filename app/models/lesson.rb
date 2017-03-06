@@ -3,6 +3,6 @@ class Lesson < ActiveRecord::Base
   belongs_to :user
   has_many :videos
 
-  validates :caption, presence: true, length: { minimum: 3, maximum: 5000 }
+  validates :caption, presence: true, length: { minimum: 1, maximum: 250 }
   validates :video, presence: true
 end

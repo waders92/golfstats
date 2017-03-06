@@ -6,17 +6,9 @@
     <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
     <hr class="hr2" />
   </div>
-  <br class="clr" />
-  <div class="container">
-    <p class="bigdate">
-      2017 -
-    </p>
-  </div>
-
-
-  <br class="clr" />
+    <br class="clr" />
   <% @monthly_rounds.each do |month, round| %>
-  <h1 class="text-center"><%= month %></h1>
+  <h1 class="text-center"><%= month %> '17</h1>
     <div class="user-table">
       <table class="col-xs-10 col-xs-offset-1 table2">
         <tr class="table-title">

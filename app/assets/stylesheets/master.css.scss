@@ -277,7 +277,7 @@ hr {
 }
 
 .modal-header, .modal-body, .modal-footer {
-  background-color: #374F4F;
+  background-color: #50545E;
   color: white;
   font-size: 1.25em;
 }
@@ -459,10 +459,6 @@ averages#text {
   height: 200px;
 }
 
-.lessonimgs {
-  height: 200px;
-}
-
 .swings {
   margin-left: 50px;
 }
@@ -483,10 +479,43 @@ a.lessonlink:hover {
   font-size: 20px;
 }
 
-input {
-  background-color: #2F86A3;
+.lessonbtn {
+  background-color: #325F6E;
   color: white;
-  width: 200px;
+  height: 75px;
+  width: 400px;
+  font-size: 20px;
+}
+
+.form-control {
+  height: 40px;
+  font-size: 18px;
+}
+
+.wcpic {
+  height: 125px;
+  width: 125px;
+  border-radius: 100%;
+}
+
+.wc {
+  margin-top: 25px;
+}
+
+.top {
+  margin-top :50px;
+}
+
+.mc img {
+  border: 1px solid black;
+}
+
+.good {
+  margin-bottom: 100px;
+}
+
+input#lesson_caption.string.required.form-control {
+  height: 75px;
 }
 
 @media only screen

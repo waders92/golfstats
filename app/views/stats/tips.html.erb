@@ -73,40 +73,10 @@
     </ul>
   </div>
 </div>
-<hr />
+<hr class="hr" />
 <br class="clr" />
 <div>
-  <div class="col-xs-6 text-center bottom">
-    <form id="courseYardage" action="" class="info">
-    <fieldset>
-    	<legend>Course Yardage Calculator</legend>
-    	<p>
-    		<label for="length">Avg Driver Distance (yds)</label>
-    		<input id="length" name="length" type="number" />
-    	</p>
-    	<p>
-    		<label for="iron">Avg 7 Iron Distance (yds)</label>
-    		<input id="iron" name="iron" type="number" />
-    	</p>
-    	<p>
-    		<input type="submit" value="Calculate yardage" />
-    		or
-    		<input type="reset" value="Reset" />
-    	</p>
-    	<p>
-    		<label for="distance">Your Ideal Course Yardage (yds)</label>
-    		<input id="distance" name="distance" type="number" />
-    	</p>
-    </fieldset>
-    </form>
-    <br /><br /><br /><br />
-    <p class="info2">
-      Go Low!
-    </p>
-    <br /><br />
-    <%= image_tag 'golf.png' , class: 'icons2' %>
-  </div>
-  <div class="col-xs-6 bottom what">
+  <div class="col-xs-10 col-xs-offset-1 bottom what">
     <h1 class="text-center">What length course should I play?</h1>
     <br />
     <p class="info2">
@@ -125,5 +95,29 @@
     </p>
     <p class="info2">
       What length course are you playing?
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 bottom">
+    <form id="courseYardage" action="" class="info">
+    <fieldset>
+      <legend>Course Yardage Calculator</legend>
+      <p>
+        <label for="length">Avg Driver Distance (yds)</label>
+        <input id="length" name="length" type="number" />
+      </p>
+      <p>
+        <label for="iron">Avg 7 Iron Distance (yds)</label>
+        <input id="iron" name="iron" type="number" />
+      </p>
+      <p>
+        <input type="submit" value="Calculate yardage" />
+        or
+        <input type="reset" value="Reset" />
+      </p>
+      <p>
+        <label for="distance">Your Ideal Course Yardage (yds)</label>
+        <input id="distance" name="distance" type="number" />
+      </p>
+    </fieldset>
+    </form>
   </div>
 </div>
