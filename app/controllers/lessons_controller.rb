@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_action :authenticate_user!
+  before_filter :set_cache_headers
 
   def payment_required
     unless current_user.subscribed?
