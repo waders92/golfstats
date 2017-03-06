@@ -19,7 +19,7 @@ class LessonsController < ApplicationController
   end
 
   def update
-    @lesson = Lesson.find(params[:id])
+    @lesson = Lesson.find_by_id(params[:id])
     @lesson.update_attributes(lesson_params)
     redirect_to admin_path
   end
