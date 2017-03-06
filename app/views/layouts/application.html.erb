@@ -38,7 +38,7 @@
           <ul class="dropdown-menu">
             <li><%= link_to 'Scoring Average', scoringavg_path %></li>
             <li><%= link_to 'Greens Average', greensavg_path %></li>
-            <li><%= link_to 'Fairways Avearage', fwysavg_path %></li>
+            <li><%= link_to 'Fairways Average', fwysavg_path %></li>
             <li><%= link_to 'Putting Average', puttsavg_path %></li>
             <li><%= link_to 'Birdie Avearage', birdieavg_path %></li>
             <li><%= link_to 'Par Average', paravg_path %></li>
@@ -51,14 +51,14 @@
             <% if current_user.admin? %>
             <li><%= link_to 'Tips', tips_path %></li>
             <li><%= link_to 'Instruction by Wade Carlson, PGA', aboutwc_path %></li>
-            <li><%= link_to 'Upload a video', lessons_path %></li>
+            <li><%= link_to 'Video Lessons', lessons_path %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to '*READ* How to submit a Video Lesson!',howto_path %></li>
             <li><%= link_to 'ADMIN', admin_path %></li>
             <% else %>
             <li><%= link_to 'Tips', tips_path %></li>
             <li><%= link_to 'Instruction by Wade Carlson, PGA', aboutwc_path %></li>
-            <li><%= link_to 'Upload a video', lessons_path %></li>
+            <li><%= link_to 'Video Lessons', lessons_path %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to '*READ* How to submit a Video Lesson!',howto_path %></li>
             <% end %>

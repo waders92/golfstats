@@ -11,7 +11,7 @@ class NotificationMailer < ActionMailer::Base
   def lesson_added(lesson)
     @lesson = lesson
     @lesson_owner = @lesson.user
-    mail(to: @lesson_owner.email,
+    mail(to: @lesson_owner.email, bcc: wade.carlson@pga.com,
          subject: 'A video has been uploaded on Trakstats')
   end
 
