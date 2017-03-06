@@ -4,7 +4,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :picture
       t.string :caption
       t.string :advice
-      
+
       t.timestamps
     end
   end

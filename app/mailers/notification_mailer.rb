@@ -7,4 +7,11 @@ class NotificationMailer < ActionMailer::Base
     mail(to: @round_owner.email,
          subject: 'A round has been posted on Trakstats')
   end
+
+  def lesson_added(lesson)
+    @lesson = lesson
+    @lesson_owner = @lesson.user
+    mail(to: @lesson_owner.email,
+         subject: 'A lesson has been uploaded on Trakstats')
+  end
 end

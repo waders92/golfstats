@@ -3,7 +3,7 @@
   <h2>Sign me up for a video lesson!</h2>
   <p class="info">
     Once you complete the payment process, a receipt will be emailed to you. From there you will see instructions
-    on how to upload your video!
+    on how to upload your video! Make sure you have read <%= link_to '"HOW TO SUBMIT A VIDEO LESSON"', howto_path %> before you checkout!
   </p>
   <br />
   <%= form_tag charges_path do %>
@@ -14,14 +14,14 @@
       </div>
       <% end %>
       <label class="amount">
-        <span class="cost">Amount: $50.00</span>
+        <span class="cost">Amount: $25.00</span>
       </label>
     </article>
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         data-description="TrakStats Lesson"
-        data-amount="5000"
+        data-amount="2500"
         data-locale="auto"></script>
         <% end %>
     </div>

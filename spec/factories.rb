@@ -1,9 +1,7 @@
 FactoryGirl.define do
   factory :photo do
-    
   end
   factory :lesson do
-    
   end
   factory :membership do
   end

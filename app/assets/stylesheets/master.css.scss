@@ -164,12 +164,12 @@ body {
 
 .msgbtn {
   border: none;
-  background-color: black;
+  background-color: #244147;
   color: white;
 }
 
 .msgbtn:hover {
-  background-color: black;
+  background-color: #2E6975;
 }
 
 .links a {
@@ -502,6 +502,10 @@ a.lessonlink:hover {
   margin-top: 25px;
 }
 
+.pga img {
+  height: 150px;
+}
+
 .top {
   margin-top :50px;
 }
@@ -511,11 +515,17 @@ a.lessonlink:hover {
 }
 
 .good {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 input#lesson_caption.string.required.form-control {
   height: 75px;
+}
+
+.dropdown-menu > li > a {
+  font-size: 16px;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 100;
 }
 
 @media only screen

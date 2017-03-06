@@ -40,12 +40,12 @@ gem 'active_median', '~> 0.1.0'
 gem 'chartkick', '1.2.4'
 gem 'groupdate', '2.1.1'
 
-gem 'figaro', '>= 1.0.0'
-gem 'stripe'
 gem 'carrierwave', '~> 1.0'
-gem 'mini_magick', '~> 4.3.1'
-gem 'fog'
 gem 'carrierwave-aws'
+gem 'figaro', '>= 1.0.0'
+gem 'fog'
+gem 'mini_magick', '~> 4.3.1'
+gem 'stripe'
 
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
