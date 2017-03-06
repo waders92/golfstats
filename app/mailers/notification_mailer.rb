@@ -9,9 +9,10 @@ class NotificationMailer < ActionMailer::Base
   end
 
   def lesson_added(lesson)
+    @user = User.find(1)
     @lesson = lesson
     @lesson_owner = @lesson.user
-    mail(to: @lesson_owner.email, bcc: wade.carlson@pga.com,
+    mail(to: @lesson_owner.email, bcc: @user.email,
          subject: 'A video has been uploaded on Trakstats')
   end
 
