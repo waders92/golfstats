@@ -40,4 +40,12 @@ class StatsController < ApplicationController
   def paravg
     member_required
   end
+
+  def admin
+    unless user_signed_in? && current_user.admin?
+      redirect_to root_path
+      flash[:error] = 'You do not have access'
+    end
+    @lessons = Lesson.all
+  end
 end

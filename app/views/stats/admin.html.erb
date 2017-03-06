@@ -1,0 +1,36 @@
+<br />
+<div class="container">
+  <div class="col-xs-10 col-xs-offset-1 lessons">
+    <h2 class="text-center">All User videos</h2>
+    <br class="clr" />
+    <% @lessons.each do |lesson| %>
+    <div class="each-lesson">
+      <video id="MY_VIDEO_1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls
+          preload="auto" width="1000" height="500" poster="/assets/black.jpg" data-setup="{}">
+          <source src="<%= lesson.video.to_s %>" type='video/mp4'>
+            <noscript>
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p></noscript>
+      </video>
+      <div class="advice">
+        <div class="col-xs-6 text-center top bottom">
+          <p class=" info advice">
+            <h3>What you struggle with.....</h3>
+            <%= lesson.caption %>
+          </p>
+        </div>
+        <div class="col-xs-6 text-center top bottom">
+        <h3>Here's my advice...</h3>
+        <%= link_to 'Edit Video', edit_lesson_path(lesson) %>
+          <p class="info advice">
+            <%= lesson.advice %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <br class="clr" />
+    <% end %>
+  </div>
+</div>

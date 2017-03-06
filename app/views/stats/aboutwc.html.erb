@@ -28,6 +28,9 @@
     <p class="info bottom">
       Wade Carlson has been a PGA professional since 2003. After graduating from MSU's PGA/PGM Program, he went on to serve as the Head Golf Professional
       at Limestone Springs (Oneonta, AL) and The Highlands (Starkville, MS). Currently a full time Ruby on Rails Developer, Wade still teaches in his spare time.
-      If you would like him to take a look at your swing online, click to <%= link_to 'SIGN-UP', lessons_path %> for a video lesson. Thanks for your interest in TrakStats lessons!
+      If you would like him to take a look at your swing online, click to sign up for a video lesson. Thanks for your interest in TrakStats lessons!
     </p>
+    <div class="col-xs-6 col-xs-offset-3 text-center bottom">
+      <%= button_to "Sign me up for a video lesson!", { :action => "new", :controller =>"charges" }, :method => :get, class: 'lessonbtn' %>
+    </div>
 </div>

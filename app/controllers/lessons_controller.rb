@@ -14,6 +14,16 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new
   end
 
+  def edit
+    @lesson = Lesson.find_by_id(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update_attributes(lesson_params)
+    redirect_to admin_path
+  end
+
   def create
     @lesson = current_user.lessons.create(lesson_params)
     if @lesson.valid?
@@ -27,6 +37,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:video, :caption)
+    params.require(:lesson).permit(:video, :caption, :advice)
   end
 end

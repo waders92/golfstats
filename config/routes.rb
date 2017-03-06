@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/puttsavg', to: 'stats#puttsavg'
   get '/birdieavg', to: 'stats#birdieavg'
   get '/paravg', to: 'stats#paravg'
-  get 'thanks', to: 'lessons#thanks', as: 'thanks'
+  get '/admin', to: 'stats#admin'
   resources :rounds do
     resources :comments, only: :create
   end

@@ -1,0 +1,11 @@
+<br /><br />
+<h2 class="text-center">Editing the video lesson!</h2>
+  <div class="col-xs-6 col-xs-offset-3">
+    <%= simple_form_for @lesson do |f| %>
+      <%= f.input :video, label: 'Upload edited video here' %>
+      <%= f.input :caption, label: 'Enter a description of what you struggle with - 250 chars max!', placeholder: 'Example - I struggle hitting the ball fat and ocassionally hook the ball.' %>
+      <%= f.input :advice %>
+        <br />
+      <%= f.submit "Update Video", class: 'btn btn-primary btn-xs' %>
+      <% end %>
+  </div>
