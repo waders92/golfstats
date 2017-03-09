@@ -35,7 +35,7 @@
           <% @messages.each do |message| %>
           <div class="comment">
             <span class="comment_handle">
-              <%=message.created_at.strftime("%m-%d-%Y") %> | <%= message.user.name %> -
+              <%=message.created_at.strftime("%m/%d") %> | <%= message.user.name %> -
             </span>
            " <%= message.message %> "
           </div>

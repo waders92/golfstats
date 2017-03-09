@@ -45,9 +45,9 @@
           <% @round.comments.each do |comment| %>
           <div class="comment">
             <span class="comment_handle">
-              <%=comment.created_at.strftime("%m-%d-%Y, %I:%M %p") %> | <%= comment.user.name %> -
+              <%=comment.created_at.strftime("%m/%d") %> | <%= comment.user.name %> -
             </span>
-           " <%= comment.message %> "
+           "<%= comment.message %>"
           </div>
         <% end %>
       </div>

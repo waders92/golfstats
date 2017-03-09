@@ -29,6 +29,7 @@ class LessonsController < ApplicationController
     if @lesson.valid?
       current_user.update(subscribed: false)
       redirect_to lessons_path
+      flash[:error] = 'Thanks for submitting your lesson, I will check it out shortly!'
     else
       render :new, status: :unprocessable_entity
     end

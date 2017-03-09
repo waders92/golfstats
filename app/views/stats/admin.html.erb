@@ -1,12 +1,12 @@
 <br />
 <div class="container">
   <div class="col-xs-10 col-xs-offset-1 lessons">
-    <h2 class="text-center">All User videos</h2>
+    <h2>All User videos</h2>
     <br class="clr" />
     <% @lessons.each do |lesson| %>
-    <div class="each-lesson">
-      <video id="MY_VIDEO_1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls
-          preload="auto" width="1000" height="500" poster="/assets/black.jpg" data-setup="{}">
+    <div class="each-lesson text-center">
+      <video id="MY_VIDEO_1" class="video-js vjs-default-skin vjs-big-play-centered" controls
+          preload="auto" width="800" height="500" poster="/assets/black.jpg" data-setup="{}">
           <source src="<%= lesson.video.to_s %>" type='video/mp4'>
             <noscript>
           <p class="vjs-no-js">
@@ -16,14 +16,12 @@
       </video>
       <div class="advice">
         <div class="col-xs-6 text-center top bottom">
-          <h2>What you struggle with.....</h2>
           <p class="info advice">
             <%= lesson.caption %>
           </p>
         </div>
         <div class="col-xs-6 text-center top bottom">
           <%= link_to 'Edit Video', edit_lesson_path(lesson) %>
-        <h2>Here's my advice...</h2>
           <p class="info advice">
             <%= lesson.advice %>
           </p>
