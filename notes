@@ -1,1 +1,56 @@
 
+<div class="top">
+  <div class="col-xs-6 wrap">
+    <%= image_tag 'about1.png', class: 'img-responsive' %>
+  </div>
+  <div class="col-xs-6 text-center fix">
+    <p class="infoa">
+      Add your rounds!
+    </p>
+  </div>
+</div>
+<br class="clr" />
+<div>
+  <div class="col-xs-6 text-center fix">
+    <p class="infoa">
+      Check your stats!
+    </p>
+  </div>
+  <div class="col-xs-6 wrap">
+    <%= image_tag 'about2.png', class: 'img-responsive' %>
+  </div>
+</div>
+<br class="clr" />
+<div>
+  <div class="col-xs-6 wrap">
+    <%= image_tag 'about3.png', class: 'img-responsive' %>
+  </div>
+  <div class="col-xs-6 text-center">
+    <p class="infoa fix">
+      See how your friends are doing!
+    </p>
+  </div>
+</div>
+<br class="clr" />
+<div>
+  <div class="col-xs-6 text-center">
+    <p class="infoa fix">
+      See how you rank!
+    </p>
+  </div>
+  <div class="col-xs-6 wrap">
+    <%= image_tag 'about4.png', class: 'img-responsive' %>
+  </div>
+</div>
+<br class="clr" />
+<div>
+  <div class="col-xs-6 wrap">
+    <%= image_tag 'about6.png', class: 'img-responsive' %>
+  </div>
+  <div class="col-xs-6 text-center">
+    <p class="infoa fix">
+      Submit a video for a lesson!
+    </p>
+  </div>
+</div>
+<br class="clr" />
