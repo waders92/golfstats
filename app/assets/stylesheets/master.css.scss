@@ -451,11 +451,19 @@ averages#text {
 }
 
 .edits {
+  color: white;
+}
+
+.edits:visited {
+  color: white;
+}
+
+.edits2 {
   color: blue;
   font-size: 20px;
 }
 
-.edits:visited {
+.edits2:visited {
   color: blue;
 }
 
