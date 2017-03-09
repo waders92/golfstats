@@ -481,6 +481,7 @@ averages#text {
 
 .tagline {
   font-family: 'Nothing You Could Do', cursive;
+  margin-top: 50px;
 }
 
 a.lessonlink:visited {
@@ -512,6 +513,7 @@ a.lessonlink:hover {
   height: 125px;
   width: 125px;
   border-radius: 100%;
+  border: 1px solid black;
 }
 
 .wc {
@@ -547,6 +549,10 @@ input#lesson_caption.string.required.form-control {
 .bottom-advice {
   margin-top: -90px;
   margin-bottom: 75px;
+}
+
+.mc img {
+  border: 1px solid black;
 }
 
 @media only screen
