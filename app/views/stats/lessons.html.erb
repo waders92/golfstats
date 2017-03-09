@@ -8,7 +8,7 @@
     </p>
   </div>
   <hr class="hr" />
-<div class="col-xs-10 col=xs-offset-1">
+<div class="col-xs-10 col-xs-offset-1">
   <div class="lessons">
     <h2>Your Uploaded Video Lessons</h2>
     <% if current_user.lessons.present? %>
@@ -25,7 +25,7 @@
           </p></noscript>
       </video>
       <div class="advice">
-        <div class="top bottom">
+        <div class="col-xs-8 top bottom">
           <p class="info advice">
             <%= lesson.advice %>
           </p>
