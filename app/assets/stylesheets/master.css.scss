@@ -272,6 +272,13 @@ hr {
   width: 500px;
 }
 
+.hr-split {
+  width: 800px;
+  color: black;
+  margin-top: 50px;
+  border-top: 1px solid black;
+}
+
 .title {
   margin-top: 50px;
 }
@@ -444,11 +451,12 @@ averages#text {
 }
 
 .edits {
-  color: white;
+  color: blue;
+  font-size: 20px;
 }
 
 .edits:visited {
-  color: white;
+  color: blue;
 }
 
 .bigdate {
@@ -522,6 +530,15 @@ input#lesson_caption.string.required.form-control {
   font-size: 16px;
   font-family: 'Yantramanav', sans-serif;
   font-weight: 100;
+}
+
+.issue {
+  color: firebrick;
+}
+
+.bottom-advice {
+  margin-top: -90px;
+  margin-bottom: 75px;
 }
 
 @media only screen
