@@ -11,7 +11,7 @@
   <hr class="hr" />
 <div class="col-xs-10 col-xs-offset-1">
   <div class="lessons">
-    <h2>Latest Lessons</h2>
+    <h3>Saved Lessons For <%= current_user.name %></h3>
     <% if current_user.lessons.present? %>
     <br class="clr" />
     <% current_user.lessons.each do |lesson| %>
@@ -27,7 +27,7 @@
       </video>
       <div class="advice">
         <div class="col-xs-8 top bottom">
-          <h3 class="text-center"><%= lesson.created_at.strftime('%B %_d, %Y')%></h3>
+          <h3><%= lesson.created_at.strftime('%B %_d, %Y')%></h3>
           <p class="info advice">
             <%= lesson.advice %>
           </p>
