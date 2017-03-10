@@ -1,16 +1,17 @@
 <br />
 <br />
-  <div class="col-xs-6 col-xs-offset-3 text-center bottom">
+<h2 class="text-center">Video Lessons</h2>
+  <div class="col-xs-6 col-xs-offset-3 text-center top bottom">
     <%= button_to "Upload your video!", { :action => "new", :controller =>"charges" }, :method => :get, class: 'lessonbtn' %>
     <p class="info">
       <br />
-      IMPORTANT -> Information about videos <%= link_to 'HERE', howto_path %>!
+      PLEASE READ -> Information about submitting videos <%= link_to 'HERE', howto_path %>!
     </p>
   </div>
   <hr class="hr" />
 <div class="col-xs-10 col-xs-offset-1">
   <div class="lessons">
-    <h2>Your Uploaded Video Lessons</h2>
+    <h2>Latest Lessons</h2>
     <% if current_user.lessons.present? %>
     <br class="clr" />
     <% current_user.lessons.each do |lesson| %>
@@ -26,6 +27,7 @@
       </video>
       <div class="advice">
         <div class="col-xs-8 top bottom">
+          <h3 class="text-center"><%= lesson.created_at.strftime('%B %_d, %Y')%></h3>
           <p class="info advice">
             <%= lesson.advice %>
           </p>

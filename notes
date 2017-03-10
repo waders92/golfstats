@@ -1,56 +1,35 @@
+<div class="col-xs-12">
+  <p class="info top">
+    TrakStats is a simple way for you to keep track of your golf stats!<br />
+    Upload your round, view your stats, see how you rank against other users!
+  </p>
+  <br class="clr" />
+  <div>
+    <div class="col-xs-6">
+      <p class="info top">
+        Membership is free and you have access to the following -
+      </p>
+      <ul class="info">
+        <li>Add / Edit Rounds</li>
+        <li>Stat Averages</li>
+        <li>Rankings</li>
+        <li>View other member scores</li>
+        <li>Leave comments and messages</li>
+        <li>Tips</li>
+    </div>
+    <div class="col-xs-6 wrap top">
+      <%= image_tag 'about2.png', class: 'img-responsive' %>
+    </div>
+  </div>
+<br class="clr" />
 
-<div class="top">
-  <div class="col-xs-6 wrap">
-    <%= image_tag 'about1.png', class: 'img-responsive' %>
-  </div>
-  <div class="col-xs-6 text-center fix">
-    <p class="infoa">
-      Add your rounds!
-    </p>
-  </div>
-</div>
-<br class="clr" />
-<div>
-  <div class="col-xs-6 text-center fix">
-    <p class="infoa">
-      Check your stats!
-    </p>
-  </div>
-  <div class="col-xs-6 wrap">
-    <%= image_tag 'about2.png', class: 'img-responsive' %>
-  </div>
-</div>
-<br class="clr" />
-<div>
-  <div class="col-xs-6 wrap">
-    <%= image_tag 'about3.png', class: 'img-responsive' %>
-  </div>
-  <div class="col-xs-6 text-center">
-    <p class="infoa fix">
-      See how your friends are doing!
-    </p>
-  </div>
-</div>
-<br class="clr" />
-<div>
-  <div class="col-xs-6 text-center">
-    <p class="infoa fix">
-      See how you rank!
-    </p>
-  </div>
-  <div class="col-xs-6 wrap">
-    <%= image_tag 'about4.png', class: 'img-responsive' %>
-  </div>
-</div>
-<br class="clr" />
-<div>
-  <div class="col-xs-6 wrap">
+  </ul>
+  <p class="info top">
+    If you are struggling and not sure what to work on you can always <br />upload a video of your swing and get a lesson! (Premium)
+    <br />
+    Thanks for checking out TrakStats!
+  </p>
+  <div>
     <%= image_tag 'about6.png', class: 'img-responsive' %>
   </div>
-  <div class="col-xs-6 text-center">
-    <p class="infoa fix">
-      Submit a video for a lesson!
-    </p>
-  </div>
 </div>
-<br class="clr" />

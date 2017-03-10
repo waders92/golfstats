@@ -5,7 +5,7 @@ class Lesson < ActiveRecord::Base
   after_create :send_lesson_email
   after_update :send_update_email
 
-  validates :caption, presence: true, length: { minimum: 1, maximum: 250 }
+  validates :caption, presence: true
   validates :video, presence: true
 
   def send_lesson_email

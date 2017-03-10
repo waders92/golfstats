@@ -14,7 +14,8 @@
             <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
           </p></noscript>
       </video>
-        <div class="col-xs-8 top bottom">
+        <div class="col-xs-8 bottom">
+          <h3><%= lesson.created_at.strftime('%B %_d, %Y')%></h3>
           <p class="info issue">
             <%= lesson.user.name %>-<br />
             <%= lesson.caption %>
