@@ -1,11 +1,6 @@
 <br /><br />
-<div class="col-xs-6 col-xs-offset-3 text-center">
-  <h2>Sign me up for a video lesson!</h2>
-  <p class="info">
-    Once you complete the payment process, you will be able to
-    upload your video! Make sure to read <%= link_to '"HOW TO SUBMIT A VIDEO LESSON"', howto_path %> before you checkout!
-  </p>
-  <br />
+<div class="col-xs-6 col-xs-offset-3 text-center bottom big-box2">
+  <h2>TrakStats Lesson</h2>
   <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -17,11 +12,16 @@
         <span class="cost">Amount: $30.00</span>
       </label>
     </article>
-
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description="TrakStats Lesson"
-        data-amount="3000"
-        data-locale="auto"></script>
-        <% end %>
-    </div>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-description="TrakStats Lesson"
+      data-amount="3000"
+      data-locale="auto"></script>
+      <% end %>
+</div>
+<br class="clr" />
+<p class="info col-xs-6 col-xs-offset-3">
+  Once your payment has processed, you will be able to
+  upload your video! Make sure to read <%= link_to '"HOW TO SUBMIT A VIDEO LESSON"', howto_path %>
+  before you checkout!
+</p>
