@@ -14,14 +14,14 @@
       </div>
       <% end %>
       <label class="amount">
-        <span class="cost">Amount: $25.00</span>
+        <span class="cost">Amount: $30.00</span>
       </label>
     </article>
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         data-description="TrakStats Lesson"
-        data-amount="2500"
+        data-amount="3000"
         data-locale="auto"></script>
         <% end %>
     </div>

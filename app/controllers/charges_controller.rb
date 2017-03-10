@@ -3,7 +3,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 2500
+    @amount = 3000
 
     customer = Stripe::Customer.create(
       email: current_user.email,
