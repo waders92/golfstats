@@ -1,5 +1,3 @@
-<br /><br />
-<h3 class="text-center">Video Lessons</h3>
 <div class="container test">
     <div class="col-xs-10 col-xs-offset-1 text-center wc">
       <%= image_tag 'pga.png', class: 'pgalogo' %>
@@ -21,10 +19,9 @@
 </div>
 
   <div class="col-xs-6 col-xs-offset-3 text-center top bottom">
-    <%= button_to "Upload your video!", { :action => "new", :controller =>"charges" }, :method => :get, class: 'lessonbtn' %>
+    <%= button_to "Upload a video!", { :action => "new", :controller =>"charges" }, :method => :get, class: 'lessonbtn' %>
     <p class="info">
       <br />
-       <%= link_to 'Important - Video Instructions', howto_path %>!
     </p>
   </div>
   <hr class="hr" />
