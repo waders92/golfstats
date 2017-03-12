@@ -20,44 +20,39 @@
       <% end %>
       <br />
 </div>
+<div class="top bottom">
+  <div class="col-xs-6 bottom">
+    <%= image_tag 'swing2.PNG', class:'img-responsive' %>
+  </div>
+  <div class="col-xs-6 bottom">
+    <%= image_tag 'swing1.PNG', class: 'img-responsive' %>
+  </div>
+</div>
+<div class="top bottom">
+  <div class="col-xs-6 bottom">
+    <%= image_tag 'swing4.PNG', class:'img-responsive' %>
+  </div>
+  <div class="col-xs-6 bottom">
+    <%= image_tag 'swing6.PNG', class: 'img-responsive' %>
+  </div>
+</div>
 
 <br class="clr" />
-<div class="col-xs-10 col-xs-offset-1 lesson-instructions">
-  <h3>What you need to know before you upload your video-</h3>
+<div class="col-xs-10 col-xs-offset-1 lesson-instructions bottom">
+  <h3>** What you need to know before you upload your video **</h3>
   <br />
   <ul class="info">
-    <li>Upload a video from your iphone or ipad or desktop</li>
-    <li>If using Samsung phone, make sure your video is MP4 format first before uploading!</li>
-    <li>Submit a video of a swing that is FACE ON or DOWN THE LINE (Examples below)</li>
-    <li>Be sure to give a description of what you struggle with (CAPTION)</li>
-    <li>Once you submit a video I will take a look at it and create a lesson for you to view!</li>
-    <li>Lessons will be available in 24 hours and will be viewable on the <%= link_to 'VIDEO LESSONS', lessons_path %> page</li>
-    <li>Videos are evaluated with <a href="https://www.hudl.com/products/technique" target="_blank">Hudl Technique</a> (formerly Ubersense)</li>
-  </ul>
+    <li>Upload a video using your iPhone, iPad or desktop computer</li>
+    <li>If using a Samsung phone, make sure your video is in MP4 format</li>
+    <li>Submit a video of a swing that is FACE ON or DOWN THE LINE</li>
+    <li>Be sure to give a description of what you struggle with</li>
+    <li>Once you submit a video I will take a look at it and create a lesson for you to view</li>
+    <li>I'll email you when it's ready and you can view it on the <%= link_to 'VIDEO LESSONS', lessons_path %> page</li>
 </div>
 <br />
 <br class="clr" />
 <hr class="hr" />
-<div class="col-xs-10 col-xs-offset-1">
-  <h3 class="text-center">What good videos angles look like!</h3>
-  <br />
-  <div class="col-xs-6 text-center good">
-    <h3 class="text-center">Down the line</h3>
-    <p class="info">
-      Good angle, could be back a bit (too close)
-    </p>
-    <br />
-    <%= image_tag 'good1.jpg', class: 'img-responsive' %>
-  </div>
-  <div class="col-xs-6 text-center good">
-    <h3 class="text-center">Face on</h3>
-    <p class="info">
-      Good distance! (10'-15')
-    </p>
-    <br />
-    <%= image_tag 'good2.jpg', class: 'img-responsive' %>
-   </div>
-</div>
+
 <div class="container test">
     <div class="col-xs-10 col-xs-offset-1 text-center wc">
       <%= image_tag 'pga.png', class: 'pgalogo' %>
