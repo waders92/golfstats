@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/tips', to: 'stats#tips'
   get '/lessons', to: 'stats#lessons'
   get '/howto', to: 'stats#howto'
-  get '/aboutwc', to: 'stats#aboutwc'
   get '/rankings', to: 'stats#rankings'
   get '/scoringavg', to: 'stats#scoringavg'
   get '/fwysavg', to: 'stats#fwysavg'
