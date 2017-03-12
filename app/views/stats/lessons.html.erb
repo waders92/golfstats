@@ -1,33 +1,14 @@
-<div class="container test">
-    <div class="col-xs-10 col-xs-offset-1 text-center wc">
-      <%= image_tag 'pga.png', class: 'pgalogo' %>
-        <%= image_tag 'me.jpg', class: 'wcpic' %>
-        <p class="info tagline">
-        "I pride myself on teaching proper form and good fundamentals." &nbsp;&nbsp;&nbsp;-W.C.
-        </p>
 
-    </div>
-    <div class="col-xs-10 swings top bottom">
-      <div class="col-xs-4 mc">
-        <%= image_tag 'swing3.png', class: 'img-responsive' %>
-      </div>
-      <div class="col-xs-8 mc">
-        <%= image_tag 'swing2.jpg', class: 'img-responsive' %>
-      </div>
-    </div>
-    <br class="clr" />
-</div>
-
-  <div class="col-xs-6 col-xs-offset-3 text-center top bottom">
-    <%= button_to "Upload a video!", { :action => "new", :controller =>"charges" }, :method => :get, class: 'lessonbtn' %>
-    <p class="info">
-      <br />
-    </p>
-  </div>
-  <hr class="hr" />
 <div class="col-xs-10 col-xs-offset-1">
   <div class="lessons">
-    <h3>Saved Lessons For <%= current_user.name %></h3>
+    <% if current_user.lessons.present? %>
+    <h3><%= current_user.name %>'s Lesson Dashboard</h3>
+    <% else %>
+    <br /><br  />
+    <p class="info">
+      You have no videos uploaded! Check out our <%= link_to 'LESSON', new_charge_path %> section.
+    </p>
+    <% end %>
     <% if current_user.lessons.present? %>
     <br class="clr" />
     <% current_user.lessons.each do |lesson| %>
