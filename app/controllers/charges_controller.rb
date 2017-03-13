@@ -1,5 +1,10 @@
 class ChargesController < ApplicationController
-  def new; end
+  def new
+    unless user_signed_in?
+      redirect_to new_user_session_path
+      flash[:error] = 'You must be signed-in!'
+    end
+  end
 
   def create
     # Amount in cents

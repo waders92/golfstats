@@ -41,6 +41,10 @@ class StatsController < ApplicationController
     member_required
   end
 
+  def tips
+    member_required
+  end
+
   def admin
     unless user_signed_in? && current_user.admin?
       redirect_to root_path
