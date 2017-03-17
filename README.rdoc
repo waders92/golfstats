@@ -6,7 +6,7 @@ Here are some of the key features -
 
 - Created using Test Driven Development (RSpec, FactoryGirl & Shoulda Matchers)
 - Devise for authentication
-- Notification Mailer after round is created
+- Notification Mailers (round creation / video uploading / lesson ready)
 - STRIPE payments for Online Lessons
 - Video Uploading feature
 
