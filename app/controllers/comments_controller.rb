@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def show
-    @round = Round.find_by_id(params[:id])
+    @round = Round.find_by(id: params[:id])
   end
 
   def create
-    @round = Round.find_by_id(params[:round_id])
+    @round = Round.find_by(id: params[:round_id])
     @round.comments.create(comment_params.merge(user: current_user))
     redirect_to round_path(@round)
   end

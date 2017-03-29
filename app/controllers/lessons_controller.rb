@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :set_cache_headers
+  before_action :set_cache_headers
 
   def payment_required
     unless current_user.subscribed?
@@ -15,11 +15,11 @@ class LessonsController < ApplicationController
   end
 
   def edit
-    @lesson = Lesson.find_by_id(params[:id])
+    @lesson = Lesson.find_by(id: params[:id])
   end
 
   def update
-    @lesson = Lesson.find_by_id(params[:id])
+    @lesson = Lesson.find_by(id: params[:id])
     @lesson.update_attributes(lesson_params)
     redirect_to admin_path
   end

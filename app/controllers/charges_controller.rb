@@ -23,7 +23,6 @@ class ChargesController < ApplicationController
     )
     current_user.update(subscribed: true)
     redirect_to new_lesson_path
-
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to root_path

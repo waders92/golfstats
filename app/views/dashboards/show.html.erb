@@ -20,17 +20,19 @@
           <th>Putts</th>
           <th>Birdies</th>
           <th>Pars</th>
+          <th>Edits?</th>
         </tr>
         <tr class="text-center">
           <% round.sort.each do |round| %>
           <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %></td>
           <td class="text-center"><%= round.course %></td>
-          <td class="text-center"><%= link_to round.score, edit_round_path(round), class: 'edits' %></td>
+          <td class="text-center"><%= round.score %></td>
           <td class="text-center"><%= round.greens %> / 18</td>
           <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
           <td class="text-center"><%= round.putts %></td>
           <td class="text-center"><%= round.birdies %></td>
           <td class="text-center"><%= round.pars %></td>
+          <td class="text-center"><%= link_to(image_tag("edit.png", class: 'pencil'), edit_round_path(round), class: 'pencil') %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("trash.png", class: 'trash'), round_path(round), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %></td>
         </tr>
     <% end %>
     </table>

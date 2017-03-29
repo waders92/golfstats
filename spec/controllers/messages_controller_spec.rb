@@ -6,7 +6,7 @@ RSpec.describe MessagesController, type: :controller do
       user = FactoryGirl.create(:user)
       sign_in user
 
-      post :create, message: { message: 'test message' }
+      post :create, message: { message: 'test message' } 
       expect(response).to redirect_to root_path
     end
   end

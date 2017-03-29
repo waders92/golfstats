@@ -15,7 +15,7 @@ RSpec.describe CommentsController, type: :controller do
 
     it 'should require the user to be logged in to make a comment' do
       round = FactoryGirl.create(:round)
-      post :create, round_id: round.id, comment: { message: 'nice round' }
+      post :create, round_id: round.id, comment: { message: 'nice round' } 
       expect(response).to redirect_to new_user_session_path
     end
   end

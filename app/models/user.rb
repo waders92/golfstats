@@ -15,5 +15,11 @@ class User < ActiveRecord::Base
     @name ||= [first_name, last_name].join(' ')
   end
 
-  include ScoringAverage, GreensAverage, FwysAverage, PuttingAverage, BirdieAverage, ParAverage, TotalRounds
+  include ScoringAverage
+  include GreensAverage
+  include FwysAverage
+  include PuttingAverage
+  include BirdieAverage
+  include ParAverage
+  include TotalRounds
 end
