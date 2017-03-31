@@ -73,6 +73,18 @@ body {
   margin-top: 15px;
 }
 
+.big-box3 {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #244147;
+  color: white;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 10px;
+  margin-top: 15px;
+}
+
 .leaders {
   background-color: #244147;
   color: white;
@@ -644,12 +656,14 @@ input#lesson_caption.string.required.form-control {
 
 .tk img {
   border: 1px solid darkgray;
-  margin-left: auto;
-  margin-right: auto;
+  height: 85%;
+  width: 85%;
 }
 
-.about-chart {
-  margin-left: 100px;
+.pk {
+  margin-top: auto;
+  margin-bottom: auto;
+  position: absolute;
 }
 
 @media only screen
