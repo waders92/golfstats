@@ -22,4 +22,76 @@ module RoundsHelper
   def pars_rank
     Round.group(:user).average(:pars)
   end
+
+  def best_scoring_average_name
+    scoring_rank.sort.each do |(user, avg)|
+      return user.name
+    end
+  end
+
+  def best_scoring_average
+    scoring_rank.sort.each do |(user, avg)|
+      return avg
+    end
+  end
+
+  def best_greens_rank_name
+    greens_rank.sort.each do |(user, avg)|
+      return user.name
+    end
+  end
+
+  def best_greens_rank
+    greens_rank.sort.each do |(user, avg)|
+      return avg
+    end
+  end
+
+  def best_faiwrways_rank_name
+    fairways_rank.sort.each do |(user, avg)|
+      return user.name
+    end
+  end
+
+  def best_faiwrways_rank
+    fairways_rank.sort.each do |(user, avg)|
+      return avg
+    end
+  end
+
+  def best_putting_rank_name
+    putting_rank.sort.each do |(user, avg)|
+      return user.name
+    end
+  end
+
+  def best_putting_rank
+    putting_rank.sort.each do |(user, avg)|
+      return avg
+    end
+  end
+
+  def best_birdie_average_name
+    birdies_rank.sort.each do |(user, avg)|
+      return user.name
+    end
+  end
+
+  def best_birdie_rank
+    birdies_rank.sort.each do |(user, avg)|
+      return avg
+    end
+  end
+
+  def best_par_rank_name
+    pars_rank.sort.each do |(user, avg)|
+      return user.name
+    end
+  end
+
+  def best_par_rank
+    pars_rank.sort.each do |(user, avg)|
+      return avg
+    end
+  end
 end
