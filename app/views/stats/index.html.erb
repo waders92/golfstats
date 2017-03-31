@@ -1,7 +1,50 @@
 <div class="responsive-scale"></div>
 <% if user_signed_in? %>
-<br /><br />
-  <h2 class="text-center">Welcome, <%= current_user.name %>!</h2>
+<div class="leaders">
+<br />
+<p class="text-center tleader">TrakStats Leaders</p>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active text-center">
+      <p>
+        <b>Scoring Average -</b> <%= best_scoring_average_name %>
+        (<%= best_scoring_average %>)
+      </p>
+    </div>
+    <div class="item text-center">
+      <p>
+        <b>Greens In Regulation -</b> <%= best_greens_rank_name %>
+        (<%= best_greens_rank %>)
+      </p>
+    </div>
+    <div class="item text-center">
+      <p>
+        <b>Fairways Hit -</b> <%= best_faiwrways_rank_name %>
+        (<%= best_faiwrways_rank %>)
+      </p>
+    </div>
+    <div class="item text-center">
+      <p>
+        <b>Putting Average -</b> <%= best_putting_rank_name %>
+        (<%= best_putting_rank %>)
+      </p>
+    </div>
+    <div class="item text-center">
+      <p>
+        <b>Birdie Average -</b> <%= best_birdie_average_name %>
+        (<%= best_birdie_rank %>)
+      </p>
+    </div>
+    <div class="item text-center">
+      <p>
+        <b>Par Average -</b> <%= best_par_rank_name %>
+        (<%= best_par_rank %>)
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
   <% end %>
     <div class="first-chart col-xs-10 col-xs-offset-1">
         <h3> - Latest Scores - </h3>
