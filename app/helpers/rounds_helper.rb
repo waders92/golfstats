@@ -36,25 +36,25 @@ module RoundsHelper
   end
 
   def best_greens_rank_name
-    greens_rank.sort.each do |(user, avg)|
+    greens_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return user.name
     end
   end
 
   def best_greens_rank
-    greens_rank.sort.each do |(user, avg)|
+    greens_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return avg
     end
   end
 
   def best_faiwrways_rank_name
-    fairways_rank.sort.each do |(user, avg)|
+    fairways_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return user.name
     end
   end
 
   def best_faiwrways_rank
-    fairways_rank.sort.each do |(user, avg)|
+    fairways_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return avg
     end
   end
@@ -72,25 +72,25 @@ module RoundsHelper
   end
 
   def best_birdie_average_name
-    birdies_rank.sort.each do |(user, avg)|
+    birdies_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return user.name
     end
   end
 
   def best_birdie_rank
-    birdies_rank.sort.each do |(user, avg)|
+    birdies_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return avg
     end
   end
 
   def best_par_rank_name
-    pars_rank.sort.each do |(user, avg)|
+    pars_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return user.name
     end
   end
 
   def best_par_rank
-    pars_rank.sort.each do |(user, avg)|
+    pars_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return avg
     end
   end
