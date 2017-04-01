@@ -6,8 +6,9 @@
   <div class="carousel-inner">
     <div class="item active text-center">
       <p>
-        <b>Scoring Average -</b> <%= best_scoring_average_name %>
-        (<%= best_scoring_average %>)
+        <% user, rank = best_scoring_rank_with_index %>
+        <b>Scoring Average -</b> <%= user.name %>
+        (<%= rank %>)
       </p>
     </div>
     <div class="item text-center">

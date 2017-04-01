@@ -9,7 +9,7 @@
       <th>Avg</th>
       <th>Rnds</th>
     </tr>
-  <% scoring_rank.sort_by{|k, v| +v }.each.with_index(1) do |(user, avg), i| %>
+  <% scoring_rank_with_index do |(user, avg), i| %>
     <tr class="text-center">
       <td><%= i %></td>
       <td><%= user.name %></td>
