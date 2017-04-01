@@ -72,9 +72,9 @@ module RoundsHelper
   end
 
   def best_birdie_average_name
-    user = birdies_rank.sort_by{|k, v| -v}.first 
+    birdies_rank.sort_by{|k, v| -v}.each do |(user, avg)|
       return user.name
-
+    end
   end
 
   def best_birdie_rank
