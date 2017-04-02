@@ -13,32 +13,37 @@
     </div>
     <div class="item text-center">
       <p>
-        <b>Greens In Regulation -</b> <%= best_greens_rank_name %>
-        (<%= best_greens_rank %>)
+        <% user, rank = best_greens_rank_with_index %>
+        <b>Greens In Regulation -</b> <%= user.name %>
+        (<%= rank %>)
       </p>
     </div>
     <div class="item text-center">
       <p>
-        <b>Fairways Hit -</b> <%= best_faiwrways_rank_name %>
-        (<%= best_faiwrways_rank %>)
+        <% user, rank = best_faiwrways_rank_with_index %>
+        <b>Fairways Hit -</b> <%= user.name %>
+        (<%= rank %>)
       </p>
     </div>
     <div class="item text-center">
       <p>
-        <b>Putting Average -</b> <%= best_putting_rank_name %>
-        (<%= best_putting_rank %>)
+        <% user, rank = best_putting_rank_with_index %>
+        <b>Putting Average -</b> <%= user.name %>
+        (<%= rank %>)
       </p>
     </div>
     <div class="item text-center">
       <p>
-        <b>Birdie Average -</b> <%= best_birdie_average_name %>
-        (<%= best_birdie_rank %>)
+        <% user, rank = best_birdies_rank_with_index %>
+        <b>Birdie Average -</b> <%= user.name %>
+        (<%= rank %>)
       </p>
     </div>
     <div class="item text-center">
       <p>
-        <b>Par Average -</b> <%= best_par_rank_name %>
-        (<%= best_par_rank %>)
+        <% user, rank = best_pars_rank_with_index %>
+        <b>Par Average -</b> <%= user.name %>
+        (<%= rank %>)
       </p>
     </div>
   </div>
