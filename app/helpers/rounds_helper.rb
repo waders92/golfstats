@@ -23,75 +23,75 @@ module RoundsHelper
     Round.group(:user).average(:pars)
   end
 
-  def best_scoring_average_name
-    scoring_rank.sort.each do |(user, avg)|
-      return user.name
+  def scoring_rank_with_index
+    scoring_rank.sort_by{|k, v| +v }.each.with_index(1) do |(user, avg), i|
+      yield([user, avg], i)
     end
   end
 
-  def best_scoring_average
-    scoring_rank.sort.each do |(user, avg)|
-      return avg
+  def best_scoring_rank_with_index
+    scoring_rank_with_index do |(user, avg), i|
+      return [user, avg]
     end
   end
 
-  def best_greens_rank_name
-    greens_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return user.name
+  def greens_rank_with_index
+    greens_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
+      yield([user, avg], i)
     end
   end
 
-  def best_greens_rank
-    greens_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return avg
+  def best_greens_rank_with_index
+    greens_rank_with_index do |(user, avg), i|
+      return [user, avg]
     end
   end
 
-  def best_faiwrways_rank_name
-    fairways_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return user.name
+  def fairways_rank_with_index
+    fairways_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
+      yield([user, avg], i)
     end
   end
 
-  def best_faiwrways_rank
-    fairways_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return avg
+  def best_faiwrways_rank_with_index
+    fairways_rank_with_index do |(user, avg), i|
+      return [user, avg]
     end
   end
 
-  def best_putting_rank_name
-    putting_rank.sort.each do |(user, avg)|
-      return user.name
+  def putting_rank_with_index
+    putting_rank.sort_by{|k, v| +v }.each.with_index(1) do |(user, avg), i|
+      yield([user, avg], i)
     end
   end
 
-  def best_putting_rank
-    putting_rank.sort.each do |(user, avg)|
-      return avg
+  def best_putting_rank_with_index
+    putting_rank_with_index do |(user, avg), i|
+      return [user, avg]
     end
   end
 
-  def best_birdie_average_name
-    birdies_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return user.name
+  def birdies_rank_with_index
+    birdies_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
+      yield([user, avg], i)
     end
   end
 
-  def best_birdie_rank
-    birdies_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return avg
+  def best_birdies_rank_with_index
+    birdies_rank_with_index do |(user, avg), i|
+      return [user, avg]
     end
   end
 
-  def best_par_rank_name
-    pars_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return user.name
+  def pars_rank_with_index
+    pars_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
+      yield([user, avg], i)
     end
   end
 
-  def best_par_rank
-    pars_rank.sort_by{|k, v| -v}.each do |(user, avg)|
-      return avg
+  def best_pars_rank_with_index
+    pars_rank_with_index do |(user, avg), i|
+      return [user, avg]
     end
   end
 end
