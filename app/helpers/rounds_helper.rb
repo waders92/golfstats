@@ -25,55 +25,55 @@ module RoundsHelper
 
   def scoring_rank_with_index
     scoring_rank.sort_by{|k, v| +v }.each.with_index(1) do |(user, avg), i|
-      yield([user, avg.round(2)], i)
+      yield([user, avg], i)
     end
   end
 
   def best_scoring_rank_with_index
     scoring_rank_with_index do |(user, avg), i|
-      return [user, avg]
+      return [user, avg.round(2)]
     end
   end
 
   def greens_rank_with_index
     greens_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
-      yield([user, avg.round(2)], i)
+      yield([user, avg], i)
     end
   end
 
   def best_greens_rank_with_index
     greens_rank_with_index do |(user, avg), i|
-      return [user, avg]
+      return [user, avg.round(2)]
     end
   end
 
   def fairways_rank_with_index
     fairways_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
-      yield([user, avg.round(2)], i)
+      yield([user, avg], i)
     end
   end
 
   def best_faiwrways_rank_with_index
     fairways_rank_with_index do |(user, avg), i|
-      return [user, avg]
+      return [user, avg.round(2)]
     end
   end
 
   def putting_rank_with_index
     putting_rank.sort_by{|k, v| +v }.each.with_index(1) do |(user, avg), i|
-      yield([user, avg.round(2)], i)
+      yield([user, avg], i)
     end
   end
 
   def best_putting_rank_with_index
     putting_rank_with_index do |(user, avg), i|
-      return [user, avg]
+      return [user, avg.round(2)]
     end
   end
 
   def birdies_rank_with_index
     birdies_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
-      yield([user, avg.round(2)], i)
+      yield([user, avg], i)
     end
   end
 
@@ -85,13 +85,13 @@ module RoundsHelper
 
   def pars_rank_with_index
     pars_rank.sort_by{|k, v| -v}.each.with_index(1) do |(user, avg), i|
-      yield([user, avg.round(2)], i)
+      yield([user, avg], i)
     end
   end
 
   def best_pars_rank_with_index
     pars_rank_with_index do |(user, avg), i|
-      return [user, avg]
+      return [user, avg.round(2)]
     end
   end
 end
