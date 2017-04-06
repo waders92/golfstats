@@ -1,11 +1,51 @@
 <br /><br />
-
   <div class="text-center col-xs-6 col-xs-offset-3">
     <%= image_tag 'user.png', class: 'user' %>
     <h1><%= current_user.name %></h1>
     <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
-    <hr class="hr2" />
+    <hr class="hr2 top" />
   </div>
+  <br />
+  <% if current_user.rounds.present? %>
+  <div class="col-xs-6 col-xs-offset-3">
+    <h1 class="text-center">Total Rounds : <%= current_user.total_rounds %></h1>
+  </div>
+    <div>
+      <div class="col-xs-4 text-center averages">
+        <p class="big-score"><%= current_user.scoring_average_rounded %></p>
+        Scoring Average
+      </div>
+      <div class="col-xs-4 text-center averages">
+        <p class="big-score"><%= current_user.greens_hit_average_rounded %>%</p>
+        Green's Percentage
+      </div>
+      <div class="col-xs-4 text-center averages">
+        <p class="big-score"><%= current_user.fwys_hit_average_rounded %>%</p>
+        Driving Accuracy
+      </div>
+    </div>
+      <br class= "clr" />
+    <div>
+      <div class="col-xs-4 text-center averages2 bottom">
+        <p class="big-score"><%= current_user.putting_average_rounded %></p>
+        Putting Average
+      </div>
+      <div class="col-xs-4 text-center averages2 bottom">
+        <p class="big-score"><%= current_user.birdie_average_rounded %></p>
+        Birdie Average
+      </div>
+      <div class="col-xs-4 text-center averages2 bottom">
+        <p class="big-score"><%= current_user.par_average_rounded %></p>
+        Par Average
+      </div>
+    </div>
+    <hr />
+
+  <% else %>
+    <div class="col-xs-6 col-xs-offset-3 text-center">
+      <h2>You need to enter a round to see your stats!</h2>
+    </div>
+  <% end %>
     <br class="clr" />
   <% @yearly_rounds.each do |year, round| %>
   <h1 class="text-center"><%= year %></h1>
@@ -39,45 +79,3 @@
     <br class="clr" />
     <% end %>
   </div>
-
-<br />
-
-<% if current_user.rounds.present? %>
-<div class="col-xs-6 col-xs-offset-3">
-  <h1 class="text-center">Total Rounds : <%= current_user.total_rounds %></h1>
-</div>
-  <div>
-    <div class="col-xs-4 text-center averages">
-      <p class="big-score"><%= current_user.scoring_average_rounded %></p>
-      Scoring Average
-    </div>
-    <div class="col-xs-4 text-center averages">
-      <p class="big-score"><%= current_user.greens_hit_average_rounded %>%</p>
-      Green's Percentage
-    </div>
-    <div class="col-xs-4 text-center averages">
-      <p class="big-score"><%= current_user.fwys_hit_average_rounded %>%</p>
-      Driving Accuracy
-    </div>
-  </div>
-    <br class= "clr" />
-  <div>
-    <div class="col-xs-4 text-center averages2 bottom">
-      <p class="big-score"><%= current_user.putting_average_rounded %></p>
-      Putting Average
-    </div>
-    <div class="col-xs-4 text-center averages2 bottom">
-      <p class="big-score"><%= current_user.birdie_average_rounded %></p>
-      Birdie Average
-    </div>
-    <div class="col-xs-4 text-center averages2 bottom">
-      <p class="big-score"><%= current_user.par_average_rounded %></p>
-      Par Average
-    </div>
-  </div>
-
-<% else %>
-  <div class="col-xs-6 col-xs-offset-3 text-center">
-    <h2>You need to enter a round to see your stats!</h2>
-  </div>
-<% end %>
