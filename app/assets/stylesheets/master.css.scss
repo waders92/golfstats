@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway:500|Codystar|Yantramanav:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway:500|Codystar|Yantramanav:100,300,400|Pavanam');
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 .carousel-fade .carousel-inner .item {
   opacity: 0;
@@ -35,7 +39,8 @@ p {
 
 body {
   background-color: #C7D1D4;
-  font-family: 'Yantramanav', sans-serif;
+  font-family: 'Pavanam', sans-serif;
+  letter-spacing: .5px;
 }
 
 .responsive-scale{
@@ -130,7 +135,6 @@ body {
   font-family: 'Codystar', cursive;
 }
 
-
 .averages {
   margin-top: 25px;
   padding-top: 20px;
@@ -180,10 +184,6 @@ body {
   font-family: 'Yantramanav', sans-serif;
   font-weight: 100;
   display: inline-block;
-}
-
-.red {
-  background-color: firebrick;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -250,7 +250,7 @@ body {
 }
 
 .linkavg {
-  font-family: 'Yantramanav', sans-serif;
+  font-family: 'Pavanam', sans-serif;
   font-size: 25px;
   font-weight: 100;
 }
@@ -555,11 +555,6 @@ averages#text {
 
 .swings {
   margin-left: 50px;
-}
-
-.tagline {
-  font-family: 'Nothing You Could Do', cursive;
-  margin-top: 50px;
 }
 
 a.lessonlink:visited {
