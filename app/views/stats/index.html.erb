@@ -101,6 +101,6 @@
 <div class="col-xs-12 newpage">
   <br /><br />
   <h1 class="text-center">Welcome to TrakStats!</h1>
-    <h3 class="text-center">Register or Sign-in to get started....</h3>
+    <h3 class="text-center"><%= link_to 'Register', new_user_registration_path, class: 'about-link' %> or <%= link_to 'Sign-in', new_user_session_path, class: 'about-link' %> to get started....<br />New to TrakStats? Visit the <%= link_to 'About Page', about_path, class: 'about-link' %><br />to see what we're about.</h3>
 </div>
 <% end %>

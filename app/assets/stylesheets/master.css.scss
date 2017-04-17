@@ -661,6 +661,21 @@ input#lesson_caption.string.required.form-control {
   position: absolute;
 }
 
+.about-ror {
+  height: 150px;
+  background-color: #244147;
+  margin-bottom: 0;
+}
+
+a.about-link {
+  color: black;
+
+  &:hover {
+    color: firebrick;
+    text-decoration: none;
+  }
+}
+
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px){

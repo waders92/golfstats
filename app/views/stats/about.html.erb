@@ -1,8 +1,7 @@
 <br /><br />
   <div class="col-xs-8 col-xs-offset-2 about-chart">
     <p class="info top">
-    Play golf, track your stats and start to improve! The best part, Membership
-    is always free! For the best experience, please view us on iPad devices or larger. Here's a preview...
+    Play golf, track your stats and start to improve! For the best experience, please use iPad devices or larger. Here's a preview...
     </p>
   </div>
   <br class="clr" />
@@ -44,20 +43,11 @@
     </div>
   </div>
 <br class="clr" />
-<div class="col-sm-4 text-center banner">
-    <%= image_tag 'golf-2.png', class: 'icons' %>
-    <br />
-    <h4>Play golf!</h4>
-</div>
-<div class="col-sm-4 text-center banner">
-    <%= image_tag 'analytics.png', class: 'icons' %>
-    <br />
-    <h4>Track your stats!</h4>
-</div>
-<div class="col-sm-4 text-center banner">
-    <%= image_tag 'hole.png', class: 'icons' %>
-    <br />
-    <h4>Start Improving!</h4>
+<div class="col-xs-6 col-xs-offset-3 top bottom">
+  <p class="info">
+    I got it! (<%= link_to 'Sign Me Up', new_user_registration_path, class: 'about-link' %>)<br />
+    Already registered? (<%= link_to 'Sign Me In', new_user_session_path, class: 'about-link' %>)
+  </p>
 </div>
 <br /><br /><hr class="hr" />
 <p class="info text-center top bottom">
