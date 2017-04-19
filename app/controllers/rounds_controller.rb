@@ -1,6 +1,10 @@
 class RoundsController < ApplicationController
   before_action :authenticate_user!, only: %i(create edit update destroy)
 
+  def new
+    @round = Round.new
+  end
+
   def show
     @round = Round.find_by(id: params[:id])
   end

@@ -30,7 +30,6 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-          <li><%= link_to 'Add Round', '#', data: {toggle: 'modal', target: '#myModal'} %></li>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %>'s Profile <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -73,36 +72,6 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">Recap Your Round (18 Holes)</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          </button>
-        </div>
-        <div class="modal-body" id="signupForm">
-          <%= simple_form_for Round.new do |f| %>
-          <%= f.error_notification %>
-            <%= f.input :course, required: true, label: 'Course Name?', placeholder: 'Holston Hills CC' %>
-            <%= f.input :score, required: true, label: 'What score did you shoot?', placeholder: '75' %>
-            <%= f.input :greens, required: true, label: 'Greens hit this round?', placeholder: '8' %>
-            <%= f.input :fwys, required: true, placeholder: '7', label: 'Fairways hit today?' %>
-            <%= f.input :fwystotal, required: true, label: 'Total fairways possible? Do not include Par 3 holes', placeholder: '14' %>
-            <%= f.input :putts, required: true, label: 'Putts Total', placeholder: '31' %>
-            <%= f.input :birdies, required: true, label: 'How many birdies this round?', placeholder: '3' %>
-            <%= f.input :pars, required: true, label: 'How many pars this round?', placeholder: '10' %>
-            <div id="errors"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <%= f.submit 'Create', class: 'btn btn-primary' %>
-        </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
     <% if flash[:error].present? %>
       <div class="alert alert-danger text-center">
         <%= flash[:error].html_safe %>
