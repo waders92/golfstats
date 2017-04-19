@@ -1,54 +1,4 @@
-<div class="responsive-scale"></div>
-<div class="leaders">
 <br />
-<p class="text-center tleader">TrakStats Leaders</p>
-<div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="item active text-center">
-      <p>
-        <% user, rank = best_scoring_rank_with_index %>
-        <b>Scoring Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_greens_rank_with_index %>
-        <b>Greens In Regulation -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_faiwrways_rank_with_index %>
-        <b>Fairways Hit -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_putting_rank_with_index %>
-        <b>Putting Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_birdies_rank_with_index %>
-        <b>Birdie Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_pars_rank_with_index %>
-        <b>Par Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-  </div>
-</div>
-</div>
     <div class="first-chart col-xs-10 col-xs-offset-1">
         <h3> - Latest Scores - </h3>
       <table class="table1">
@@ -71,6 +21,56 @@
         </tr>
       <% end %>
       </table>
+    </div>
+    <div class="leaders col-xs-6 col-xs-offset-3">
+    <br class="clr"/>
+    <p class="text-center tleader">Current Stat Leaders</p>
+    <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active text-center">
+          <p>
+            <% user, rank = best_scoring_rank_with_index %>
+            <b>Scoring Average -</b> <%= user.name %>
+            (<%= rank %>)
+          </p>
+        </div>
+        <div class="item text-center">
+          <p>
+            <% user, rank = best_greens_rank_with_index %>
+            <b>Greens In Regulation -</b> <%= user.name %>
+            (<%= rank %>)
+          </p>
+        </div>
+        <div class="item text-center">
+          <p>
+            <% user, rank = best_faiwrways_rank_with_index %>
+            <b>Fairways Hit -</b> <%= user.name %>
+            (<%= rank %>)
+          </p>
+        </div>
+        <div class="item text-center">
+          <p>
+            <% user, rank = best_putting_rank_with_index %>
+            <b>Putting Average -</b> <%= user.name %>
+            (<%= rank %>)
+          </p>
+        </div>
+        <div class="item text-center">
+          <p>
+            <% user, rank = best_birdies_rank_with_index %>
+            <b>Birdie Average -</b> <%= user.name %>
+            (<%= rank %>)
+          </p>
+        </div>
+        <div class="item text-center">
+          <p>
+            <% user, rank = best_pars_rank_with_index %>
+            <b>Par Average -</b> <%= user.name %>
+            (<%= rank %>)
+          </p>
+        </div>
+      </div>
+    </div>
     </div>
 
 <% if user_signed_in? %>

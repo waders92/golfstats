@@ -5,12 +5,7 @@ Rails.application.routes.draw do
   get '/tips', to: 'stats#tips'
   get '/lessons', to: 'stats#lessons'
   get '/rankings', to: 'stats#rankings'
-  get '/scoringavg', to: 'stats#scoringavg'
-  get '/fwysavg', to: 'stats#fwysavg'
-  get '/greensavg', to: 'stats#greensavg'
-  get '/puttsavg', to: 'stats#puttsavg'
-  get '/birdieavg', to: 'stats#birdieavg'
-  get '/paravg', to: 'stats#paravg'
+  get '/rankingavgs', to: 'stats#rankingavgs'
   get '/admin', to: 'stats#admin'
   resources :rounds do
     resources :comments, only: :create

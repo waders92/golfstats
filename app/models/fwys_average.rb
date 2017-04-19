@@ -14,4 +14,12 @@ module FwysAverage
   def fwys_hit_average_rounded
     fwys_hit_average.round(2)
   end
+
+  def users_best_fairways
+    fwys = []
+    rounds.each do |round|
+      fwys << round.fwys
+    end
+    fwys.sort.pop
+  end
 end

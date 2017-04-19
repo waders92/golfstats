@@ -1,5 +1,5 @@
 class RoundsController < ApplicationController
-  before_action :authenticate_user!, only: %i(create edit update destroy)
+  before_action :authenticate_user!, only: %i(new create edit update destroy)
 
   def new
     @round = Round.new

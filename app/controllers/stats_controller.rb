@@ -12,38 +12,6 @@ class StatsController < ApplicationController
     end
   end
 
-  def lessons
-    member_required
-  end
-
-  def scoringavg
-    member_required
-  end
-
-  def greensavg
-    member_required
-  end
-
-  def fwysavg
-    member_required
-  end
-
-  def puttsavg
-    member_required
-  end
-
-  def birdieavg
-    member_required
-  end
-
-  def paravg
-    member_required
-  end
-
-  def tips
-    member_required
-  end
-
   def admin
     unless user_signed_in? && current_user.admin?
       redirect_to root_path
