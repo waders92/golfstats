@@ -8,7 +8,7 @@ module FwysAverage
   end
 
   def fwys_hit_average
-    fwy_hit_total / total_fwys_possible.to_f * 100
+    rounds.average(:fwys)
   end
 
   def fwys_hit_average_rounded

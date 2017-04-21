@@ -1,23 +1,34 @@
 <br /><br />
-    <div class="text-center col-xs-6 col-xs-offset-3">
-      <% if current_user.picture.present? %>
+  <div class="container">
+    <div class="col-xs-2"></div>
+    <%= link_to edit_user_registration_path do %>
+    <div class="col-xs-4 box">
+      <br />
+        <% if current_user.picture.present? %>
       <div class="user-photo">
-          <%= link_to edit_user_registration_path do %>
           <%= image_tag current_user.picture %>
-          <% end %>
       </div>
       <% else %>
-      <%= link_to edit_user_registration_path do %>
       <%= image_tag 'add-user.png', class: 'user' %>
       <% end %>
-      <% end %>
       <h1><%= current_user.name %></h1>
-      <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %></h5>
-      <hr class="hr2 top" />
+      <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
     </div>
+    <% end %>
+    <%= link_to new_round_path do %>
+    <div class="col-xs-4 new-round">
+      <br />
+      <p class="links text-center">
+        Post A New Round!
+      </p>
+    </div>
+    <% end %>
+  </div>
+
   <br class="clr" />
   <% if current_user.rounds.present? %>
   <div class="container">
+    <hr />
     <div class="top col-xs-5 col-xs-offset-1">
       <p class="info text-center">
         Stat Averages
@@ -27,11 +38,11 @@
           <p class=" big-score"><%= current_user.scoring_average_rounded %></p>
       </div>
       <div class="each-average text-center">
-          <p class="info">Greens Percentage</p>
+          <p class="info">Greens Hit Average</p>
           <p class=" big-score"><%= current_user.greens_hit_average_rounded %></p>
       </div>
       <div class="each-average text-center">
-          <p class="info">Driving Accuracy</p>
+          <p class="info">Fwy's Hit Average</p>
           <p class=" big-score"><%= current_user.fwys_hit_average_rounded %></p>
       </div>
       <div class="each-average text-center">

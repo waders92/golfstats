@@ -1,8 +1,23 @@
+.alert-danger {
+  border-radius: 0;
+  background-color: #823E40;
+  color: white;
+}
+
+.alert {
+  border: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .navbar {
   border-radius: 0;
   border: none;
   background-color: #084544;
   margin-bottom: 0;
+  box-shadow: 1px 1px 2px 0 black;
 }
 
 .nav.navbar .navbar-default {

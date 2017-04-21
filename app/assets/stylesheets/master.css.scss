@@ -2,10 +2,6 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway:500|NTR|Codystar|Yantramanav:100,300,400|Pavanam');
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;
@@ -58,11 +54,9 @@ body {
 .big-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #6F8C87;
-  color: black;
-  border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  box-shadow: 1px 1px 2px 0 black;
+  background: #286B6B;
+  color: white;
   padding: 10px;
   margin-top: 15px;
 }
@@ -175,13 +169,6 @@ body {
 .banner {
   margin-top: 100px;
   padding-bottom: 50px;
-}
-
-.splitter {
-  background: url('embossed_paper.png');
-  color: black;
-  height: 900px;
-  margin-top: 100px;
 }
 
 .msgbtn {
@@ -331,10 +318,6 @@ hr {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.alert-danger {
-  border-radius: 0;
-}
-
 .user {
   height: 75px;
 }
@@ -472,14 +455,6 @@ a.lessonlink:hover {
   font-size: 18px;
 }
 
-.trash {
-  height: 20px;
-}
-
-.pencil {
-  height: 20px;
-}
-
 .wcpic {
   height: 125px;
   width: 125px;
@@ -554,12 +529,6 @@ a.about-link {
     color: firebrick;
     text-decoration: none;
   }
-}
-
-.user-photo img {
-  border-radius: 100%;
-  height: 15%;
-  width: 15%;
 }
 
 @media only screen

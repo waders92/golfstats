@@ -1,6 +1,6 @@
 class StatsController < ApplicationController
   def index
-    @rounds = Round.limit(15).order('created_at DESC')
+    @rounds = Round.limit(5).order('created_at DESC')
     @comments = Comment.all
   end
 
@@ -9,6 +9,14 @@ class StatsController < ApplicationController
       redirect_to new_user_session_path
       flash[:error] = 'You must be signed-in!'
     end
+  end
+
+  def lessons
+    member_required
+  end
+
+  def allrounds
+    @rounds = Round.all.order('created_at DESC')
   end
 
   def admin

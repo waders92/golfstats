@@ -1,3 +1,10 @@
+<script>
+$(function($) {
+  $(".card").flip({
+    axis: 'y'
+  });
+});
+</script>
 <div class="responsive-scale"></div>
 <div class="leaders">
   <br />
@@ -50,21 +57,47 @@
   </div>
 </div>
 <br class="clr" />
-<h1 class="text-center top">Recent Member Rounds</h1>
-  <div>
-    <% @rounds.each do |round| %>
-    <div class="col-xs-6 col-xs-offset-3 text-center each-round">
-        <div>
-          <br />
-            <% if round.user.picture.present? %>
-            <%= image_tag round.user.picture %>&nbsp;&nbsp;&nbsp;<%= round.user.name %>
-            <% else %>
-            <%= image_tag 'add-user.png' %>&nbsp;&nbsp;&nbsp;<%= round.user.name %>
-            <% end %>
-        </div>
-        <br class="clr" />
-          <p class="big-score"><%= link_to round.score, round_path(round) %></p>
-          <p class="info2"><%= round.course %></p>
+<h1 class="text-center top">Last 5 Member Rounds</h1>
+<p class="text-center">
+  (click to view round stats)
+</p>
+<% @rounds.each do |round| %>
+<div class="card col-xs-6 col-xs-offset-3">
+  <div class="front each-round-front text-center">
+    <div class="col-xs-6 top-score2 info">
+      <% if round.user.picture.present? %>
+      <%= image_tag round.user.picture %><br /><%= round.user.name %><br />  <%= round.created_at.strftime("%b %-d, %Y") %>
+      <% else %>
+      <%= image_tag 'add-user.png' %><br /><%= round.user.name %><br />  <%= round.created_at.strftime("%b %-d, %Y") %>
+      <% end %>
     </div>
-    <% end %>
+    <div class="col-xs-6 round-score">
+      <p class="big-score"><%= round.score %></p>
+      <p class="info"><%= round.course %></p>
+    </div>
   </div>
+  <div class="back each-round-back justify">
+    <div class="col-xs-6 top-score">
+      <h1 class="text-center">Round<br />Stats</h1>
+    </div>
+    <div class="col-xs-6">
+      <br />
+      <p class="info">
+        Fwy's Hit-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.fwys %>/<%= round.fwystotal %><br />
+        Greens Hit-&nbsp;&nbsp;&nbsp;<%= round.greens %>/18<br />
+        Putts-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.putts %><br />
+        Birdies-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.birdies %><br />
+        Pars-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.pars %>
+      </p>
+    </div>
+  </div>
+</div>
+<% end %>
+<br class="clr" />
+<div class="footer linkavg">
+  <div class="text-center top footer-links">
+    <br /><br /><br />
+    <%= link_to 'View All Rounds', allrounds_path %>
+    <%= link_to 'My Profile', dashboard_path, class: 'links' %>
+  </div>
+</div>

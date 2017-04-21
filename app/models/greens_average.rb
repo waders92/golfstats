@@ -8,7 +8,7 @@ module GreensAverage
   end
 
   def greens_hit_average
-    greens_hit_total / total_greens_possible.to_f * 100
+    rounds.average(:greens)
   end
 
   def greens_hit_average_rounded
