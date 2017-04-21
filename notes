@@ -1,6 +1,4 @@
-<div class="responsive-scale"></div>
-<div class="leaders">
-  <br />
+<div class="col-xs-8 leaders top">
   <p class="text-center tleader">Current Stat Leaders</p>
   <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
@@ -49,22 +47,3 @@
     </div>
   </div>
 </div>
-<br class="clr" />
-<h1 class="text-center top">Recent Member Rounds</h1>
-  <div>
-    <% @rounds.each do |round| %>
-    <div class="col-xs-6 col-xs-offset-3 text-center each-round">
-        <div>
-          <br />
-            <% if round.user.picture.present? %>
-            <%= image_tag round.user.picture %>&nbsp;&nbsp;&nbsp;<%= round.user.name %>
-            <% else %>
-            <%= image_tag 'add-user.png' %>&nbsp;&nbsp;&nbsp;<%= round.user.name %>
-            <% end %>
-        </div>
-        <br class="clr" />
-          <p class="big-score"><%= link_to round.score, round_path(round) %></p>
-          <p class="info2"><%= round.course %></p>
-    </div>
-    <% end %>
-  </div>

@@ -1,0 +1,42 @@
+.navbar {
+  border-radius: 0;
+  border: none;
+  background-color: #084544;
+  margin-bottom: 0;
+}
+
+.nav.navbar .navbar-default {
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  font-size: 16px;
+  font-family: 'NTR', sans-serif;
+  font-weight: 100;
+  display: inline-block;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
+}
+
+.navbar .navbar-brand {
+  color: white;
+  font-family: 'Codystar', cursive;
+  font-size: 20px;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: white;
+}
+
+.dropdown-menu > li > a {
+  font-size: 16px;
+  font-family: 'NTR', sans-serif;
+  font-weight: 100;
+}

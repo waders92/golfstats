@@ -1,0 +1,41 @@
+th, td {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.table1 tr:first-child{
+  background-color: #1C4D4B;
+}
+
+.table1 {
+  background-color: #215755;
+  color: white;
+  margin-bottom: 50px;
+  width: 100%;
+  box-shadow: 1px 1px 2px 0 white;
+}
+
+table, th, td {
+  border: 1px solid white;
+}
+
+.table-title th {
+  font-size: 21px;
+  text-align: center;
+}
+
+.linkavg a {
+  font-family: 'NTR', sans-serif;
+  font-size: 25px;
+  color: black;
+  padding: 15px;
+}
+
+.linkavg a:visited {
+  color: black;
+}
+
+.linkavg a:hover {
+  text-decoration: none;
+  color: white;
+}

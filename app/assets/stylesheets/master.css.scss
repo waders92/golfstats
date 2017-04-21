@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway:500|Codystar|Yantramanav:100,300,400|Pavanam');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway:500|NTR|Codystar|Yantramanav:100,300,400|Pavanam');
 
 .dropdown:hover .dropdown-menu {
   display: block;
@@ -39,8 +39,9 @@ p {
 
 body {
   background-color: #c0c5ce;
-  font-family: 'Pavanam', sans-serif;
+  font-family: 'NTR', sans-serif;
   letter-spacing: .5px;
+  // font-size: 20px;
 }
 
 .responsive-scale{
@@ -90,13 +91,6 @@ body {
   margin-top: 15px;
 }
 
-.leaders {
-  background-color: #4f5b66;
-  color: white;
-  padding-bottom: 25px;
-  border: 1px solid black;
-}
-
 .leaderboard {
   background: #0E6E38 no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -131,12 +125,6 @@ body {
   font-size: 1.25em;
 }
 
-.tleader {
-  font-size: 20px;
-  font-family: 'Codystar', cursive;
-  color: white;
-}
-
 .averages {
   margin-top: 25px;
   padding-top: 20px;
@@ -167,43 +155,6 @@ body {
 .section {
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.navbar {
-  border-radius: 0;
-  border: none;
-  background-color: #4f5b66;
-  margin-bottom: 0;
-}
-
-.nav.navbar .navbar-default {
-  margin-bottom: 0;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: white;
-  font-size: 16px;
-  font-family: 'Yantramanav', sans-serif;
-  font-weight: 100;
-  display: inline-block;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.navbar-default .navbar-nav > li > a:focus {
-  color: white;
-}
-
-.navbar .navbar-brand {
-  color: white;
-  font-family: 'Codystar', cursive;
-  font-size: 20px;
-}
-
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: white;
 }
 
 .convo {
@@ -251,26 +202,6 @@ body {
   font-size: 22px;
 }
 
-.linkavg {
-  font-family: 'Pavanam', sans-serif;
-  font-size: 25px;
-  font-weight: 100;
-}
-
-.linkavg a {
-  color: black;
-  padding: 15px;
-}
-
-.linkavg a:visited {
-  color: black;
-}
-
-.linkavg a:hover {
-  text-decoration: none;
-  color: white;
-}
-
 .big-score {
   font-size: 3em;
 }
@@ -280,11 +211,6 @@ body {
   border: 2px solid black;
   background-color: #015249;
   color: white;
-}
-
-.tagline2 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 25px;
 }
 
 .little-score {
@@ -429,44 +355,6 @@ a {
   color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #65737e;
-}
-
-th, td {
-  padding: 10px;
-  font-size: 18px;
-}
-
-.table1 tr:first-child{
-  background-color: #4f5b66;
-}
-
-.table1 {
-  background-color: #4f5b66;
-  color: white;
-  margin-bottom: 50px;
-  width: 100%;
-}
-
-.table2 {
-  background-color: #10754D;
-  color: white;
-  margin-bottom: 50px;
-}
-
-.table2 tr:first-child{
-  background-color: #244147;
-}
-
-table, th, td {
-  border: 1px solid white;
-}
-
-.table-title th {
-  font-size: 21px;
-  text-align: center;
-}
 
 .scores {
   background-color: #244147;
@@ -619,12 +507,6 @@ input#lesson_caption.string.required.form-control {
   height: 75px;
 }
 
-.dropdown-menu > li > a {
-  font-size: 16px;
-  font-family: 'Yantramanav', sans-serif;
-  font-weight: 100;
-}
-
 .issue {
   color: firebrick;
 }
@@ -632,10 +514,6 @@ input#lesson_caption.string.required.form-control {
 .bottom-advice {
   margin-top: -90px;
   margin-bottom: 75px;
-}
-
-.mc img {
-  border: 1px solid black;
 }
 
 .fix {
@@ -676,6 +554,12 @@ a.about-link {
     color: firebrick;
     text-decoration: none;
   }
+}
+
+.user-photo img {
+  border-radius: 100%;
+  height: 15%;
+  width: 15%;
 }
 
 @media only screen

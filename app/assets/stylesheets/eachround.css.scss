@@ -1,0 +1,25 @@
+.each-round {
+  border: 1px solid black;
+  background-color: #286B6B;
+  color: white;
+  padding-bottom: 20px;
+  margin: 10px;
+  height: auto;
+  box-shadow: 1px 1px 2px 0 black;
+}
+
+.each-round img {
+  border-radius: 100%;
+  height: 8%;
+  width: 8%;
+  border: 1px solid white;
+}
+
+.each-round a:hover {
+  color: #1F3333;
+  text-decoration: none;
+}
+
+.comments p {
+  margin: none;
+}

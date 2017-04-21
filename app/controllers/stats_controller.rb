@@ -1,7 +1,6 @@
 class StatsController < ApplicationController
   def index
     @rounds = Round.limit(15).order('created_at DESC')
-    @messages = Message.limit(20).order('created_at DESC')
     @comments = Comment.all
   end
 

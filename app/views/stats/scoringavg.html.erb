@@ -1,0 +1,28 @@
+<br /><br />
+<div id="scoring" class="col-xs-8 col-xs-offset-2 member-stats">
+  <h2>Scoring Average</h2>
+  <br />
+  <table class="table1">
+    <tr class="table-title">
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Avg</th>
+      <th>Rnds</th>
+    </tr>
+  <% scoring_rank_with_index do |(user, avg), i| %>
+    <tr class="text-center">
+      <td><%= i %></td>
+      <td><%= user.name %></td>
+      <td><%= avg.round(2) %></td>
+      <td><%= user.total_rounds %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<div class="col-xs-12 text-center linkavg">
+  <%= link_to 'Greens Avg', greensavg_path, class: 'links' %>
+  <%= link_to 'Fwys Avg', fwysavg_path, class: 'links' %>
+  <%= link_to 'Putts Avg', puttsavg_path, class: 'links' %>
+  <%= link_to 'Birdie Avg', birdieavg_path, class: 'links' %>
+  <%= link_to 'Par Avg', paravg_path, class: 'links' %>
+</div>
