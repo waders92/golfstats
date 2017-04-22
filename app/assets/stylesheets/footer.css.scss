@@ -3,6 +3,17 @@
   color: white;
 }
 
-.footer-links a {
-  margin-top: 25px;
+.linkavg2 {
+
+  a {
+    color: white;
+    font-family: 'NTR', sans-serif;
+    font-size: 18px;
+    margin: 40px;
+
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }

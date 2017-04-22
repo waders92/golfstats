@@ -91,7 +91,7 @@
   <br class="clr" />
   <% @yearly_rounds.each do |year, round| %>
  <h1 class="text-center"><%= year %></h1>
-   <div class="user-table">
+   <div>
      <table class="col-xs-10 col-xs-offset-1 table2">
        <tr class="table-title">
          <th>Date</th>
@@ -118,10 +118,10 @@
    </table>
    <br class="clr" />
    <% end %>
+
   <% else %>
-    <div class="col-xs-6 col-xs-offset-3 text-center">
+    <div class="col-xs-6 col-xs-offset-3 text-center fitz">
       <h2>You need to enter a round to see your stats!</h2>
       <%= link_to 'Add Round +', new_round_path %>
     </div>
   <% end %>
-    <br class="clr" />
