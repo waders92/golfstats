@@ -22,7 +22,7 @@
 
 .each-best {
   border: 1px solid black;
-  background-color: #823E40;
+  background-color: #286B6B;
   color: white;
   padding-top: 10px;
   margin: 10px;
@@ -65,14 +65,23 @@ img.editing {
 
 .new-round {
   margin-top: 50px;
-  background-color: #752A2C;
+  background-color: #0071bc;
   height: 65px;
   margin-left: 25px;
   box-shadow: 1px 1px 2px 0 black;
 }
 
-
 .user-photo img {
   border-radius: 100%;
   width: 25%;
+}
+
+.recap {
+  margin-top: 100px;
+  background-color: #286B6B;
+  color: white;
+}
+
+.comment_handle, .score-handle {
+  color: white;
 }

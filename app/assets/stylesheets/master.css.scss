@@ -34,28 +34,17 @@ p {
 }
 
 body {
-  background-color: #c0c5ce;
+  background-color: lightgray;
   font-family: 'NTR', sans-serif;
   letter-spacing: .5px;
   // font-size: 20px;
-}
-
-.responsive-scale{
-	width:100%;
-	padding-bottom: 35.666666666667%; /* 960px/1440px */
-	background-image:url('whistling.jpg');
-	background-size:cover;
-	background-position:center; /* IE fix */
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
 }
 
 .big-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 black;
-  background: #286B6B;
+  background: #195c60;
   color: white;
   padding: 10px;
   margin-top: 15px;
@@ -139,11 +128,6 @@ body {
   background-color: white;
   color: black;
   margin-top: 50px;
-}
-
-.recap {
-  margin-top: 100px;
-  background-color: white;
 }
 
 .section {
@@ -312,10 +296,6 @@ hr {
 
 .last-stat {
   margin-bottom: 100px;
-}
-
-.comment_handle, .score-handle {
-  color: rgba(0, 0, 0, 0.3);
 }
 
 .user {

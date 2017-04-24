@@ -1,8 +1,11 @@
 
-<h1 class="text-center top">All Member Rounds</h1>
+<h1 class="text-center top">Member Rounds</h1>
 <p class="text-center">
-  (click to view round stats)
+  (click box view round stats)
 </p>
+<div class="text-center">
+  <%= will_paginate @rounds, previous_label: h("<"), next_label: h(">") %>
+</div>
 <% @rounds.each do |round| %>
 <div class="card col-xs-6 col-xs-offset-3">
   <div class="front each-round-front text-center">
@@ -36,4 +39,7 @@
 </div>
 <% end %>
 <br class="clr" />
+<div class="text-center">
+  <%= will_paginate @rounds, previous_label: h("<"), next_label: h(">") %>
+</div>
 <div class="end"></div>
