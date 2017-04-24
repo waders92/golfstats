@@ -1,106 +1,56 @@
-<div class="responsive-scale"></div>
-<div class="leaders">
-<br />
-<p class="text-center tleader">TrakStats Leaders</p>
-<div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="item active text-center">
-      <p>
-        <% user, rank = best_scoring_rank_with_index %>
-        <b>Scoring Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_greens_rank_with_index %>
-        <b>Greens In Regulation -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_faiwrways_rank_with_index %>
-        <b>Fairways Hit -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_putting_rank_with_index %>
-        <b>Putting Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_birdies_rank_with_index %>
-        <b>Birdie Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-    <div class="item text-center">
-      <p>
-        <% user, rank = best_pars_rank_with_index %>
-        <b>Par Average -</b> <%= user.name %>
-        (<%= rank %>)
-      </p>
-    </div>
-  </div>
-</div>
-</div>
-    <div class="first-chart col-xs-10 col-xs-offset-1">
-        <h3> - Latest Scores - </h3>
-      <table class="table1">
-        <tr class="table-title">
-          <th>Date</th>
-          <th>Name</th>
-          <th>Course</th>
-          <th>Score</th>
-        </tr>
-      <% @rounds.each do |round| %>
-        <tr class="text-center">
-          <td><%= round.created_at.strftime("%-m/%-d/%y") %></td>
-          <td><%= round.user.name %></td>
-          <td><%= round.course %></td>
-          <% if user_signed_in? %>
-          <td class="round-link"><%= link_to round.score, round_path(round) %></td>
-          <% else %>
-          <td><%= round.score %></td>
-          <% end %>
-        </tr>
+<section class="first-section">
+    <h1 class="text-center big-text">
+      RECORD YOUR ROUND<br />
+      TRACK YOUR STATS<br />
+      START TO IMPROVE
+    </h1>
+    <div class="sign-in text-center">
+      <%= link_to new_user_session_path do %>
+      <%= image_tag 'signin.png' %>
       <% end %>
-      </table>
     </div>
-
-<% if user_signed_in? %>
-<div class="col-xs-12 splitter">
-  <div id ="conversation" class="last-stat col-xs-12">
-      <div class="col-xs-12 info">
-        <h3>- Say something! -</h3>
-          <% @messages.each do |message| %>
-          <div class="comment">
-            <span class="comment_handle">
-              <%=message.created_at.strftime("%-m/%-d") %> | <%= message.user.name %> -
-            </span>
-           "<%= message.message %>"
-          </div>
-        <% end %>
-      </div>
-      <div class="col-xs-12 messages">
-        <%= simple_form_for Message.new do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :message, required: true %>
-        <br />
-        <%= f.submit 'Add Message', class: 'btn btn-primary msgbtn' %>
-        <% end %>
-      </div>
+</section>
+<section class="second-section">
+  <div class="container">
+    <h1 class="text-center big-text">RECORD YOUR ROUND</h1>
+    <div class="col-xs-5 top">
+      <p class="landing-info1">
+        Play golf and enter your stats. Keep track of your scores, how many greens and fairways you hit as well as total putts, birdies and pars for your round.
+      </p>
+    </div>
+    <div class="col-xs-5 text-center big-icons1">
+      <%= image_tag 'news.png' %>
+    </div>
   </div>
-</div>
-<% else %>
-<div class="col-xs-12 newpage">
-  <br /><br />
-  <h1 class="text-center">Welcome to TrakStats!</h1>
-    <h3 class="text-center"><%= link_to 'Register', new_user_registration_path, class: 'about-link' %> or <%= link_to 'Sign-in', new_user_session_path, class: 'about-link' %> to get started....<br />New to TrakStats? Visit the <%= link_to 'About Page', about_path, class: 'about-link' %><br />to see what we're about.</h3>
-</div>
-<% end %>
+</section>
+<section class="third-section">
+  <div class="container">
+    <h1 class="text-center big-text">TRACK YOUR STATS</h1>
+    <div class="col-xs-5 text-center big-icons2">
+      <%= image_tag 'analytics.png' %>
+    </div>
+    <div class="col-xs-5 pull-right top">
+      <p class="landing-info2">
+        Keep track of all of your averages and see how you rank versus other TrakStat users. Not sure what to work on? We have a great reference
+        section that shows you typical scoring and stat averages.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="last-section">
+  <div>
+    <h1 class="text-center big-text">START TO IMPROVE</h1>
+    <div class="col-xs-8 big-icons3 text-center">
+      <%= image_tag 'golf.png' %>
+    </div>
+    <div class="col-xs-3 big-icons3">
+      <p class="landing-info2 pull-right lastp">
+        Get started today for free! <br /><br />Join the fastest growing online
+        golf stat tracking community.<br /><br />
+
+        <br /><br />
+        <%= link_to 'SIGN IN', new_user_session_path, class: 'sign-in' %>
+      </p>
+    </div>
+  </div>
+</section>

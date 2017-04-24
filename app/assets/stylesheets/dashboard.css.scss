@@ -1,0 +1,87 @@
+.each-average {
+  border: 1px solid black;
+  background-color: #286B6B;
+  color: white;
+  padding-top: 10px;
+  margin: 10px;
+  box-shadow: 1px 1px 2px 0 black;
+}
+
+.tleader {
+  font-size: 20px;
+  font-family: 'Codystar', cursive;
+  color: white;
+}
+
+.leaders {
+  background-color: #286B6B;
+  color: white;
+  padding-bottom: 25px;
+  border: 1px solid black;
+}
+
+.each-best {
+  border: 1px solid black;
+  background-color: #286B6B;
+  color: white;
+  padding-top: 10px;
+  margin: 10px;
+  box-shadow: 1px 1px 2px 0 black;
+}
+
+.table2 {
+  background-color: #215755;
+  color: white;
+  margin-bottom: 50px;
+  box-shadow: 1px 1px 2px 0 black;
+}
+
+.table2 tr:first-child{
+  background-color: #1C4D4B;
+}
+
+tr:nth-child(even) {
+  background-color: #286B6B;
+}
+
+.pencil, .trash {
+  height: 13px;
+}
+
+.box {
+  border: 1px solid black;
+  background-color: #386B6B;
+  color: white;
+}
+
+.box img {
+  border: 1px solid #A9B898;
+}
+
+img.editing {
+  height: 18px;
+  border: none;
+}
+
+.new-round {
+  margin-top: 50px;
+  background-color: #0071bc;
+  height: 65px;
+  margin-left: 25px;
+  box-shadow: 1px 1px 2px 0 black;
+}
+
+.user-photo img {
+  border-radius: 100%;
+  width: 25%;
+}
+
+.recap {
+  margin-top: 100px;
+  background-color: #286B6B;
+  color: white;
+}
+
+.comment_handle, .score-handle {
+  color: white;
+}

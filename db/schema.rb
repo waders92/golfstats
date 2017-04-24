@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309234622) do
+ActiveRecord::Schema.define(version: 20170420171758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,15 +38,6 @@ ActiveRecord::Schema.define(version: 20170309234622) do
   end
 
   add_index "lessons", ["user_id"], name: "index_lessons_on_user_id", using: :btree
-
-  create_table "messages", force: true do |t|
-    t.string   "message"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.string   "picture"
@@ -91,6 +82,7 @@ ActiveRecord::Schema.define(version: 20170309234622) do
     t.boolean  "subscribed"
     t.string   "stripeid"
     t.boolean  "admin"
+    t.string   "picture"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

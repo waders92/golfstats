@@ -1,7 +1,6 @@
 class StatsController < ApplicationController
   def index
-    @rounds = Round.limit(15).order('created_at DESC')
-    @messages = Message.limit(20).order('created_at DESC')
+    @rounds = Round.limit(5).order('created_at DESC')
     @comments = Comment.all
   end
 
@@ -16,32 +15,8 @@ class StatsController < ApplicationController
     member_required
   end
 
-  def scoringavg
-    member_required
-  end
-
-  def greensavg
-    member_required
-  end
-
-  def fwysavg
-    member_required
-  end
-
-  def puttsavg
-    member_required
-  end
-
-  def birdieavg
-    member_required
-  end
-
-  def paravg
-    member_required
-  end
-
-  def tips
-    member_required
+  def allrounds
+    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page:4)
   end
 
   def admin

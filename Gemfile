@@ -24,6 +24,7 @@ gem 'spring', group: :development
 gem 'sprockets', '2.11.0'
 gem 'stripe'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'

@@ -1,81 +1,134 @@
 <br /><br />
-  <div class="text-center col-xs-6 col-xs-offset-3">
-    <%= image_tag 'user.png', class: 'user' %>
-    <h1><%= current_user.name %></h1>
-    <h5>Member since: <%=current_user.created_at.strftime("%m/%d/%Y") %></h5>
-    <hr class="hr2 top" />
+  <div class="container">
+    <%= link_to edit_user_registration_path do %>
+    <div class="col-xs-6 col-xs-offset-3 box">
+      <br />
+        <% if current_user.picture.present? %>
+      <div class="user-photo">
+          <%= image_tag current_user.picture %>
+      </div>
+      <% else %>
+      <%= image_tag 'add-user.png', class: 'user' %>
+      <% end %>
+      <h1><%= current_user.name %></h1>
+      <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
+    </div>
+    <% end %>
+    <%= link_to new_round_path do %>
+    <div class="col-xs-6 col-xs-offset-3 new-round">
+      <br />
+      <p class="links text-center">
+        Post A New Round!
+      </p>
+    </div>
+    <% end %>
   </div>
-  <br />
+
+  <br class="clr" />
   <% if current_user.rounds.present? %>
-  <div class="col-xs-6 col-xs-offset-3">
-    <h1 class="text-center">Total Rounds : <%= current_user.total_rounds %></h1>
-  </div>
-    <div>
-      <div class="col-xs-4 text-center averages">
-        <p class="big-score"><%= current_user.scoring_average_rounded %></p>
-        Scoring Average
-      </div>
-      <div class="col-xs-4 text-center averages">
-        <p class="big-score"><%= current_user.greens_hit_average_rounded %>%</p>
-        Green's Percentage
-      </div>
-      <div class="col-xs-4 text-center averages">
-        <p class="big-score"><%= current_user.fwys_hit_average_rounded %>%</p>
-        Driving Accuracy
-      </div>
-    </div>
-      <br class= "clr" />
-    <div>
-      <div class="col-xs-4 text-center averages2 bottom">
-        <p class="big-score"><%= current_user.putting_average_rounded %></p>
-        Putting Average
-      </div>
-      <div class="col-xs-4 text-center averages2 bottom">
-        <p class="big-score"><%= current_user.birdie_average_rounded %></p>
-        Birdie Average
-      </div>
-      <div class="col-xs-4 text-center averages2 bottom">
-        <p class="big-score"><%= current_user.par_average_rounded %></p>
-        Par Average
-      </div>
-    </div>
+  <div class="container">
     <hr />
+    <div class="top col-xs-5 col-xs-offset-1">
+      <p class="info text-center">
+        Stat Averages
+      </p>
+      <div class="each-average text-center">
+          <p class="info">Scoring Average</p>
+          <p class=" big-score"><%= current_user.scoring_average_rounded %></p>
+      </div>
+      <div class="each-average text-center">
+          <p class="info">Greens Hit Average</p>
+          <p class=" big-score"><%= current_user.greens_hit_average_rounded %></p>
+      </div>
+      <div class="each-average text-center">
+          <p class="info">Fwy's Hit Average</p>
+          <p class=" big-score"><%= current_user.fwys_hit_average_rounded %></p>
+      </div>
+      <div class="each-average text-center">
+          <p class="info">Putting Average</p>
+          <p class=" big-score"><%= current_user.putting_average_rounded %></p>
+      </div>
+      <div class="each-average text-center">
+          <p class="info">Birdie Average</p>
+          <p class=" big-score"><%= current_user.birdie_average_rounded %></p>
+      </div>
+      <div class="each-average text-center">
+          <p class="info">Par Average</p>
+          <p class=" big-score"><%= current_user.par_average_rounded %></p>
+      </div>
+    </div>
+    <div class="col-xs-5 top">
+      <p class="info text-center">
+        Personal Bests
+      </p>
+      <div class="each-best text-center">
+          <p class="info">Low Score</p>
+          <p class=" big-score"><%= current_user.users_best_score %></p>
+      </div>
+      <div class="each-best text-center">
+          <p class="info">Most Green's Hit</p>
+          <p class=" big-score"><%= current_user.users_best_greens %></p>
+      </div>
+      <div class="each-best text-center">
+          <p class="info">Most Fairway's Hit</p>
+          <p class=" big-score"><%= current_user.users_best_fairways %></p>
+      </div>
+      <div class="each-best text-center">
+          <p class="info">Least Putts</p>
+          <p class=" big-score"><%= current_user.users_best_putting_round %></p>
+      </div>
+      <div class="each-best text-center">
+          <p class="info">Most Birdies</p>
+          <p class=" big-score"><%= current_user.users_best_birdie_total %></p>
+      </div>
+      <div class="each-best text-center">
+          <p class="info">Most Pars</p>
+          <p class=" big-score"><%= current_user.users_best_par_total %></p>
+      </div>
+    </div>
+    <%= link_to new_round_path do %>
+    <div class="col-xs-6 col-xs-offset-3 new-round">
+      <br />
+      <p class="links text-center">
+        Post A New Round!
+      </p>
+    </div>
+    <% end %>
+  </div>
+  <br class="clr" />
+  <% @yearly_rounds.each do |year, round| %>
+ <h1 class="text-center"><%= year %></h1>
+   <div>
+     <table class="col-xs-10 col-xs-offset-1 table2">
+       <tr class="table-title">
+         <th>Date</th>
+         <th>Course</th>
+         <th>Score</th>
+         <th>Greens</th>
+         <th>Fwys</th>
+         <th>Putts</th>
+         <th>Birdies</th>
+         <th>Pars</th>
+       </tr>
+       <tr class="text-center">
+         <% round.sort.each do |round| %>
+         <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("trash.png", class: 'trash'), round_path(round), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %></td>
+         <td class="text-center"><%= round.course %>&nbsp;&nbsp;&nbsp;<%=link_to(image_tag("mag.png", class: 'pencil'), round_path(round)) %></td>
+         <td class="text-center"><%= round.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_round_path(round), class: 'pencil') %></td>
+         <td class="text-center"><%= round.greens %> / 18</td>
+         <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
+         <td class="text-center"><%= round.putts %></td>
+         <td class="text-center"><%= round.birdies %></td>
+         <td class="text-center"><%= round.pars %></td>
+       </tr>
+   <% end %>
+   </table>
+   <br class="clr" />
+   <% end %>
 
   <% else %>
-    <div class="col-xs-6 col-xs-offset-3 text-center">
+    <div class="col-xs-6 col-xs-offset-3 text-center fitz">
       <h2>You need to enter a round to see your stats!</h2>
+      <%= link_to 'Add Round +', new_round_path %>
     </div>
   <% end %>
-    <br class="clr" />
-  <% @yearly_rounds.each do |year, round| %>
-  <h1 class="text-center"><%= year %></h1>
-    <div class="user-table">
-      <table class="col-xs-10 col-xs-offset-1 table2">
-        <tr class="table-title">
-          <th>Date</th>
-          <th>Course</th>
-          <th>Score</th>
-          <th>Greens</th>
-          <th>Fwys</th>
-          <th>Putts</th>
-          <th>Birdies</th>
-          <th>Pars</th>
-          <th class="red">Edits</th>
-        </tr>
-        <tr class="text-center">
-          <% round.sort.each do |round| %>
-          <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %></td>
-          <td class="text-center"><%= round.course %></td>
-          <td class="text-center"><%= round.score %></td>
-          <td class="text-center"><%= round.greens %> / 18</td>
-          <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
-          <td class="text-center"><%= round.putts %></td>
-          <td class="text-center"><%= round.birdies %></td>
-          <td class="text-center"><%= round.pars %></td>
-          <td class="text-center"><%= link_to(image_tag("edit.png", class: 'pencil'), edit_round_path(round), class: 'pencil') %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("trash.png", class: 'trash'), round_path(round), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %></td>
-        </tr>
-    <% end %>
-    </table>
-    <br class="clr" />
-    <% end %>
-  </div>

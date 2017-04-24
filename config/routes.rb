@@ -5,20 +5,20 @@ Rails.application.routes.draw do
   get '/tips', to: 'stats#tips'
   get '/lessons', to: 'stats#lessons'
   get '/rankings', to: 'stats#rankings'
+  get '/admin', to: 'stats#admin'
   get '/scoringavg', to: 'stats#scoringavg'
   get '/fwysavg', to: 'stats#fwysavg'
   get '/greensavg', to: 'stats#greensavg'
   get '/puttsavg', to: 'stats#puttsavg'
   get '/birdieavg', to: 'stats#birdieavg'
   get '/paravg', to: 'stats#paravg'
-  get '/admin', to: 'stats#admin'
+  get '/allrounds', to: 'stats#allrounds'
   resources :rounds do
     resources :comments, only: :create
   end
   resources :charges
   resources :lessons
-  resources :photos, only: :create
-  resources :messages
+  resources :photos
   resource :dashboard, only: :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

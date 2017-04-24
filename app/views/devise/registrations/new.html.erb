@@ -1,5 +1,5 @@
 <br />
-<div class="big-box col-xs-8 col-xs-offset-2">
+<div class="big-box col-xs-8 col-xs-offset-2 fitz">
     <h2>Registration</h2>
     <br />
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -12,6 +12,8 @@
         <br />
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
+        <br />
+        <%= f.input :picture %>
       </div>
       <br />
       <div class="form-actions">

@@ -8,10 +8,18 @@ module FwysAverage
   end
 
   def fwys_hit_average
-    fwy_hit_total / total_fwys_possible.to_f * 100
+    rounds.average(:fwys)
   end
 
   def fwys_hit_average_rounded
     fwys_hit_average.round(2)
+  end
+
+  def users_best_fairways
+    fwys = []
+    rounds.each do |round|
+      fwys << round.fwys
+    end
+    fwys.sort.pop
   end
 end

@@ -1,10 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway:500|Codystar|Yantramanav:100,300,400|Pavanam');
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway:500|NTR|Codystar|Yantramanav:100,300,400|Pavanam');
 
 .carousel-fade .carousel-inner .item {
   opacity: 0;
@@ -38,30 +34,18 @@ p {
 }
 
 body {
-  background-color: #C7D1D4;
-  font-family: 'Pavanam', sans-serif;
+  background-color: lightgray;
+  font-family: 'NTR', sans-serif;
   letter-spacing: .5px;
-}
-
-.responsive-scale{
-	width:100%;
-	padding-bottom: 35.666666666667%; /* 960px/1440px */
-	background-image:url('whistling.jpg');
-	background-size:cover;
-	background-position:center; /* IE fix */
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  // font-size: 20px;
 }
 
 .big-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #6F8C87;
-  color: black;
-  border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  box-shadow: 1px 1px 2px 0 black;
+  background: #195c60;
+  color: white;
   padding: 10px;
   margin-top: 15px;
 }
@@ -88,12 +72,6 @@ body {
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding: 10px;
   margin-top: 15px;
-}
-
-.leaders {
-  background-color: #244147;
-  color: white;
-  padding-bottom: 25px;
 }
 
 .leaderboard {
@@ -130,11 +108,6 @@ body {
   font-size: 1.25em;
 }
 
-.tleader {
-  font-size: 20px;
-  font-family: 'Codystar', cursive;
-}
-
 .averages {
   margin-top: 25px;
   padding-top: 20px;
@@ -157,51 +130,9 @@ body {
   margin-top: 50px;
 }
 
-.recap {
-  margin-top: 100px;
-  background-color: white;
-}
-
 .section {
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.navbar {
-  border-radius: 0;
-  border: none;
-  background-color: #244147;
-  margin-bottom: 0;
-}
-
-.nav.navbar .navbar-default {
-  margin-bottom: 0;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: white;
-  font-size: 16px;
-  font-family: 'Yantramanav', sans-serif;
-  font-weight: 100;
-  display: inline-block;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.navbar-default .navbar-nav > li > a:focus {
-  color: white;
-}
-
-.navbar .navbar-brand {
-  color: white;
-  font-family: 'Codystar', cursive;
-  font-size: 20px;
-}
-
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: white;
 }
 
 .convo {
@@ -224,13 +155,6 @@ body {
   padding-bottom: 50px;
 }
 
-.splitter {
-  background: url('embossed_paper.png');
-  color: black;
-  height: 900px;
-  margin-top: 100px;
-}
-
 .msgbtn {
   border: none;
   background-color: #244147;
@@ -249,26 +173,6 @@ body {
   font-size: 22px;
 }
 
-.linkavg {
-  font-family: 'Pavanam', sans-serif;
-  font-size: 25px;
-  font-weight: 100;
-}
-
-.linkavg a {
-  color: black;
-  padding: 15px;
-}
-
-.linkavg a:visited {
-  color: black;
-}
-
-.linkavg a:hover {
-  text-decoration: none;
-  color: white;
-}
-
 .big-score {
   font-size: 3em;
 }
@@ -278,11 +182,6 @@ body {
   border: 2px solid black;
   background-color: #015249;
   color: white;
-}
-
-.tagline2 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 25px;
 }
 
 .little-score {
@@ -399,14 +298,6 @@ hr {
   margin-bottom: 100px;
 }
 
-.comment_handle, .score-handle {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.alert-danger {
-  border-radius: 0;
-}
-
 .user {
   height: 75px;
 }
@@ -427,44 +318,6 @@ a {
   color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #0EA167;
-}
-
-th, td {
-  padding: 10px;
-  font-size: 18px;
-}
-
-.table1 tr:first-child{
-  background-color: #244147;
-}
-
-.table1 {
-  background-color: #10754D;
-  color: white;
-  margin-bottom: 50px;
-  width: 100%;
-}
-
-.table2 {
-  background-color: #10754D;
-  color: white;
-  margin-bottom: 50px;
-}
-
-.table2 tr:first-child{
-  background-color: #244147;
-}
-
-table, th, td {
-  border: 1px solid white;
-}
-
-.table-title th {
-  font-size: 21px;
-  text-align: center;
-}
 
 .scores {
   background-color: #244147;
@@ -582,14 +435,6 @@ a.lessonlink:hover {
   font-size: 18px;
 }
 
-.trash {
-  height: 20px;
-}
-
-.pencil {
-  height: 20px;
-}
-
 .wcpic {
   height: 125px;
   width: 125px;
@@ -617,12 +462,6 @@ input#lesson_caption.string.required.form-control {
   height: 75px;
 }
 
-.dropdown-menu > li > a {
-  font-size: 16px;
-  font-family: 'Yantramanav', sans-serif;
-  font-weight: 100;
-}
-
 .issue {
   color: firebrick;
 }
@@ -630,10 +469,6 @@ input#lesson_caption.string.required.form-control {
 .bottom-advice {
   margin-top: -90px;
   margin-bottom: 75px;
-}
-
-.mc img {
-  border: 1px solid black;
 }
 
 .fix {
