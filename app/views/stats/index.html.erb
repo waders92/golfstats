@@ -1,3 +1,19 @@
+<% if user_signed_in? %>
+<section class="get-back">
+  <div>
+    <br /><br />
+    <h1 class="text-center big-text">WELCOME BACK <%= current_user.first_name.upcase %>.<br />LET'S START TRACKING.</h1>
+    <%= link_to new_round_path do %>
+    <div class="col-xs-6 col-xs-offset-3 new-round">
+      <br />
+      <p class="links text-center">
+        Post A New Round!
+      </p>
+    </div>
+    <% end %>
+  </div>
+</section>
+<% else %>
 <section class="first-section">
     <h1 class="text-center big-text">
       RECORD YOUR ROUND<br />
@@ -52,3 +68,4 @@
     </div>
   </div>
 </section>
+<% end %>
