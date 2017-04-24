@@ -516,16 +516,9 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px){
   .navbar-default .navbar-nav > li > a {
     color: white;
-    font-size: 20px;
-    font-family: 'Yantramanav', sans-serif;
+    font-size: 26px;
     font-weight: 300;
     display: inline-block;
-  }
-
-  .navbar .navbar-brand {
-    color: white;
-    font-family: 'Codystar', cursive;
-    font-size: 29px;
   }
 
   .navbar .navbar-brand:visited {
@@ -553,4 +546,9 @@ and (max-device-width : 1024px){
   .info {
     font-size: 25px;
   }
+
+  .each-round-back p {
+    font-size: 12px;
+  }
+
 }
