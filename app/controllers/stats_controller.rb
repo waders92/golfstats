@@ -16,7 +16,7 @@ class StatsController < ApplicationController
   end
 
   def allrounds
-    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page:4)
+    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 4)
   end
 
   def admin

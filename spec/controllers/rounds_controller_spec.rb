@@ -7,7 +7,7 @@ RSpec.describe RoundsController, type: :controller do
       sign_in user
       round = FactoryGirl.create(:round)
 
-      post :create, round: { course: 'Test course' }
+      post :create, params: { round: { course: 'Test course' } }
       expect(response).to redirect_to dashboard_path
       round = Round.last
       expect(round.course).to eq 'Test course'
@@ -15,7 +15,7 @@ RSpec.describe RoundsController, type: :controller do
     end
 
     it 'should deal with errors correctly' do
-      post :create, round: { course: '' }
+      post :create, params: { round: { course: '' } }
       expect(Round.count).to eq 0
     end
   end
@@ -26,7 +26,7 @@ RSpec.describe RoundsController, type: :controller do
       round = FactoryGirl.create(:round)
       sign_in user
 
-      delete :destroy, id: round.id 
+      delete :destroy, params: { id: round.id }
       expect(response).to redirect_to dashboard_path
       round = Round.find_by(id: round.id)
       expect(round).to eq nil

@@ -10,7 +10,7 @@ module ScoringAverage
   def users_best_score
     low_round = []
     rounds.each do |round|
-      low_round  << round.score
+      low_round << round.score
     end
     low_round.sort.shift
   end

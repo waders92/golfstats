@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-  layout "application"
+  layout 'application'
   def new
     unless user_signed_in?
       redirect_to new_user_session_path
