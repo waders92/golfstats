@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'stats#index'
-  get '/about', to: 'stats#about'
   get '/tips', to: 'stats#tips'
   get '/lessons', to: 'stats#lessons'
   get '/rankings', to: 'stats#rankings'
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   get '/birdieavg', to: 'stats#birdieavg'
   get '/paravg', to: 'stats#paravg'
   get '/allrounds', to: 'stats#allrounds'
+  get '/badges', to: 'stats#badges'
   resources :rounds do
     resources :comments, only: :create
   end

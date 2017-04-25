@@ -25,4 +25,5 @@ class User < ActiveRecord::Base
   include PuttingAverage
   include BirdieAverage
   include ParAverage
+  include Badge
 end

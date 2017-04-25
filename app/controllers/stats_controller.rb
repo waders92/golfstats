@@ -26,4 +26,7 @@ class StatsController < ApplicationController
     end
     @lessons = Lesson.all
   end
+
+  def badges
+  end
 end
