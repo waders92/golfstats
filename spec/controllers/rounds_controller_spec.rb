@@ -5,7 +5,6 @@ RSpec.describe RoundsController, type: :controller do
     it 'should create a new round in the database' do
       user = FactoryGirl.create(:user)
       sign_in user
-      round = FactoryGirl.create(:round)
 
       post :create, params: { round: { course: 'Test course' } }
       expect(response).to redirect_to dashboard_path
