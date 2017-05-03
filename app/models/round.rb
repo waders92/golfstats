@@ -1,6 +1,5 @@
 class Round < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
   after_create :send_round_email
 
   validates :course, presence: true, length: { minimum: 1 }

@@ -1,7 +1,6 @@
 class StatsController < ApplicationController
   def index
     @rounds = Round.limit(5).order('created_at DESC')
-    @comments = Comment.all
   end
 
   def member_required
@@ -16,7 +15,7 @@ class StatsController < ApplicationController
   end
 
   def allrounds
-    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 4)
+    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 5)
   end
 
   def admin
@@ -27,6 +26,5 @@ class StatsController < ApplicationController
     @lessons = Lesson.all
   end
 
-  def badges
-  end
+  def badges; end
 end

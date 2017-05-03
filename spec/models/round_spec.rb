@@ -9,7 +9,6 @@ RSpec.describe Round, type: :model do
   it { is_expected.to validate_presence_of(:birdies) }
   it { is_expected.to validate_presence_of(:pars) }
   it { is_expected.to belong_to(:user) }
-  it { is_expected.to have_many(:comments) }
   it { is_expected.to have_db_column(:course) }
   it { is_expected.to have_db_column(:score) }
   it { is_expected.to have_db_column(:greens) }

@@ -13,9 +13,7 @@ Rails.application.routes.draw do
   get '/paravg', to: 'stats#paravg'
   get '/allrounds', to: 'stats#allrounds'
   get '/badges', to: 'stats#badges'
-  resources :rounds do
-    resources :comments, only: :create
-  end
+  resources :rounds
   resources :charges
   resources :lessons
   resources :photos
