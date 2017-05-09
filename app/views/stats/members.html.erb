@@ -1,0 +1,10 @@
+<br />
+<div class="container">
+    <h2>Member List</h2>
+    <% @user.each do |user| %>
+    <p class="info">
+      <%= link_to user.name, member_list_path(user) %><br />
+      <%= user.email %><br />
+    </p>
+    <% end %>
+</div>
