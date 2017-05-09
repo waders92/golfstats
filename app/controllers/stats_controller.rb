@@ -27,4 +27,8 @@ class StatsController < ApplicationController
   end
 
   def badges; end
+
+  def members
+    @user = User.all
+  end
 end

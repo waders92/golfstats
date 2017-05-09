@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/paravg', to: 'stats#paravg'
   get '/allrounds', to: 'stats#allrounds'
   get '/badges', to: 'stats#badges'
+  get '/members', to: 'stats#members'
   resources :rounds
   resources :charges
   resources :lessons
