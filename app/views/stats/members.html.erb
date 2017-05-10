@@ -1,0 +1,15 @@
+<br />
+<div class="container">
+    <h2>Member List</h2>
+    <br />
+    <% @user.each do |user| %>
+    <h3 class="names">
+      <%= user.name %><br />
+    </h3>
+    <p class="info">
+      <%= user.email %><br />
+      Scoring Average: <%= user.scoring_average %><br />
+      Total Rounds: <%= user.total_rounds %><br />
+    </p>
+    <% end %>
+</div>
