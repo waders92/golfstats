@@ -15,6 +15,22 @@ module GreensAverage
     greens_hit_average.round(2)
   end
 
+  def greens_hit_average_nine_holes
+    nineholerounds.average(:greenshit)
+  end
+
+  def greens_hit_average_nine_holes_rounded
+    greens_hit_average_nine_holes.round(2)
+  end
+
+  def users_best_greens_nine_holes
+    greens = []
+    nineholerounds.each do |nineholeround|
+      greens << nineholeround.greenshit
+    end
+    greens.sort.pop
+  end
+
   def users_best_greens
     greens = []
     rounds.each do |round|
