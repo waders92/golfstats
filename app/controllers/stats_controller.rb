@@ -18,6 +18,14 @@ class StatsController < ApplicationController
     @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 5)
   end
 
+  def allnineholes
+    @nineholerounds = Nineholeround.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 5)
+  end
+
+  def nine_holes
+    @yearly_nineholerounds = current_user.nineholerounds.group_by(&:year)
+  end
+
   def admin
     unless user_signed_in? && current_user.admin?
       redirect_to root_path

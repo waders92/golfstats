@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :rounds, dependent: :destroy
+  has_many :nineholerounds, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one :membership
   has_many :lessons

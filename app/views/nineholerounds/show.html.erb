@@ -1,39 +1,39 @@
 <div class="col-xs-10 col-xs-offset-1 recap bottom">
-  <h1 class="text-center"><%= @round.course %></h1>
-  <h4 class="text-center comment_handle"><%= @round.user.name %> | <%= @round.created_at.strftime("%m-%d-%Y") %></h4>
+  <h1 class="text-center"><%= @nineholeround.course %></h1>
+  <h4 class="text-center comment_handle"><%= @nineholeround.user.name %> | <%= @nineholeround.created_at.strftime("%m-%d-%Y") %></h4>
     <br /><br /><br />
 
   <div class="show-stats">
     <div class="col-xs-4 text-center big-score show-stats">
         <h4 class="comment_handle">Score</h4>
-        <%= @round.score %>
+        <%= @nineholeround.score %>
     </div>
 
     <div class="col-xs-4 text-center big-score show-stats">
         <h4 class="comment_handle">Greens Hit</h4>
-        <%= @round.greens %> / 18
+        <%= @nineholeround.greenshit %> / 9
     </div>
 
     <div class="col-xs-4 text-center big-score show-stats">
         <h4 class="comment_handle">Driving Accuracy</h4>
-        <%= @round.fwys %> / <%= @round.fwystotal %>
+        <%= @nineholeround.fwys %> / <%= @nineholeround.fwystotal %>
     </div>
   </div>
 
   <div class="show-stats">
       <div class="col-xs-4 text-center big-score bottom">
         <h4 class="comment_handle">Putts</h4>
-      <%= @round.putts %>
+      <%= @nineholeround.putts %>
       </div>
 
       <div class="col-xs-4 text-center big-score bottom">
         <h4 class="comment_handle">Birdies</h4>
-        <%= @round.birdies %>
+        <%= @nineholeround.birdies %>
       </div>
 
       <div class="col-xs-4 text-center big-score bottom">
         <h4 class="comment_handle">Pars</h4>
-        <%= @round.pars %>
+        <%= @nineholeround.pars %>
       </div>
   </div>
 </div>
