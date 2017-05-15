@@ -13,7 +13,7 @@
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
         <br />
-        <%= f.input :picture %>
+        <%= f.input :picture, label: 'Upload a Picture (NOT Required / you can update later...)' %>
       </div>
       <br />
       <div class="form-actions">
