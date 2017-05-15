@@ -1,6 +1,6 @@
 class Nineholeround < ActiveRecord::Base
   belongs_to :user
-  after_create :send_round_email
+  after_create :send_nine_hole_round_email
 
   validates :course, presence: true, length: { minimum: 1 }
   validates :score, presence: true
@@ -11,8 +11,8 @@ class Nineholeround < ActiveRecord::Base
   validates :birdies, presence: true
   validates :pars, presence: true
 
-  def send_round_email
-    NotificationMailer.round_added(self).deliver
+  def send_nine_hole_round_email
+    NotificationMailer.nine_hole_round_added(self).deliver
   end
 
   def year

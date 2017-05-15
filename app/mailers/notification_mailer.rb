@@ -8,6 +8,13 @@ class NotificationMailer < ActionMailer::Base
          subject: 'A round has been posted on Trakstats')
   end
 
+  def nine_hole_round_added(nineholeround)
+    @nineholeround = nineholeround
+    @nineholeround_owner = @nineholeround.user
+    mail(to: @nineholeround_owner.email,
+        subject: 'A 9 hole round has been posted on Trakstats')
+  end
+
   def lesson_added(lesson)
     @user = User.find(1)
     @lesson = lesson
