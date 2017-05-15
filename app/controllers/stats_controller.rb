@@ -27,16 +27,23 @@ class StatsController < ApplicationController
   end
 
   def admin
-    unless user_signed_in? && current_user.admin?
-      redirect_to root_path
-      flash[:error] = 'You do not have access'
-    end
+    admin_user
     @lessons = Lesson.all
   end
 
   def badges; end
 
   def members
+    admin_user
     @user = User.all
+  end
+
+  private
+
+  def admin_user
+    unless user_signed_in? && current_user.admin?
+      redirect_to root_path
+      flash[:error] = 'You do not have access'
+    end
   end
 end

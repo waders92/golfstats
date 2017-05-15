@@ -40,7 +40,9 @@
           <li><%= link_to 'My 18 Hole Rounds', dashboard_path %></li>
           <li><%= link_to 'My 9 Hole Rounds', nine_holes_path %></li>
           <li><%= link_to 'My Badges', badges_path %></li>
+          <% if current_user.admin? %>
           <li><%= link_to 'Member List', members_path %></li>
+          <% end %>
           <li role="separator" class="divider"></li>
           <li><%= link_to 'My Video Lessons', lessons_path %></li>
           </ul>
