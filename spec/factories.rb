@@ -1,7 +1,4 @@
 FactoryGirl.define do
-  factory :nineholeround do
-    
-  end
   factory :photo do
   end
   factory :lesson do
@@ -35,6 +32,18 @@ FactoryGirl.define do
     putts '25'
     birdies '2'
     pars '2'
+    association :user
+  end
+
+  factory :nineholeround do
+    course 'Test course'
+    score '40'
+    greenshit '4'
+    fwys '4'
+    fwystotal '7'
+    putts '18'
+    birdies '2'
+    pars '4'
     association :user
   end
 

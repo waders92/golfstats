@@ -5,8 +5,9 @@ RSpec.describe RoundsController, type: :controller do
     it 'should create a new round in the database' do
       user = FactoryGirl.create(:user)
       sign_in user
+      round = FactoryGirl.create(:round)
 
-      post :create, params: { round: { course: 'Test course' } }
+      post :create, round: { course: 'Test course' }
       expect(response).to redirect_to dashboard_path
       round = Round.last
       expect(round.course).to eq 'Test course'
@@ -25,7 +26,7 @@ RSpec.describe RoundsController, type: :controller do
       round = FactoryGirl.create(:round)
       sign_in user
 
-      delete :destroy, params: { id: round.id }
+      delete :destroy, id: round.id
       expect(response).to redirect_to dashboard_path
       round = Round.find_by(id: round.id)
       expect(round).to eq nil
