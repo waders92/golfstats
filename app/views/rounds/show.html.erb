@@ -37,3 +37,29 @@
       </div>
   </div>
 </div>
+<br class="clr" />
+<div class="col-xs-10 col-xs-offset-1 round-recap top bottom">
+  <div class="container">
+    <h3>Let's look at your round from another perspective....</h3>
+    <br />
+    <p class="info">
+      <% if @round.birdies > 0 %>
+      <% total_stretch_under = @round.birdies + @round.pars %>
+      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= total_stretch_under %> holes at <%= @round.birdies %> under!
+      <% else %>
+      <% total_stretch = @round.pars %>
+      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= total_stretch %> holes at EVEN par!
+      <% end %>
+    </p>
+    <p class="info">
+      <% total_holes_left = (18 - (@round.pars + @round.birdies)) %>
+      What happend on the last <%= total_holes_left %> holes?
+      How was your chipping? How many times did you get up and down for par
+      on the remaining <%= total_holes_left %> holes?<br />
+      Did you have poor tee shots or did you have a bad
+      approach to the green? Was your chip close or did you chip to 10' or 15' and miss the putt?
+      Think about the holes where you could have improved and it should help you to focus on areas that need
+      attention to help you lower your score!
+    </p>
+  </div>
+</div>
