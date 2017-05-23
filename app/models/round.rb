@@ -24,4 +24,16 @@ class Round < ActiveRecord::Base
   def month
     created_at.strftime('%B')
   end
+
+  def zero_birdie_round
+    self.pars
+  end
+
+  def total_stretch_under
+    self.pars + self.birdies
+  end
+
+  def total_holes_left
+    (18 - total_stretch_under)
+  end
 end
