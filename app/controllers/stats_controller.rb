@@ -23,7 +23,7 @@ class StatsController < ApplicationController
   end
 
   def nine_holes
-    @yearly_nineholerounds = current_user.nineholerounds.group_by(&:year)
+    @yearly_nineholerounds = current_user.nineholerounds.order('created_at DESC').group_by(&:year)
   end
 
   def admin

@@ -113,7 +113,7 @@
          <th>Pars</th>
        </tr>
        <tr class="text-center">
-         <% nineholeround.sort.each do |nineholeround| %>
+         <% nineholeround.each do |nineholeround| %>
          <td class="text-center"><%= nineholeround.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("trash.png", class: 'trash'), nineholeround_path(nineholeround), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %></td>
          <td class="text-center"><%= nineholeround.course %>&nbsp;&nbsp;&nbsp;<%=link_to(image_tag("mag.png", class: 'pencil'), nineholeround_path(nineholeround)) %></td>
          <td class="text-center"><%= nineholeround.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_nineholeround_path(nineholeround), class: 'pencil') %></td>
