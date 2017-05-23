@@ -8,6 +8,6 @@ class DashboardsController < ApplicationController
   def show
     @rounds = Round.all
     @monthly_rounds = current_user.rounds.order('created_at DESC').group_by(&:month)
-    @yearly_rounds = current_user.rounds.group_by(&:year)
+    @yearly_rounds = current_user.rounds.order('created_at DESC').group_by(&:year)
   end
 end
