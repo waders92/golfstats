@@ -38,29 +38,33 @@
   </div>
 </div>
 <br class="clr" />
-<div class="col-xs-10 col-xs-offset-1 round-recap top bottom">
-  <div class="container">
-    <h3>Let's look at your round from another perspective....</h3>
+<h3 class="text-center">Add Some Notes For This Round</h3>
+<div class="col-xs-10 col-xs-offset-1 recap top">
+  <%= simple_form_for Note.new, url: round_notes_path(@round) do |f| %>
+    <%= f.input :message %>
     <br />
+    <%= f.submit 'Add Round Notes', class: 'btn' %>
+    <% end %>
+    <br />
+</div>
+<br class="clr" />
+<div class="col-xs-10 col-xs-offset-1 round-recap bottom">
+  <div class="container">
     <p class="info">
+      <br />
+      Notes:<br />
       <% if @round.birdies > 1 %>
-      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!
+      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!<br />
       <% end %>
       <% if @round.birdies == 0 %>
-      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.zero_birdie_round %> holes at EVEN par!
+      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.zero_birdie_round %> holes at EVEN par!<br />
       <% end %>
       <% if @round.birdies == 1 %>
-      You had <%= @round.birdies %> birdie and <%= @round.pars %> par(s). If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!
+      You had <%= @round.birdies %> birdie and <%= @round.pars %> par(s). If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!<br />
       <% end %>
-    </p>
-    <p class="info">
-      What happend on the other <%= @round.total_holes_left %> holes?
-      How was your chipping? How many times did you get up and down for par
-      on the remaining <%= @round.total_holes_left %> holes?<br />
-      Did you have poor tee shots or did you have a bad
-      approach to the green? Was your chip close or did you chip to 10' or 15' and miss the putt?
-      Think about the holes where you could have improved and it should help you to focus on areas that need
-      attention to help you lower your score!
+      <% @round.notes.each do |note| %>
+      <%= note.message %><br />
+      <% end %>
     </p>
   </div>
 </div>

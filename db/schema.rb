@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515175539) do
+ActiveRecord::Schema.define(version: 20170525143123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 20170515175539) do
   end
 
   add_index "nineholerounds", ["user_id"], name: "index_nineholerounds_on_user_id", using: :btree
+
+  create_table "notes", force: true do |t|
+    t.text     "message"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "round_id"
+  end
+
+  add_index "notes", ["round_id"], name: "index_notes_on_round_id", using: :btree
+  add_index "notes", ["user_id"], name: "index_notes_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.string   "picture"
