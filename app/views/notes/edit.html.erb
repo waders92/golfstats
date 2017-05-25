@@ -1,0 +1,9 @@
+<div class="col-xs-10 col-xs-offset-1 recap">
+  <h3>Edit Round Note</h3>
+  <%= simple_form_for @note, url: edit_round_note_path(round_url, @note) do |f| %>
+  <%= f.input :message %>
+  <br />
+  <%= f.submit 'Update', class: 'btn-primary' %>
+  <% end %>
+  <br />
+</div>

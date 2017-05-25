@@ -63,7 +63,7 @@
       You had <%= @round.birdies %> birdie and <%= @round.pars %> par(s). If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!<br />
       <% end %>
       <% @round.notes.each do |note| %>
-      <%= note.message %><br />
+      <%= note.message %>&nbsp;&nbsp;<%= link_to 'Edit', edit_round_note_path(@round, note) %><br />
       <% end %>
     </p>
   </div>
