@@ -43,10 +43,14 @@
     <h3>Let's look at your round from another perspective....</h3>
     <br />
     <p class="info">
-      <% if @round.birdies > 0 %>
+      <% if @round.birdies > 1 %>
       You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!
-      <% else %>
+      <% end %>
+      <% if @round.birdies == 0 %>
       You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.zero_birdie_round %> holes at EVEN par!
+      <% end %>
+      <% if @round.birdies == 1 %>
+      You had <%= @round.birdies %> birdie and <%= @round.pars %> par(s). If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!
       <% end %>
     </p>
     <p class="info">
