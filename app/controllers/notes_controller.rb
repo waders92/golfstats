@@ -7,6 +7,10 @@ class NotesController < ApplicationController
     redirect_to round_path(@round)
   end
 
+  def edit
+
+  end
+
   private
 
   def note_params
