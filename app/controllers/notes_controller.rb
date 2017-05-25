@@ -14,8 +14,8 @@ class NotesController < ApplicationController
 
   def update
     round = Round.find_by_id(params[:round_id])
-    @note = round.notes.find(params[:id])
-    @note.update_attributes(note_params.merge(user: current_user))
+    note = round.notes.find(params[:id])
+    note.update_attributes(note_params)
     redirect_to round_path(round)
   end
 
