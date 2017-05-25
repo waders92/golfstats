@@ -1,13 +1,14 @@
 FactoryGirl.define do
-  factory :photo do
+  factory :note do
+    message 'Test Message'
+    association :user
+    association :round
   end
-  factory :lesson do
-  end
-  factory :membership do
-  end
+
   factory :comment do
     association :round
   end
+
   factory :user do
     sequence :first_name do |n|
       "dummyfirstname#{n}"
@@ -47,7 +48,4 @@ FactoryGirl.define do
     association :user
   end
 
-  factory :message do
-    message 'Test message'
-  end
 end

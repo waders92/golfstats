@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   get '/badges', to: 'stats#badges'
   get '/members', to: 'stats#members'
   get '/nine_holes', to: 'stats#nine_holes'
-  resources :rounds
+  resources :rounds do
+    resources :notes
+  end
   resources :nineholerounds
   resources :charges
   resources :lessons

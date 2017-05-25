@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_one :membership
   has_many :lessons
   has_many :photos
+  has_many :notes
 
   def name
     @name ||= [first_name, last_name].join(' ')
