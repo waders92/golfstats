@@ -114,7 +114,11 @@
          <% round.each do |round| %>
          <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("trash.png", class: 'trash'), round_path(round), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %></td>
          <td class="text-center"><%= round.course %>&nbsp;&nbsp;&nbsp;<%=link_to(image_tag("mag.png", class: 'pencil'), round_path(round)) %></td>
+         <% if round.public == true %>
          <td class="text-center"><%= round.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_round_path(round), class: 'pencil') %></td>
+         <% else %>
+         <td class="text-center private"><%= round.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_round_path(round), class: 'pencil') %></td>
+         <% end %>
          <td class="text-center"><%= round.greens %> / 18</td>
          <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
          <td class="text-center"><%= round.putts %></td>

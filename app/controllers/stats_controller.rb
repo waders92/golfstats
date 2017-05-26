@@ -1,6 +1,6 @@
 class StatsController < ApplicationController
   def index
-    @rounds = Round.limit(5).order('created_at DESC')
+    @rounds = Round.limit(15).order('created_at DESC')
   end
 
   def member_required
@@ -15,11 +15,11 @@ class StatsController < ApplicationController
   end
 
   def allrounds
-    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 5)
+    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 15)
   end
 
   def allnineholes
-    @nineholerounds = Nineholeround.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 5)
+    @nineholerounds = Nineholeround.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 15)
   end
 
   def nine_holes
