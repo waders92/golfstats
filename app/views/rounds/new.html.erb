@@ -11,6 +11,7 @@
       <%= f.input :putts, required: true, label: 'Putts Total', placeholder: '31' %>
       <%= f.input :birdies, required: true, label: 'How many birdies this round?', placeholder: '3' %>
       <%= f.input :pars, required: true, label: 'How many pars this round?', placeholder: '10' %>
+      <p class="info">Would you like this round public?&nbsp;&nbsp;<%= f.check_box :public %></p>
       <br />
       <%= f.submit 'Create', class: 'btn btn-primary' %>
   </div>

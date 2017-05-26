@@ -6,6 +6,7 @@
   <%= will_paginate @rounds, previous_label: h("<"), next_label: h(">") %>
 </div>
 <% @rounds.each do |round| %>
+<% if round.public == true %>
 <div class="card col-xs-6 col-xs-offset-3">
   <div class="front each-round-front text-center">
     <div class="col-xs-6 top-score2 info">
@@ -36,6 +37,7 @@
     </div>
   </div>
 </div>
+<% end %>
 <% end %>
 <br class="clr" />
 <div class="text-center">
