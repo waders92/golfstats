@@ -1,6 +1,10 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @round = Round.find_by(id: params[:round_id])
+  end
+
   def create
     @round = Round.find_by_id(params[:round_id])
     @round.notes.create(note_params.merge(user: current_user))
@@ -27,7 +31,7 @@ class NotesController < ApplicationController
     @round = Round.find_by_id(params[:id])
     @note = Note.find_by_id(params[:id])
     @note.destroy
-    redirect_to dashboard_path(anchor: 'redirect') 
+    redirect_to dashboard_path(anchor: 'redirect')
   end
 
   private

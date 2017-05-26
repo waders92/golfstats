@@ -38,6 +38,11 @@ class StatsController < ApplicationController
     @user = User.all
   end
 
+  def notes
+    @round = Round.all
+    @notes = Note.all
+  end
+
   private
 
   def admin_user
