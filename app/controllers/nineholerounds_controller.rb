@@ -44,6 +44,6 @@ class NineholeroundsController < ApplicationController
   end
 
   def round_params_nine
-    params.require(:nineholeround).permit(:course, :score, :greenshit, :fwys, :fwystotal, :putts, :birdies, :pars)
+    params.require(:nineholeround).permit(:course, :score, :greenshit, :fwys, :fwystotal, :putts, :birdies, :pars, :public)
   end
 end
