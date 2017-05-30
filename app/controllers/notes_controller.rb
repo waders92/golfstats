@@ -22,9 +22,6 @@ class NotesController < ApplicationController
     @note.update_attributes(note_params)
     flash[:error] = 'Note edit was saved!'
     redirect_to dashboard_path(anchor: 'redirect')
-    # redirect_to proc { round_url(@round) }
-    # redirect_to round_path(@round)
-    # redirect_to round_url(:controller => :rounds, :action => :show)
   end
 
   def destroy
