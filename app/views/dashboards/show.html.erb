@@ -96,8 +96,11 @@
     <% end %>
   </div>
   <br class="clr" />
-  <% @yearly_rounds.each do |year, round| %>
- <h1 class="text-center"><%= year %></h1>
+  <div class="container">
+    <h1><%= DateTime.now.year %></h1>
+  </div>
+  <% @monthly_rounds.each do |month, round| %>
+ <h1 class="text-center"><%= month %></h1>
    <div id="redirect">
      <table class="col-xs-10 col-xs-offset-1 table2">
        <tr class="table-title">
