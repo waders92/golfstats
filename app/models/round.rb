@@ -23,7 +23,7 @@ class Round < ActiveRecord::Base
   end
 
   def month
-    created_at.strftime('%B')
+    created_at.strftime('%B (%Y)')
   end
 
   def zero_birdie_round

@@ -28,4 +28,5 @@ class User < ActiveRecord::Base
   include BirdieAverage
   include ParAverage
   include Badge
+  include DuplicateNotes
 end

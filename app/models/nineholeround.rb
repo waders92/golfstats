@@ -18,4 +18,8 @@ class Nineholeround < ActiveRecord::Base
   def year
     created_at.strftime('%Y')
   end
+
+  def month
+    created_at.strftime('%B (%Y)')
+  end
 end
