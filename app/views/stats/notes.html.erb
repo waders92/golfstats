@@ -1,36 +1,15 @@
 <div class="container top bottom">
   <h2>Notes</h2>
   <br />
-  <p class="info">
   <% current_user.notes.each do |note| %>
-    <%= note.round.course %> (<%= note.created_at.strftime("%-m/%d/%Y") %>):
-    <%= note.message %>
+  <p class="info">
+    <%= note.round.course %>:
+    <%= note.message %><br />
+  </p>
   <% end %>
+</div>
+<div class="container top">
+  <p class="info" style="color: red;">
+    <%= current_user.users_duplicate_notes %>
   </p>
 </div>
-
-<script>
-var text = $('p').text(),
-    words = text.split(' '),
-    sortedWords = words.slice(0).sort(),
-    duplicateWords = []
-    highlighted = [];
-
-for (var i=0; i<sortedWords.length-1; i++) {
-    if (sortedWords[i+1] == sortedWords[i]) {
-        duplicateWords.push(sortedWords[i]);
-    }
-}
-duplicateWords = $.unique(duplicateWords);
-
-for (var j=0, m=[]; j<words.length; j++) {
-    m.push($.inArray(words[j], duplicateWords) > -1);
-    if (!m[j] && m[j-1])
-        highlighted.push('</span>');
-    else if (m[j] && !m[j-1])
-        highlighted.push('<span class="duplicate">');
-    highlighted.push(words[j]);
-}
-
-$('p').html(highlighted.join(' '));
-</script>
