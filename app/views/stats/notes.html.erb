@@ -1,15 +1,15 @@
-<div class="container top bottom">
+<div class="container top bottom info">
   <h2>Notes</h2>
   <br />
-  <% current_user.notes.each do |note| %>
-  <p class="info">
-    <%= note.round.course %>:
-    <%= note.message %><br />
-  </p>
-  <% end %>
+    <% current_user.notes.each do |note| %>
+    <p class="info">
+      <%= note.message %><br />
+    </p>
+    <% end %>
 </div>
 <div class="container top">
-  <p class="info" style="color: red;">
+  <h2>Trends</h2>
+  <p class="info" style="color: firebrick;">
     <%= current_user.users_duplicate_notes %>
   </p>
 </div>
