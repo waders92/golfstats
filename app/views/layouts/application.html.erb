@@ -15,7 +15,13 @@
 </head>
 <body>
   <section class="main-logo text-center">
+    <% if user_signed_in? %>
     <%= image_tag 'TrakStats.png' %>
+    <% else %>
+    <%= link_to root_path do %>
+    <%= image_tag 'TrakStats.png' %>
+    <% end %>
+    <% end %>
   </section>
 
   <nav class="navbar navbar-default">
@@ -42,6 +48,11 @@
           <li><%= link_to 'My 9 Hole Rounds', nine_holes_path %></li>
           <li><%= link_to 'Round Notes', notes_path %></li>
           <li><%= link_to 'My Badges', badges_path %></li>
+          <li><%= link_to 'Video Lessons', new_charge_path %></li>
+          <li><%= link_to 'Stats and Tips', tips_path %></li>
+          <% if user_signed_in? && current_user.admin? %>
+          <li><%= link_to 'ADMIN', admin_path %></li>
+          <% end %>
           <% if user_signed_in? && current_user.admin? %>
           <li><%= link_to 'Member List', members_path %></li>
           <% end %>
@@ -66,15 +77,6 @@
           <ul class="dropdown-menu">
             <li><%= link_to 'Member 18 Hole Scores', allrounds_path %></li>
             <li><%= link_to 'Member 9 Hole Scores', allnineholes_path %></li>
-          </ul>
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Instruction <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to 'Video Lessons', new_charge_path %></li>
-            <li><%= link_to 'Stats and Tips', tips_path %></li>
-            <% if user_signed_in? && current_user.admin? %>
-            <li><%= link_to 'ADMIN', admin_path %></li>
-            <% end %>
           </ul>
             <% if user_signed_in? %>
             <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete', class: 'links' %></li>

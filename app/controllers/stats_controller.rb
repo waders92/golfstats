@@ -25,7 +25,9 @@ class StatsController < ApplicationController
     @lessons = Lesson.all
   end
 
-  def badges; end
+  def badges
+    member_required
+  end
 
   def members
     admin_user
@@ -33,6 +35,7 @@ class StatsController < ApplicationController
   end
 
   def notes
+    member_required
     @round = Round.all
     @notes = Note.all
   end

@@ -178,11 +178,29 @@
     <% end %>
   </div>
   <div class="badges text-center">
+    <% if current_user.users_best_putting_round <= 29 %>
+    <h3 class="text-center">29 Putts!</h3>
+    <%= image_tag 'trophy.png', class: 'trophy' %>
+    <% else %>
+    <h3 class="text-center">29 Putts!</h3>
+    <%= image_tag 'x.png', class: 'trophy' %>
+    <% end %>
+  </div>
+  <div class="badges text-center">
     <% if current_user.users_best_putting_round <= 28 %>
     <h3 class="text-center">28 Putts!</h3>
     <%= image_tag 'trophy.png', class: 'trophy' %>
     <% else %>
     <h3 class="text-center">28 Putts!</h3>
+    <%= image_tag 'x.png', class: 'trophy' %>
+    <% end %>
+  </div>
+  <div class="badges text-center">
+    <% if current_user.users_best_putting_round <= 27 %>
+    <h3 class="text-center">27 Putts!</h3>
+    <%= image_tag 'trophy.png', class: 'trophy' %>
+    <% else %>
+    <h3 class="text-center">27 Putts!</h3>
     <%= image_tag 'x.png', class: 'trophy' %>
     <% end %>
   </div>
@@ -196,11 +214,11 @@
     <% end %>
   </div>
   <div class="badges text-center">
-    <% if current_user.users_best_putting_round <= 24 %>
-    <h3 class="text-center">24 Putts!</h3>
+    <% if current_user.users_best_putting_round <= 25 %>
+    <h3 class="text-center">25 Putts!</h3>
     <%= image_tag 'trophy.png', class: 'trophy' %>
     <% else %>
-    <h3 class="text-center">24 Putts!</h3>
+    <h3 class="text-center">25 Putts!</h3>
     <%= image_tag 'x.png', class: 'trophy' %>
     <% end %>
   </div>
