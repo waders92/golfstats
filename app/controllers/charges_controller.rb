@@ -1,13 +1,14 @@
 class ChargesController < ApplicationController
   layout 'application'
+
   def new
+  end
+
+  def create
     unless user_signed_in?
       redirect_to new_user_session_path
       flash[:error] = 'You must be signed-in!'
     end
-  end
-
-  def create
     # Amount in cents
     @amount = 3000
 
