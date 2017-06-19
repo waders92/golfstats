@@ -1,13 +1,7 @@
 class StatsController < ApplicationController
+
   def index
     @rounds = Round.limit(15).order('created_at DESC')
-  end
-
-  def member_required
-    unless user_signed_in?
-      redirect_to new_user_session_path
-      flash[:error] = 'You must be signed-in!'
-    end
   end
 
   def lessons
@@ -24,7 +18,6 @@ class StatsController < ApplicationController
 
   def nine_holes
     @monthly_nineholerounds = current_user.nineholerounds.order('created_at DESC').group_by(&:month)
-    # @yearly_nineholerounds = current_user.nineholerounds.order('created_at DESC').group_by(&:year)
   end
 
   def admin
@@ -45,6 +38,13 @@ class StatsController < ApplicationController
   end
 
   private
+
+  def member_required
+    unless user_signed_in?
+      redirect_to new_user_session_path
+      flash[:error] = 'You must be signed-in!'
+    end
+  end
 
   def admin_user
     unless user_signed_in? && current_user.admin?
