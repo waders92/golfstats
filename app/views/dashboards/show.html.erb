@@ -14,14 +14,6 @@
       <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
     </div>
     <% end %>
-    <%= link_to new_round_path do %>
-    <div class="col-xs-6 col-xs-offset-3 new-round">
-      <br />
-      <p class="links text-center">
-        Post A New 18 Hole Round!
-      </p>
-    </div>
-    <% end %>
   </div>
 
   <br class="clr" />
@@ -30,7 +22,7 @@
     <hr />
     <div class="top col-xs-5 col-xs-offset-1">
       <p class="info text-center">
-        Stat Averages For 18 Holes
+        Stat Averages
       </p>
       <div class="each-average text-center">
           <p class="info">Scoring Average</p>
@@ -59,7 +51,7 @@
     </div>
     <div class="col-xs-5 top">
       <p class="info text-center">
-        Personal Best For 18 Holes
+        Personal Bests
       </p>
       <div class="each-best text-center">
           <p class="info">Low Score</p>
@@ -97,7 +89,7 @@
   </div>
   <br class="clr" />
   <% @monthly_rounds.each do |month, round| %>
- <h1 class="text-center"><%= month %></h1>
+ <h2 class="text-center"><%= month %></h2>
    <div id="redirect">
      <table class="col-xs-10 col-xs-offset-1 table2">
        <tr class="table-title">
@@ -112,15 +104,15 @@
        </tr>
        <tr class="text-center">
          <% round.each do |round| %>
-         <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("trash.png", class: 'trash'), round_path(round), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %></td>
-         <td class="text-center"><%= round.course %>&nbsp;&nbsp;&nbsp;<%=link_to(image_tag("mag.png", class: 'pencil'), round_path(round)) %></td>
+         <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("mag.png", class: 'pencil'), round_path(round)) %></td>
+         <td class="text-center"><%= round.course %></td>
          <% if round.public == true %>
-         <td class="text-center"><%= round.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_round_path(round), class: 'pencil') %></td>
+         <td class="text-center"><%= round.score %></td>
          <% else %>
-         <td class="text-center private"><%= round.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_round_path(round), class: 'pencil') %></td>
+         <td class="text-center private"><%= round.score %></td>
          <% end %>
-         <td class="text-center"><%= round.greens %> / 18</td>
-         <td class="text-center"><%= round.fwys %> / <%= round.fwystotal %></td>
+         <td class="text-center"><%= round.greens %></td>
+         <td class="text-center"><%= round.fwys %></td>
          <td class="text-center"><%= round.putts %></td>
          <td class="text-center"><%= round.birdies %></td>
          <td class="text-center"><%= round.pars %></td>

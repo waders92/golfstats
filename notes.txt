@@ -1,0 +1,24 @@
+TO DO-
+
+Form for scores
+List out scores - dashboard show.html.erb / nine_holes.html.erb
+Rename Clubhouse > 18 Hole Rounds > 9 Hole Rounds
+Round notes highlight, not list out in red
+Landing page refresh
+Combine stats and tips info with your averages to make it easier to see what you need to work on.
+Click on a course name and it shows you how you perform at that course.
+WITB section
+Highlights current user in the rankings section to easily see where you rank.
+Leaderboard needs to be on every page
+click on course form scoring area pulls up info about that course
+show under par rounds in RED
+
+NOT SURE -
+
+allrounds.html and allnineholes.html refresh (boxes with jQuery) - kind of like the display, maybe fix colors?
+
+____________________________________________________________
+
+                working code dump area
+
+____________________________________________________________
