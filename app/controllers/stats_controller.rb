@@ -8,12 +8,16 @@ class StatsController < ApplicationController
     member_required
   end
 
+  def averages
+    member_required
+  end
+
   def allrounds
-    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 15)
+    @rounds = Round.all.order('created_at DESC')
   end
 
   def allnineholes
-    @nineholerounds = Nineholeround.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 15)
+    @nineholerounds = Nineholeround.all.order('created_at DESC')
   end
 
   def nine_holes

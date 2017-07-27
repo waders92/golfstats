@@ -42,7 +42,8 @@ p {
 }
 
 body {
-  background-color: lightgray;
+  // background: url('/assets/fresh_snow.png');
+  background: white;
   font-family: 'NTR', sans-serif;
   letter-spacing: .5px;
   // font-size: 20px;
@@ -51,8 +52,8 @@ body {
 .big-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 black;
-  background: rgba(17, 55, 54, 0.92);
+  // background: rgb(97, 97, 97);
+  background: url('/assets/grey_wash_wall.png');
   color: white;
   padding: 10px;
   margin-top: 15px;
@@ -185,10 +186,14 @@ body {
   font-size: 2em;
 }
 
+.big-score-dash {
+  font-size: 3em;
+}
+
 .big-score2 {
   font-size: 3em;
   border: 2px solid black;
-  background-color: #015249;
+  background: url('/assets/grey_wash_wall.png');
   color: white;
 }
 
@@ -288,7 +293,7 @@ hr {
 }
 
 .info {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .info a {
@@ -442,7 +447,7 @@ a.lessonlink:hover {
 .form-control {
   height: 40px;
   font-size: 18px;
-  color: #1a2bff;
+  color: black;
 }
 
 .wcpic {

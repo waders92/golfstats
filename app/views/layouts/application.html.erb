@@ -15,12 +15,8 @@
 </head>
 <body>
   <section class="main-logo text-center">
-    <% if user_signed_in? %>
-    <%= image_tag 'TrakStats.png' %>
-    <% else %>
     <%= link_to root_path do %>
     <%= image_tag 'TrakStats.png' %>
-    <% end %>
     <% end %>
   </section>
 
@@ -46,11 +42,12 @@
           <ul class="dropdown-menu">
           <li><%= link_to 'My 18 Hole Rounds', dashboard_path %></li>
           <li><%= link_to 'My 9 Hole Rounds', nine_holes_path %></li>
+          <li><%= link_to 'My Averages', averages_path %></li>
+
           <li><%= link_to 'Round Notes', notes_path %></li>
-          <li><%= link_to 'My Badges', badges_path %></li>
           <!-- <li><%= link_to 'Video Lessons', new_charge_path %></li> -->
-          <li><%= link_to 'Stats and Tips', tips_path %></li>
           <% if user_signed_in? && current_user.admin? %>
+          <li role="separator" class="divider"></li>
           <li><%= link_to 'ADMIN', admin_path %></li>
           <% end %>
           <% if user_signed_in? && current_user.admin? %>
@@ -81,61 +78,12 @@
             <% if user_signed_in? %>
             <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete', class: 'links' %></li>
             <% else %>
-            <li><%= link_to 'Sign In (Start Tracking!)', new_user_session_path, class: 'links' %>
+            <li><%= link_to 'Sign In', new_user_session_path, class: 'links' %>
               <% end %>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  <div class="leaders">
-    <br />
-    <p class="text-center tleader">Current Stat Leaders</p>
-    <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
-      <div class="carousel-inner">
-        <div class="item active text-center">
-          <p>
-            <% user, rank = best_scoring_rank_with_index %>
-            <b>Scoring Average -</b> <%= user.name %>
-            (<%= rank %>)
-          </p>
-        </div>
-        <div class="item text-center">
-          <p>
-            <% user, rank = best_greens_rank_with_index %>
-            <b>Greens In Regulation -</b> <%= user.name %>
-            (<%= rank %>)
-          </p>
-        </div>
-        <div class="item text-center">
-          <p>
-            <% user, rank = best_faiwrways_rank_with_index %>
-            <b>Fairways Hit -</b> <%= user.name %>
-            (<%= rank %>)
-          </p>
-        </div>
-        <div class="item text-center">
-          <p>
-            <% user, rank = best_putting_rank_with_index %>
-            <b>Putting Average -</b> <%= user.name %>
-            (<%= rank %>)
-          </p>
-        </div>
-        <div class="item text-center">
-          <p>
-            <% user, rank = best_birdies_rank_with_index %>
-            <b>Birdie Average -</b> <%= user.name %>
-            (<%= rank %>)
-          </p>
-        </div>
-        <div class="item text-center">
-          <p>
-            <% user, rank = best_pars_rank_with_index %>
-            <b>Par Average -</b> <%= user.name %>
-            (<%= rank %>)
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
     <% if flash[:error].present? %>
       <div class="alert alert-danger text-center">

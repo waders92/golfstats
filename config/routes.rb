@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'stats#index'
-  get '/tips', to: 'stats#tips'
+  get '/averages', to: 'stats#averages'
   get '/lessons', to: 'stats#lessons'
   get '/rankings', to: 'stats#rankings'
   get '/admin', to: 'stats#admin'
@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get '/paravg', to: 'stats#paravg'
   get '/allrounds', to: 'stats#allrounds'
   get '/allnineholes', to: 'stats#allnineholes'
-  get '/badges', to: 'stats#badges'
   get '/members', to: 'stats#members'
   get '/nine_holes', to: 'stats#nine_holes'
   get 'notes' => 'stats#notes', as: :notes

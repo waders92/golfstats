@@ -1,7 +1,7 @@
 <div class="col-xs-10 col-xs-offset-1 recap bottom">
   <h1 class="text-center"><%= @round.course %><br /></h1>
-  <h4 class="text-center comment_handle"><%= @round.user.name %> | <%= @round.created_at.strftime("%m-%d-%Y") %><br /><br />
-    <%= link_to 'Edit Round', edit_round_path(@round), class: 'btn btn-primary' %>&nbsp;&nbsp;<%= link_to 'Delete Round', round_path(@round), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure you want to delete this?'} %>
+  <h4 class="text-center linkavg comment_handle"><%= @round.user.name %> | <%= @round.created_at.strftime("%m-%d-%Y") %><br /><br />
+    <%= link_to 'Edit Round', edit_round_path(@round), class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Delete Round', round_path(@round), class: 'btn btn-default', method: :delete, data: {confirm: 'Are you sure you want to delete this?'} %>
   </h4>
     <br /><br /><br />
 
@@ -46,7 +46,7 @@
     <br />
     <%= f.input :message, label: 'Leave a description of your round!   Example: I was pulling the ball so I adjusted my grip. OR I started lining up my putts like (this) and I started to putt better....  The more notes you leave, we can start to track similarities in your rounds which will help to narrow what you need to work on.' %>
     <br />
-    <%= f.submit 'Add Round Notes', class: 'btn-primary' %>
+    <%= f.submit 'Add Round Notes', class: 'btn-default' %>
     <% end %>
     <br />
 </div>

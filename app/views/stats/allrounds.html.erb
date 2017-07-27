@@ -1,47 +1,33 @@
-<div class="container">
-  <h1 class="text-center top">18 Hole Scores</h1>
-  <p class="text-center">
-    (click box view round stats)
-  </p>
+<br />
+<h2 class="text-center">Scoring - 18 Holes</h2>
+<br />
+<% @rounds.each do |round| %>
+<div class="thumbnail col-xs-4 top-score2">
   <div class="text-center">
-    <%= will_paginate @rounds, previous_label: h("<"), next_label: h(">") %>
+    <% if round.user.picture.present? %>
+    <%= image_tag round.user.picture %><br /><%= round.user.name %> | <%= round.created_at.strftime("%b %-d, %Y") %>
+    <% else %>
+    <%= image_tag 'add-user.png' %><br /><%= round.user.name %> | <%= round.created_at.strftime("%b %-d, %Y") %>
+    <% end %>
   </div>
-  <% @rounds.each do |round| %>
-  <% if round.public == true %>
-  <div class="card col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3">
-    <div class="front each-round-front text-center">
-      <div class="col-xs-6 top-score2 info">
-        <% if round.user.picture.present? %>
-        <%= image_tag round.user.picture %><br /><%= round.user.name %><br /><%= round.created_at.strftime("%b %-d, %Y") %>
-        <% else %>
-        <%= image_tag 'add-user.png' %><br /><%= round.user.name %><br /><%= round.created_at.strftime("%b %-d, %Y") %>
-        <% end %>
-      </div>
-      <div class="col-xs-6 round-score">
-        <p class="big-score"><%= round.score %></p>
-        <p class="info"><%= round.course %></p>
-      </div>
-    </div>
-    <div class="back each-round-back justify">
-      <div class="col-xs-6 top-score">
-        <h1 class="text-center">Round<br />Stats</h1>
-      </div>
-      <div class="col-xs-6">
-        <br />
+  <hr class="divide" />
+  <br />
+  <div class="big-score-thumbnail text-center">
+    <%= round.score %>
+  </div>
+  <div class="score-info">
+    <p class="info">
+      Fwys Hit - <%= round.fwys %>/<%= round.fwystotal %><br />
+      Greens Hit-&nbsp;&nbsp;&nbsp;<%= round.greens %>/18<br />
+      Putts - <%= round.putts %><br />
+      Birdies - <%= round.birdies %><br />
+      Pars - <%= round.pars %>
+      <hr class="hr-divide"/>
+      <div class="text-center course-name">
         <p class="info">
-          Fwy's Hit-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.fwys %>/<%= round.fwystotal %><br />
-          Greens Hit-&nbsp;&nbsp;&nbsp;<%= round.greens %>/18<br />
-          Putts-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.putts %><br />
-          Birdies-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.birdies %><br />
-          Pars-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= round.pars %>
+          <%= round.course.upcase %>
         </p>
       </div>
-    </div>
   </div>
-  <% end %>
-  <% end %>
-  <br class="clr" />
-  <div class="text-center">
-    <%= will_paginate @rounds, previous_label: h("<"), next_label: h(">") %>
-  </div>
-  <div class="end"></div>
+</div>
+<% end %>

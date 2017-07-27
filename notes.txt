@@ -1,24 +1,153 @@
 TO DO-
 
 Form for scores
-List out scores - dashboard show.html.erb / nine_holes.html.erb
 Rename Clubhouse > 18 Hole Rounds > 9 Hole Rounds
 Round notes highlight, not list out in red
-Landing page refresh
 Combine stats and tips info with your averages to make it easier to see what you need to work on.
 Click on a course name and it shows you how you perform at that course.
 WITB section
+Footer?
 Highlights current user in the rankings section to easily see where you rank.
 Leaderboard needs to be on every page
-click on course form scoring area pulls up info about that course
+click on course form scoring area pulls up info about that course on google
 show under par rounds in RED
+Hide stat divs and ask what score they are trying to shoot and then display that div while others are hidden.
 
 NOT SURE -
 
 allrounds.html and allnineholes.html refresh (boxes with jQuery) - kind of like the display, maybe fix colors?
 
-____________________________________________________________
+
+
+FINISHED -
+
+DONE- Landing page refresh
+DONE- List out scores - dashboard show.html.erb / nine_holes.html.erb
+
+
+
+___________________________________________________________
 
                 working code dump area
 
 ____________________________________________________________
+
+Averages from user dashboard -
+
+<div class="container">
+  <hr />
+  <div class="top col-xs-5 col-xs-offset-1">
+    <p class="info text-center">
+      Stat Averages
+    </p>
+    <div class="each-average text-center">
+        <p class="info">Scoring Average</p>
+        <p class=" big-score"><%= current_user.scoring_average_rounded %></p>
+    </div>
+    <div class="each-average text-center">
+        <p class="info">Greens Hit Average</p>
+        <p class=" big-score"><%= current_user.greens_hit_average_rounded %></p>
+    </div>
+    <div class="each-average text-center">
+        <p class="info">Fwy's Hit Average</p>
+        <p class=" big-score"><%= current_user.fwys_hit_average_rounded %></p>
+    </div>
+    <div class="each-average text-center">
+        <p class="info">Putting Average</p>
+        <p class=" big-score"><%= current_user.putting_average_rounded %></p>
+    </div>
+    <div class="each-average text-center">
+        <p class="info">Birdie Average</p>
+        <p class=" big-score"><%= current_user.birdie_average_rounded %></p>
+    </div>
+    <div class="each-average text-center">
+        <p class="info">Par Average</p>
+        <p class=" big-score"><%= current_user.par_average_rounded %></p>
+    </div>
+  </div>
+  <div class="col-xs-5 top">
+    <p class="info text-center">
+      Personal Bests
+    </p>
+    <div class="each-best text-center">
+        <p class="info">Low Score</p>
+        <p class=" big-score"><%= current_user.users_best_score %></p>
+    </div>
+    <div class="each-best text-center">
+        <p class="info">Most Green's Hit</p>
+        <p class=" big-score"><%= current_user.users_best_greens %></p>
+    </div>
+    <div class="each-best text-center">
+        <p class="info">Most Fairway's Hit</p>
+        <p class=" big-score"><%= current_user.users_best_fairways %></p>
+    </div>
+    <div class="each-best text-center">
+        <p class="info">Least Putts</p>
+        <p class=" big-score"><%= current_user.users_best_putting_round %></p>
+    </div>
+    <div class="each-best text-center">
+        <p class="info">Most Birdies</p>
+        <p class=" big-score"><%= current_user.users_best_birdie_total %></p>
+    </div>
+    <div class="each-best text-center">
+        <p class="info">Most Pars</p>
+        <p class=" big-score"><%= current_user.users_best_par_total %></p>
+    </div>
+  </div>
+
+
+
+
+Leaderboard -
+<div class="leaders">
+  <br />
+  <p class="text-center tleader">Current Stat Leaders</p>
+  <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
+    <div class="carousel-inner">
+      <div class="item active text-center">
+        <p>
+          <% user, rank = best_scoring_rank_with_index %>
+          <b>Scoring Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_greens_rank_with_index %>
+          <b>Greens In Regulation -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_faiwrways_rank_with_index %>
+          <b>Fairways Hit -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_putting_rank_with_index %>
+          <b>Putting Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_birdies_rank_with_index %>
+          <b>Birdie Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_pars_rank_with_index %>
+          <b>Par Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+_____________________

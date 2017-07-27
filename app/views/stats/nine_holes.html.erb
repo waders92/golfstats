@@ -1,7 +1,7 @@
 <br /><br />
   <div class="container">
     <%= link_to edit_user_registration_path do %>
-    <div class="col-xs-6 col-xs-offset-3 box">
+    <div class="col-xs-6 col-xs-offset-3 box text-center">
       <br />
         <% if current_user.picture.present? %>
       <div class="user-photo">
@@ -14,92 +14,20 @@
       <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
     </div>
     <% end %>
-    <%= link_to new_nineholeround_path do %>
-    <div class="col-xs-6 col-xs-offset-3 new-round">
-      <br />
-      <p class="links text-center">
-        Post A New 9 Hole Score!
-      </p>
-    </div>
-    <% end %>
   </div>
 
   <br class="clr" />
-  <% if current_user.nineholerounds.present? %>
-  <div class="container">
-    <hr />
-    <div class="top col-xs-5 col-xs-offset-1">
-      <p class="info text-center">
-        Stat Averages For 9 Holes Only
-      </p>
-      <div class="each-average text-center">
-          <p class="info">Scoring Average</p>
-          <p class=" big-score"><%= current_user.scoring_average_nine_holes_rounded %></p>
-      </div>
-      <div class="each-average text-center">
-          <p class="info">Greens Hit Average</p>
-          <p class=" big-score"><%= current_user.greens_hit_average_nine_holes_rounded %></p>
-      </div>
-      <div class="each-average text-center">
-          <p class="info">Fwy's Hit Average</p>
-          <p class=" big-score"><%= current_user.fwys_hit_average_nine_holes_rounded %></p>
-      </div>
-      <div class="each-average text-center">
-          <p class="info">Putting Average</p>
-          <p class=" big-score"><%= current_user.putting_average_nine_holes_rounded %></p>
-      </div>
-      <div class="each-average text-center">
-          <p class="info">Birdie Average</p>
-          <p class=" big-score"><%= current_user.birdie_average_nine_holes_rounded %></p>
-      </div>
-      <div class="each-average text-center">
-          <p class="info">Par Average</p>
-          <p class=" big-score"><%= current_user.par_average_nine_holes_rounded %></p>
-      </div>
-    </div>
-    <div class="col-xs-5 top">
-      <p class="info text-center">
-        Personal Best For 9 Holes Only
-      </p>
-      <div class="each-best text-center">
-          <p class="info">Low Score</p>
-          <p class=" big-score"><%= current_user.users_best_score_nine_holes %></p>
-      </div>
-      <div class="each-best text-center">
-          <p class="info">Most Green's Hit</p>
-          <p class=" big-score"><%= current_user.users_best_greens_nine_holes %></p>
-      </div>
-      <div class="each-best text-center">
-          <p class="info">Most Fairway's Hit</p>
-          <p class=" big-score"><%= current_user.users_best_fairways_nine_holes %></p>
-      </div>
-      <div class="each-best text-center">
-          <p class="info">Least Putts</p>
-          <p class=" big-score"><%= current_user.users_best_putting_round_nine_holes %></p>
-      </div>
-      <div class="each-best text-center">
-          <p class="info">Most Birdies</p>
-          <p class=" big-score"><%= current_user.users_best_birdie_total_nine_holes %></p>
-      </div>
-      <div class="each-best text-center">
-          <p class="info">Most Pars</p>
-          <p class=" big-score"><%= current_user.users_best_par_total_nine_holes %></p>
-      </div>
-    </div>
-    <%= link_to new_nineholeround_path do %>
-    <div class="col-xs-6 col-xs-offset-3 new-round">
-      <br />
-      <p class="links text-center">
-        Post A New 9 Hole Score!
-      </p>
-    </div>
-    <% end %>
+  <% if current_user.rounds.present? %>
+  <div class="linkavg text-center">
+    <%= link_to 'Post 9 Hole Score', new_round_path, class: 'btn btn-default' %>
+  </div>
+
+
   </div>
   <br class="clr" />
-  <% end %>
-  <% @monthly_nineholerounds.each do |month, nineholeround| %>
- <h1 class="text-center"><%= month %></h1>
-   <div>
+  <% @monthly_nineholerounds.each do |month, round| %>
+ <h2 class="text-center"><%= month %></h2>
+   <div id="redirect">
      <table class="col-xs-10 col-xs-offset-1 table2">
        <tr class="table-title">
          <th>Date</th>
@@ -112,21 +40,27 @@
          <th>Pars</th>
        </tr>
        <tr class="text-center">
-         <% nineholeround.each do |nineholeround| %>
-         <td class="text-center"><%= nineholeround.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("trash.png", class: 'trash'), nineholeround_path(nineholeround), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %></td>
-         <td class="text-center"><%= nineholeround.course %>&nbsp;&nbsp;&nbsp;<%=link_to(image_tag("mag.png", class: 'pencil'), nineholeround_path(nineholeround)) %></td>
-         <% if nineholeround.public == true %>
-         <td class="text-center"><%= nineholeround.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_nineholeround_path(nineholeround), class: 'pencil') %></td>
+         <% round.each do |round| %>
+         <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("mag.png", class: 'pencil'), nineholeround_path(round)) %></td>
+         <td class="text-center"><%= round.course %></td>
+         <% if round.public == true %>
+         <td class="text-center"><%= round.score %></td>
          <% else %>
-         <td class="text-center private"><%= nineholeround.score %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("edit.png", class: 'pencil'), edit_nineholeround_path(nineholeround), class: 'pencil') %></td>
+         <td class="text-center private"><%= round.score %></td>
          <% end %>
-         <td class="text-center"><%= nineholeround.greenshit %> / 9</td>
-         <td class="text-center"><%= nineholeround.fwys %> / <%= nineholeround.fwystotal %></td>
-         <td class="text-center"><%= nineholeround.putts %></td>
-         <td class="text-center"><%= nineholeround.birdies %></td>
-         <td class="text-center"><%= nineholeround.pars %></td>
+         <td class="text-center"><%= round.greenshit %></td>
+         <td class="text-center"><%= round.fwys %></td>
+         <td class="text-center"><%= round.putts %></td>
+         <td class="text-center"><%= round.birdies %></td>
+         <td class="text-center"><%= round.pars %></td>
        </tr>
    <% end %>
    </table>
    <br class="clr" />
+   <% end %>
+
+  <% else %>
+    <div class="col-xs-6 col-xs-offset-3 text-center fitz">
+      <h2>You need to enter a round to see your stats!</h2>
+    </div>
   <% end %>

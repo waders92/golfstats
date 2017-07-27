@@ -1,48 +1,34 @@
-<div class="container">
-  <h1 class="text-center top">9 Hole Scores</h1>
-  <p class="text-center">
-    (click box view round stats)
-  </p>
-  <div class="text-center">
-    <%= will_paginate @nineholerounds, previous_label: h("<"), next_label: h(">") %>
-  </div>
-  <% @nineholerounds.each do |nineholeround| %>
-  <% if nineholeround.public == true %>
-  <div class="card col-xs-6 col-xs-offset-3">
-    <div class="front each-round-front text-center">
-      <div class="col-xs-6 top-score2 info">
-        <% if nineholeround.user.picture.present? %>
-        <%= image_tag nineholeround.user.picture %><br /><%= nineholeround.user.name %><br /><%= nineholeround.created_at.strftime("%b %-d, %Y") %>
-        <% else %>
-        <%= image_tag 'add-user.png' %><br /><%= nineholeround.user.name %><br /><%= nineholeround.created_at.strftime("%b %-d, %Y") %>
-        <% end %>
-      </div>
-      <div class="col-xs-6 round-score">
-        <p class="big-score"><%= nineholeround.score %></p>
-        <p class="info"><%= nineholeround.course %></p>
-      </div>
+<br />
+<h2 class="text-center">Scoring - 9 Holes</h2>
+<br />
+<% @nineholerounds.each do |nineholeround| %>
+<div class="thumbnail col-xs-4 top-score2">
+    <div class="text-center">
+      <% if nineholeround.user.picture.present? %>
+    <%= image_tag nineholeround.user.picture %><br /><%= nineholeround.user.name %> | <%= nineholeround.created_at.strftime("%b %-d, %Y") %>
+    <% else %>
+    <%= image_tag 'add-user.png' %><br /><%= nineholeround.user.name %><br /><%= nineholeround.created_at.strftime("%b %-d, %Y") %>
+    <% end %>
     </div>
-    <div class="back each-round-back justify">
-      <div class="col-xs-6 top-score">
-        <h1 class="text-center">Round<br />Stats</h1>
-      </div>
-      <div class="col-xs-6">
-        <br />
-        <p class="info">
-          Fwy's Hit-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= nineholeround.fwys %>/<%= nineholeround.fwystotal %><br />
-          Greens Hit-&nbsp;&nbsp;&nbsp;<%= nineholeround.greenshit %>/9<br />
-          Putts-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= nineholeround.putts %><br />
-          Birdies-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= nineholeround.birdies %><br />
-          Pars-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= nineholeround.pars %>
-        </p>
-      </div>
+  <hr class="divide" />
+  <br />
+  <div class="big-score-thumbnail text-center">
+    <%= nineholeround.score %>
+  </div>
+  <div class="score-info">
+    <p class="info">
+      Fwys Hit - <%= nineholeround.fwys %>/<%= nineholeround.fwystotal %><br />
+      Greens Hit-&nbsp;&nbsp;&nbsp;<%= nineholeround.greenshit %>/9<br />
+      Putts - <%= nineholeround.putts %><br />
+      Birdies - <%= nineholeround.birdies %><br />
+      Pars - <%= nineholeround.pars %>
+    </p>
+    <hr class="hr-divide"/>
+    <div class="text-center course-name">
+      <p class="info">
+        <%= nineholeround.course.upcase %>
+      </p>
     </div>
   </div>
-  <% end %>
-  <% end %>
-  <br class="clr" />
-  <div class="text-center">
-    <%= will_paginate @nineholerounds, previous_label: h("<"), next_label: h(">") %>
-  </div>
-  <div class="end"></div>
 </div>
+<% end %>
