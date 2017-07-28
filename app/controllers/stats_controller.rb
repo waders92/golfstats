@@ -33,6 +33,12 @@ class StatsController < ApplicationController
     member_required
   end
 
+  def about
+  end
+
+  def help
+  end
+
   def members
     admin_user
     @user = User.all

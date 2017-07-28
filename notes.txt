@@ -4,7 +4,6 @@ Form for scores
 Rename Clubhouse > 18 Hole Rounds > 9 Hole Rounds
 Update new lesson page with information and formatting.
 Round count to show how any rounds played by user in dash and 18/9 hole showing.
-Modal for clicking on the score that you want to break - pops up stas comparison.
 Round notes highlight in yellow the duplicates - ignore common words, not list out in red
 Combine stats and tips info with your averages to make it easier to see what you need to work on.
 Click on a users picture from the all rounds pagae and it pulls up a page that lists all of the users rounds.
@@ -21,6 +20,8 @@ NOT SURE -
 
 FINISHED -
 
+DONE- Modal for clicking on the score that you want to break - pops up stats comparison.
+DONE- About Page
 DONE- Landing page refresh
 DONE- List out scores - dashboard show.html.erb / nine_holes.html.erb
 
@@ -151,3 +152,116 @@ Leaderboard -
 </div>
 
 _____________________
+
+
+Averages from the Stats and Average Page
+
+<br />
+<div class="container">
+  <h2>Averages, Stats and ---> Your Stats</h2>
+  <div class="col-xs-4">
+    <h3 class="text-center big-score2">70</h3>
+    <ul class="info">
+      <li>12 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
+      <li>11 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
+      <li>29  Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
+      <li>3.2 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
+      <li>11.8 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
+    </ul>
+  </div>
+  <div class="col-xs-4">
+    <h3 class="text-center big-score2">75</h3>
+    <ul class="info">
+      <li>10 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
+      <li>10 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
+      <li>30 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
+      <li>2.4 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
+      <li>10.3 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
+    </ul>
+  </div>
+  <div class="col-xs-4">
+    <h3 class="text-center big-score2">80</h3>
+    <ul class="info">
+      <li>8 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
+      <li>8 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
+      <li>32 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
+      <li>1.8 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
+      <li>8.5 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
+    </ul>
+  </div>
+  <br class="clr" />
+  <div class="col-xs-4 bottom">
+    <h3 class="text-center big-score2">85</h3>
+    <ul class="info">
+      <li>5 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
+      <li>6 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
+      <li>33.7 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
+      <li>0.8 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
+      <li>6.6 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
+    </ul>
+  </div>
+  <div class="col-xs-4 bottom">
+    <h3 class="text-center big-score2">90</h3>
+    <ul class="info">
+      <li>3 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
+      <li>5 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
+      <li>35 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
+      <li>0.1 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
+      <li>4.8 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
+    </ul>
+  </div>
+  <div class="col-xs-4 bottom">
+    <h3 class="text-center big-score2">100</h3>
+    <ul class="info">
+      <li>0 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
+      <li>2 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
+      <li>38.3 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
+      <li>0 Birdies<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
+      <li>1.3 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
+    </ul>
+  </div>
+</div>
+<hr class="hr" />
+<br class="clr" />
+<div>
+  <div class="col-xs-6 bottom what">
+    <h2 class="text-center">What length course should I play?</h2>
+    <br />
+    <p class="info2">
+      Most golfers play a course that is too long for them. Use the calculator to determine what length course you should be playing.
+      You typically hit 14 drives per round and you will have 18 approach shots with an iron.
+      If you are hitting a wood or long iron into every par 4, it's time to re-assess what tees you play.
+    </p>
+    <br />
+    <h3>(Avg Drive * 14) + (Avg 7i * 18) = Recommended Course Yardage</h3>
+    <p>* from Golf Channel Morning Drive and multiple online resources.
+    </p>
+    <br />
+  </div>
+  <div>
+    <div class="col-xs-6 text-center bottom">
+      <form id="courseYardage" action="" class="info">
+      <fieldset>
+        <legend>Course Yardage Calculator</legend>
+        <p>
+          <label for="length">Avg Driver Distance (yds)</label>
+          <input id="length" name="length" type="number" />
+        </p>
+        <p>
+          <label for="iron">Avg 7 Iron Distance (yds)</label>
+          <input id="iron" name="iron" type="number" />
+        </p>
+        <p>
+          <input type="submit" value="Calculate yardage" />
+          or
+          <input type="reset" value="Reset" />
+        </p>
+        <p>
+          <label for="distance">Your Ideal Course Yardage (yds)</label>
+          <input id="distance" name="distance" type="number" />
+        </p>
+      </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

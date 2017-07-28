@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'stats#index'
   get '/averages', to: 'stats#averages'
+  get '/about', to: 'stats#about'
+  get '/help', to: 'stats#help'
   get '/lessons', to: 'stats#lessons'
   get '/rankings', to: 'stats#rankings'
   get '/admin', to: 'stats#admin'
