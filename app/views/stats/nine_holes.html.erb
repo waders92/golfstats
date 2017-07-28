@@ -17,12 +17,9 @@
   </div>
 
   <br class="clr" />
-  <% if current_user.rounds.present? %>
+  <% if current_user.nineholerounds.present? %>
   <div class="linkavg text-center">
-    <%= link_to 'Post 9 Hole Score', new_round_path, class: 'btn btn-default' %>
-  </div>
-
-
+    <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
   </div>
   <br class="clr" />
   <% @monthly_nineholerounds.each do |month, round| %>

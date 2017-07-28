@@ -1,45 +1,18 @@
 <br />
-<div class="col-xs-6 col-xs-offset-3 fitz">
-  <h3>Edit your round</h3>
-  <%= simple_form_for @nineholeround do |f| %>
-  <div class="big-box col-xs-4">
-    <%= f.input :course, required: true, label: 'Course Name?', placeholder: 'Holston Hills CC' %>
+  <div class="thumbnail col-xs-6 col-xs-offset-3 bottom">
+    <h3 class="text-center">Post 9 Hole Score</h3>
+    <%= simple_form_for @nineholeround do |f| %>
+    <%= f.error_notification %>
+        <%= f.input :course, required: true, placeholder: 'Course Name' %>
+        <%= f.input :score, required: true, placeholder: 'What did you shoot?' %>
+        <%= f.input :greenshit, required: true, placeholder: 'Total greens hit?' %>
+        <%= f.input :fwys, required: true, placeholder: 'Fairways hit today?' %>
+        <%= f.input :fwystotal, required: true, placeholder: 'Total fairways possible?' %>
+        <%= f.input :putts, required: true, placeholder: 'Total number of putts?' %>
+        <%= f.input :birdies, required: true, placeholder: 'How many birdies did you make?' %>
+        <%= f.input :pars, required: true, placeholder: 'How many pars did you make?' %>
+        <p class="info">Would you like this round public?&nbsp;&nbsp;<%= f.check_box :public %></p>
+      <br />
+      <%= f.submit 'Update', class: 'btn btn-primary' %>
   </div>
-  <div class="col-xs-1"></div>
-  <div class="big-box col-xs-4">
-    <%= f.input :score, required: true, label: 'What score did you shoot?', placeholder: '38' %>
-  </div>
-  <br class="clr" />
-  <div class="big-box col-xs-4">
-    <%= f.input :greenshit, required: true, label: 'Greens hit this round?', placeholder: '4' %>
-  </div>
-  <div class="col-xs-1"></div>
-  <div class="big-box col-xs-4">
-    <%= f.input :fwys, required: true, placeholder: '3', label: 'Fairways hit today?' %>
-  </div>
-  <br class="clr" />
-  <div class="big-box col-xs-4">
-    <%= f.input :fwystotal, required: true, label: 'Total fairways possible?', placeholder: '7' %>
-  </div>
-  <div class="col-xs-1"></div>
-  <div class="big-box col-xs-4">
-    <%= f.input :putts, required: true, label: 'Putts Total', placeholder: '18' %>
-  </div>
-  <br class="clr" />
-  <div class="big-box col-xs-4">
-    <%= f.input :birdies, required: true, label: 'How many birdies?', placeholder: '2' %>
-  </div>
-  <div class="col-xs-1"></div>
-  <div class="big-box col-xs-4">
-    <%= f.input :pars, required: true, label: 'How many pars?', placeholder: '5' %>
-  </div>
-  <br class="clr" />
-  <div class="big-box col-xs-6">
-    <p class="info">Would you like this round public?&nbsp;&nbsp;<%= f.check_box :public %></p>
-  </div>
-  <br class="clr" />
-  <br />
-  <%= f.submit 'Update', class: 'btn btn-success' %>
-  <% end %>
-  <br />
-</div>
+<% end %>
