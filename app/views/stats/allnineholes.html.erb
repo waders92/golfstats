@@ -7,7 +7,7 @@
       <% if nineholeround.user.picture.present? %>
     <%= image_tag nineholeround.user.picture %><br /><%= nineholeround.user.name %> | <%= nineholeround.created_at.strftime("%b %-d, %Y") %>
     <% else %>
-    <%= image_tag 'add-user.png' %><br /><%= nineholeround.user.name %><br /><%= nineholeround.created_at.strftime("%b %-d, %Y") %>
+    <%= image_tag 'add-user.png' %><br /><%= nineholeround.user.name %> | <%= nineholeround.created_at.strftime("%b %-d, %Y") %>
     <% end %>
     </div>
   <hr class="divide" />
