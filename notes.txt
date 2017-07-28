@@ -7,21 +7,17 @@ Round count to show how any rounds played by user in dash and 18/9 hole showing.
 Modal for clicking on the score that you want to break - pops up stas comparison.
 Round notes highlight in yellow the duplicates - ignore common words, not list out in red
 Combine stats and tips info with your averages to make it easier to see what you need to work on.
-Click on a course name and it shows you how you perform at that course.
+Click on a users picture from the all rounds pagae and it pulls up a page that lists all of the users rounds.
 WITB section
 Have user landing page be profile and not scores listed out - make that another link.
 Footer?
 Highlights current user in the rankings section to easily see where you rank.
 Leaderboard needs to be on every page
-click on course form scoring area pulls up info about that course on google
-show under par rounds in RED
+Click on course form scoring area pulls up info about that course on google
+Show under par rounds in RED
 Hide stat divs and ask what score they are trying to shoot and then display that div while others are hidden.
 
 NOT SURE -
-
-allrounds.html and allnineholes.html refresh (boxes with jQuery) - kind of like the display, maybe fix colors?
-
-
 
 FINISHED -
 
