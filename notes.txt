@@ -1,6 +1,7 @@
 TO DO-
 
 Form for scores
+Update Averages page
 Rename Clubhouse > 18 Hole Rounds > 9 Hole Rounds
 Update new lesson page with information and formatting.
 Round count to show how any rounds played by user in dash and 18/9 hole showing.
