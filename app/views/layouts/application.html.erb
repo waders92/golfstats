@@ -43,8 +43,9 @@
           <li><%= link_to 'My 18 Hole Rounds', dashboard_path %></li>
           <li><%= link_to 'My 9 Hole Rounds', nine_holes_path %></li>
           <li><%= link_to 'My Averages', averages_path %></li>
-
           <li><%= link_to 'Round Notes', notes_path %></li>
+          <li><%= link_to 'Take a Lesson', new_charge_path %></li>
+          <li><%= link_to 'Archived Lessons', lessons_path %></li>
           <!-- <li><%= link_to 'Video Lessons', new_charge_path %></li> -->
           <% if user_signed_in? && current_user.admin? %>
           <li role="separator" class="divider"></li>
