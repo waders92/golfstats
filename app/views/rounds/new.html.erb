@@ -1,44 +1,18 @@
 <br />
-  <div class="col-xs-6 col-xs-offset-3 fitz">
-    <h3>Recap Your 18 Hole Round</h3>
+  <div class="col-xs-6 col-xs-offset-3 bottom">
+    <h3>Post 18 Hole Round</h3>
     <%= simple_form_for Round.new do |f| %>
     <%= f.error_notification %>
-      <div class="big-box col-xs-4">
         <%= f.input :course, required: true, label: 'Course Name?', placeholder: 'Holston Hills CC' %>
-      </div>
-      <div class="col-xs-1"></div>
-      <div class="big-box col-xs-4">
+
         <%= f.input :score, required: true, label: 'What score did you shoot?', placeholder: '75' %>
-      </div>
-      <br class="clr" />
-      <div class="big-box col-xs-4">
         <%= f.input :greens, required: true, label: 'Greens hit this round?', placeholder: '8' %>
-      </div>
-      <div class="col-xs-1"></div>
-      <div class="big-box col-xs-4">
         <%= f.input :fwys, required: true, placeholder: '7', label: 'Fairways hit today?' %>
-      </div>
-      <br class="clr" />
-      <div class="big-box col-xs-4">
         <%= f.input :fwystotal, required: true, label: 'Total fairways possible?', placeholder: '14' %>
-      </div>
-      <div class="col-xs-1"></div>
-      <div class="big-box col-xs-4">
         <%= f.input :putts, required: true, label: 'Putts Total', placeholder: '31' %>
-      </div>
-      <br class="clr" />
-      <div class="big-box col-xs-4">
         <%= f.input :birdies, required: true, label: 'How many birdies?', placeholder: '3' %>
-      </div>
-      <div class="col-xs-1"></div>
-      <div class="big-box col-xs-4">
         <%= f.input :pars, required: true, label: 'How many pars?', placeholder: '10' %>
-      </div>
-      <br class="clr" />
-      <div class="big-box col-xs-6">
         <p class="info">Would you like this round public?&nbsp;&nbsp;<%= f.check_box :public %></p>
-      </div>
-      <br class="clr" />
       <br />
       <%= f.submit 'Create', class: 'btn btn-primary' %>
   </div>

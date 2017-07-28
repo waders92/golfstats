@@ -19,7 +19,9 @@
   <br class="clr" />
   <% if current_user.rounds.present? %>
   <div class="linkavg text-center">
-    <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#post18">
+      Post 18 Hole Score
+    </button>
   </div>
 
 
@@ -62,5 +64,31 @@
   <% else %>
     <div class="col-xs-6 col-xs-offset-3 text-center fitz">
       <h2>You need to enter a round to see your stats!</h2>
+      <div class="linkavg text-center">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#post18">
+          Post 18 Hole Score
+        </button>
+      </div>
     </div>
   <% end %>
+
+
+  <div class="modal fade" id="post18" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

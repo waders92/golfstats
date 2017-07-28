@@ -2,6 +2,7 @@
 <div class="container">
   <h2>Your Path To Improvement</h2>
   <br />
+  <% if current_user.rounds.present? %>
   <div class="col-xs-8">
     <p class="info">
       When you are trying to reach a scoring goal, it is important to know your stats and the stats for that next level
@@ -9,7 +10,8 @@
       of your game need attention.
     </p>
     <p class="info">
-      What score are you trying to shoot? Your current scoring average is <%= current_user.scoring_average_rounded %>.
+      What score are you trying to shoot?
+      Your current scoring average is <%= current_user.scoring_average_rounded %>.
     </p>
     <br />
     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#break100">
@@ -201,3 +203,14 @@
     </div>
   </div>
 </div>
+<% else %>
+
+<br />
+<div class="linkavg text-center">
+  <p class="info">
+    You need to post a score to see what you have to work on!
+  </p><br />
+  <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
+  <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
+</div>
+<% end %>

@@ -1,15 +1,8 @@
 class StatsController < ApplicationController
+  before_action :authenticate_user!, only: %i(lessons help averages notes)
 
   def index
     @rounds = Round.limit(15).order('created_at DESC')
-  end
-
-  def lessons
-    member_required
-  end
-
-  def averages
-    member_required
   end
 
   def allrounds
@@ -29,15 +22,13 @@ class StatsController < ApplicationController
     @lessons = Lesson.all
   end
 
-  def badges
-    member_required
-  end
-
-  def about
-  end
-
   def help
+    @round = Round.all
   end
+
+  def about; end
+  def lessons;end
+  def averages;end
 
   def members
     admin_user

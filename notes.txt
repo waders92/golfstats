@@ -21,6 +21,7 @@ NOT SURE -
 
 FINISHED -
 
+DONE- Issues with not having scores for modal and current user
 DONE- Modal for clicking on the score that you want to break - pops up stats comparison.
 DONE- About Page
 DONE- Landing page refresh
