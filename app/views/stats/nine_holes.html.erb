@@ -1,24 +1,9 @@
 <br /><br />
-  <div class="container">
-    <%= link_to edit_user_registration_path do %>
-    <div class="col-xs-6 col-xs-offset-3 box text-center">
-      <br />
-        <% if current_user.picture.present? %>
-      <div class="user-photo">
-          <%= image_tag current_user.picture %>
-      </div>
-      <% else %>
-      <%= image_tag 'add-user.png', class: 'user' %>
-      <% end %>
-      <h1><%= current_user.name %></h1>
-      <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
-    </div>
-    <% end %>
-  </div>
-
+<div class="container">
+  <h2>9 Hole History</h2>
   <br class="clr" />
   <% if current_user.nineholerounds.present? %>
-  <div class="linkavg text-center">
+  <div class="linkavg">
     <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
   </div>
   <br class="clr" />
@@ -64,3 +49,4 @@
       </div>
     </div>
   <% end %>
+</div>

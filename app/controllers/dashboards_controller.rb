@@ -2,6 +2,6 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @monthly_rounds = current_user.rounds.order('created_at DESC').group_by(&:month)
+    @round = Round.all
   end
 end

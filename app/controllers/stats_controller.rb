@@ -1,5 +1,5 @@
 class StatsController < ApplicationController
-  before_action :authenticate_user!, only: %i(lessons help averages notes)
+  before_action :authenticate_user!, only: %i(lessons help notes nine_holes eighteen)
 
   def index
     @rounds = Round.limit(15).order('created_at DESC')
@@ -24,6 +24,11 @@ class StatsController < ApplicationController
 
   def help
     @round = Round.all
+  end
+
+  def eighteen
+    @round = Round.all
+    @monthly_rounds = current_user.rounds.order('created_at DESC').group_by(&:month)
   end
 
   def about; end

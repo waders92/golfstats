@@ -3,7 +3,7 @@
   <h2>Your Path To Improvement</h2>
   <br />
   <% if current_user.rounds.present? %>
-  <div class="col-xs-8">
+  <div class="col-xs-10">
     <p class="info">
       When you are trying to reach a scoring goal, it is important to know your stats and the stats for that next level
       that you are trying to achieve. By knowing your stats, it helps you to stay focused on what areas
@@ -14,24 +14,31 @@
       Your current scoring average is <%= current_user.scoring_average_rounded %>.
     </p>
     <br />
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#break100">
-      Break 100
-    </button>
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#break90">
-      Break 90
-    </button>
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#break85">
-      Break 85
-    </button>
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#break80">
-      Break 80
-    </button>
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#break75">
-      Break 75
-    </button>
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#break70">
-      Break 70
-    </button>
+    <div>
+      <div class="col-xs-4">
+        <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#break70">
+          Break 70
+        </button><br /><br />
+        <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#break75">
+          Break 75
+        </button><br /><br />
+        <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#break80">
+          Break 80
+        </button>
+      </div>
+      <div class="col-xs-2"></div>
+      <div class="col-xs-4">
+        <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#break85">
+          Break 85
+        </button><br /><br />
+        <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#break90">
+          Break 90
+        </button><br /><br />
+        <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#break100">
+          Break 100
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 

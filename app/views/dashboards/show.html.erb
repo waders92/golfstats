@@ -1,69 +1,19 @@
-<br /><br />
-  <div class="container">
-    <%= link_to edit_user_registration_path do %>
-    <div class="col-xs-6 col-xs-offset-3 box text-center">
-      <br />
-        <% if current_user.picture.present? %>
-      <div class="user-photo">
-          <%= image_tag current_user.picture %>
-      </div>
-      <% else %>
-      <%= image_tag 'add-user.png', class: 'user' %>
-      <% end %>
-      <h1><%= current_user.name %></h1>
-      <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
+<br />
+<div class="container">
+  <h2>Profile</h2>
+  <%= link_to edit_user_registration_path do %>
+  <div class="col-xs-4 box text-center">
+    <br />
+      <% if current_user.picture.present? %>
+    <div class="user-photo">
+        <%= image_tag current_user.picture %>
     </div>
+    <% else %>
+    <%= image_tag 'add-user.png', class: 'user' %>
     <% end %>
+    <h1><%= current_user.name %></h1>
+    <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
   </div>
-
-  <br class="clr" />
-  <% if current_user.rounds.present? %>
-  <div class="linkavg text-center">
-    <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
-  </div>
-
-
-  </div>
-  <br class="clr" />
-  <% @monthly_rounds.each do |month, round| %>
- <h2 class="text-center"><%= month %></h2>
-   <div id="redirect">
-     <table class="col-xs-10 col-xs-offset-1 table2">
-       <tr class="table-title">
-         <th>Date</th>
-         <th>Course</th>
-         <th>Score</th>
-         <th>Greens</th>
-         <th>Fwys</th>
-         <th>Putts</th>
-         <th>Birdies</th>
-         <th>Pars</th>
-       </tr>
-       <tr class="text-center">
-         <% round.each do |round| %>
-         <td class="text-center"><%= round.created_at.strftime('%_m/%-d') %>&nbsp;&nbsp;&nbsp;<%= link_to(image_tag("mag.png", class: 'pencil'), round_path(round)) %></td>
-         <td class="text-center"><%= round.course %></td>
-         <% if round.public == true %>
-         <td class="text-center"><%= round.score %></td>
-         <% else %>
-         <td class="text-center private"><%= round.score %></td>
-         <% end %>
-         <td class="text-center"><%= round.greens %></td>
-         <td class="text-center"><%= round.fwys %></td>
-         <td class="text-center"><%= round.putts %></td>
-         <td class="text-center"><%= round.birdies %></td>
-         <td class="text-center"><%= round.pars %></td>
-       </tr>
-   <% end %>
-   </table>
-   <br class="clr" />
-   <% end %>
-
-  <% else %>
-    <div class="col-xs-6 col-xs-offset-3 text-center fitz">
-      <h2>You need to enter a round to see your stats!</h2>
-      <div class="linkavg text-center">
-        <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
-      </div>
-    </div>
   <% end %>
+  <br />
+</div>
