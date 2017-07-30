@@ -1,19 +1,16 @@
 class StatsController < ApplicationController
+  before_action :authenticate_user!, only: %i(lessons help notes nine_holes eighteen)
 
   def index
     @rounds = Round.limit(15).order('created_at DESC')
   end
 
-  def lessons
-    member_required
-  end
-
   def allrounds
-    @rounds = Round.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 15)
+    @rounds = Round.all.order('created_at DESC')
   end
 
   def allnineholes
-    @nineholerounds = Nineholeround.all.order('created_at DESC').all.paginate(page: params[:page], per_page: 15)
+    @nineholerounds = Nineholeround.all.order('created_at DESC')
   end
 
   def nine_holes
@@ -25,9 +22,18 @@ class StatsController < ApplicationController
     @lessons = Lesson.all
   end
 
-  def badges
-    member_required
+  def help
+    @round = Round.all
   end
+
+  def eighteen
+    @round = Round.all
+    @monthly_rounds = current_user.rounds.order('created_at DESC').group_by(&:month)
+  end
+
+  def about; end
+  def lessons;end
+  def averages;end
 
   def members
     admin_user

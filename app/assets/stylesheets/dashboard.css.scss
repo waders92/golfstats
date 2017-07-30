@@ -10,19 +10,17 @@
 .tleader {
   font-size: 20px;
   font-family: 'Codystar', cursive;
-  color: white;
+  color: black;
 }
 
 .leaders {
-  background-color: #286B6B;
-  color: white;
-  padding-bottom: 25px;
-  border: 1px solid black;
+  background-color: white;
+  color: black;
 }
 
 .each-best {
   border: 1px solid black;
-  background-color: #3f8626;
+  background-color: #235653;
   color: white;
   padding-top: 10px;
   margin: 10px;
@@ -30,18 +28,18 @@
 }
 
 .table2 {
-  background-color: #215755;
-  color: white;
+  background-color: white;
+  color: black;
   margin-bottom: 50px;
-  box-shadow: 1px 1px 2px 0 black;
 }
 
 .table2 tr:first-child{
-  background-color: #1C4D4B;
+  background-color: white;
 }
 
 tr:nth-child(even) {
-  background-color: #286B6B;
+  background-color: rgba(221, 221, 221, 0.77);
+  color: black;
 }
 
 .pencil, .trash {
@@ -49,13 +47,11 @@ tr:nth-child(even) {
 }
 
 .box {
-  border: 1px solid black;
-  background-color: #386B6B;
-  color: white;
+  color: black;
 }
 
 .box img {
-  border: 1px solid #A9B898;
+  border: 1px solid white;
 }
 
 img.editing {
@@ -65,7 +61,7 @@ img.editing {
 
 .new-round {
   margin-top: 50px;
-  background-color: #0071bc;
+  background-color: #a00000;
   height: 65px;
   margin-left: 25px;
   box-shadow: 1px 1px 2px 0 black;
@@ -78,7 +74,7 @@ img.editing {
 
 .recap {
   margin-top: 100px;
-  background-color: #286B6B;
+  background: url('/assets/grey_wash_wall.png');
   color: white;
 }
 

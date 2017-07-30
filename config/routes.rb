@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'stats#index'
-  get '/tips', to: 'stats#tips'
+  get '/about', to: 'stats#about'
+  get '/help', to: 'stats#help'
   get '/lessons', to: 'stats#lessons'
   get '/rankings', to: 'stats#rankings'
   get '/admin', to: 'stats#admin'
@@ -13,9 +14,9 @@ Rails.application.routes.draw do
   get '/paravg', to: 'stats#paravg'
   get '/allrounds', to: 'stats#allrounds'
   get '/allnineholes', to: 'stats#allnineholes'
-  get '/badges', to: 'stats#badges'
   get '/members', to: 'stats#members'
   get '/nine_holes', to: 'stats#nine_holes'
+  get '/eighteen', to: 'stats#eighteen'
   get 'notes' => 'stats#notes', as: :notes
   resources :rounds do
     resources :notes, except: :index

@@ -1,18 +1,23 @@
 th, td {
   padding: 10px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .table1 tr:first-child{
-  background-color: #1C4D4B;
+  background-color: white;
+  color: black;
+}
+
+.table1 tr:nth-child(even) {
+  background-color: rgba(221, 221, 221, 0.77);
+  color: black;
 }
 
 .table1 {
-  background-color: #215755;
-  color: white;
+  background-color: white;
+  color: black;
   margin-bottom: 50px;
   width: 100%;
-  box-shadow: 1px 1px 2px 0 black;
 }
 
 table, th, td {
@@ -26,9 +31,8 @@ table, th, td {
 
 .linkavg a {
   font-family: 'NTR', sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   color: black;
-  padding: 15px;
 }
 
 .linkavg a:visited {
@@ -37,7 +41,7 @@ table, th, td {
 
 .linkavg a:hover {
   text-decoration: none;
-  color: white;
+  color: #a00000;
 }
 
 .fitz {

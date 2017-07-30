@@ -1,0 +1,131 @@
+TO DO-
+
+Round notes highlight in yellow the duplicates - ignore common words, not list out in red
+Click on a users picture from the all rounds page and it pulls up a page that lists all of the users rounds.
+WITB section
+Footer?
+Highlights current user in the rankings section to easily see where you rank.
+Leaderboard needs to be on every page
+Click on course form scoring area pulls up info about that course on google
+Show under par rounds in RED
+
+NOT SURE -
+
+FINISHED -
+
+DONE- Update new lesson page with information and formatting.
+DONE- Have user landing page be profile and not scores listed out - make that another link.
+DONE- Round count to show how any rounds played by user in dash and 18/9 hole showing.
+DONE- Combine stats and tips info with your averages to make it easier to see what you need to work on.
+DONE- Form for scores
+DONE- Issues with not having scores for modal and current user
+DONE- Modal for clicking on the score that you want to break - pops up stats comparison.
+DONE- About Page
+DONE- Landing page refresh
+DONE- List out scores - dashboard show.html.erb / nine_holes.html.erb
+
+
+
+___________________________________________________________
+
+                working code dump area
+
+____________________________________________________________
+
+Leaderboard -
+<div class="leaders">
+  <br />
+  <p class="text-center tleader">Current Stat Leaders</p>
+  <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
+    <div class="carousel-inner">
+      <div class="item active text-center">
+        <p>
+          <% user, rank = best_scoring_rank_with_index %>
+          <b>Scoring Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_greens_rank_with_index %>
+          <b>Greens In Regulation -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_faiwrways_rank_with_index %>
+          <b>Fairways Hit -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_putting_rank_with_index %>
+          <b>Putting Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_birdies_rank_with_index %>
+          <b>Birdie Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+      <div class="item text-center">
+        <p>
+          <% user, rank = best_pars_rank_with_index %>
+          <b>Par Average -</b> <%= user.name %>
+          (<%= rank %>)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+_____________________
+
+
+
+<div>
+  <div class="col-xs-6 bottom what">
+    <h2 class="text-center">What length course should I play?</h2>
+    <br />
+    <p class="info2">
+      Most golfers play a course that is too long for them. Use the calculator to determine what length course you should be playing.
+      You typically hit 14 drives per round and you will have 18 approach shots with an iron.
+      If you are hitting a wood or long iron into every par 4, it's time to re-assess what tees you play.
+    </p>
+    <br />
+    <h3>(Avg Drive * 14) + (Avg 7i * 18) = Recommended Course Yardage</h3>
+    <p>* from Golf Channel Morning Drive and multiple online resources.
+    </p>
+    <br />
+  </div>
+  <div>
+    <div class="col-xs-6 text-center bottom">
+      <form id="courseYardage" action="" class="info">
+      <fieldset>
+        <legend>Course Yardage Calculator</legend>
+        <p>
+          <label for="length">Avg Driver Distance (yds)</label>
+          <input id="length" name="length" type="number" />
+        </p>
+        <p>
+          <label for="iron">Avg 7 Iron Distance (yds)</label>
+          <input id="iron" name="iron" type="number" />
+        </p>
+        <p>
+          <input type="submit" value="Calculate yardage" />
+          or
+          <input type="reset" value="Reset" />
+        </p>
+        <p>
+          <label for="distance">Your Ideal Course Yardage (yds)</label>
+          <input id="distance" name="distance" type="number" />
+        </p>
+      </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

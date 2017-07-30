@@ -1,5 +1,34 @@
 <br /><br />
-<div class="col-xs-6 col-xs-offset-3 text-center bottom big-box3">
+<div class="container">
+  <h2>Video Lessons</h2>
+  <div class="top bottom">
+    <div class="col-xs-3 bottom vids">
+      <%= image_tag 'swing2.PNG', class:'img-responsive' %>
+    </div>
+    <div class="col-xs-3 bottom vids">
+      <%= image_tag 'swing1.PNG', class:'img-responsive' %>
+    </div>
+    <div class="col-xs-3 bottom vids">
+      <%= image_tag 'swing4.PNG', class:'img-responsive' %>
+    </div>
+    <div class="col-xs-3 bottom vids">
+      <%= image_tag 'swing6.PNG', class:'img-responsive' %>
+    </div>
+  </div>
+</div>
+
+<br class="clr" />
+<div class="col-xs-10 col-xs-offset-1 lesson-instructions bottom">
+  <p class="info">
+    Stuck and not sure what to work on?  Submit a video for a lesson! Once you checkout, you will be able to fill out a form and upload
+    your video. Your lesson will be viewable under the "Clubhouse" tab with-in 24 hours.
+    Questions or Concerns? Send me an <a href="mailto:wade.carlson@pga.com">Email</a>.
+  </p>
+</div>
+<br />
+<br class="clr" />
+<hr class="hr" />
+<div class="col-xs-6 col-xs-offset-3 text-center big-box3">
   <h2>Video Lessons</h2>
   <%= form_tag charges_path do %>
   <article>
@@ -20,35 +49,6 @@
       <% end %>
       <br />
 </div>
-<br class="clr" />
-<div class="top bottom">
-  <div class="col-xs-3 bottom vids">
-    <%= image_tag 'swing2.PNG', class:'img-responsive' %>
-  </div>
-  <div class="col-xs-3 bottom vids">
-    <%= image_tag 'swing1.PNG', class:'img-responsive' %>
-  </div>
-  <div class="col-xs-3 bottom vids">
-    <%= image_tag 'swing4.PNG', class:'img-responsive' %>
-  </div>
-  <div class="col-xs-3 bottom vids">
-    <%= image_tag 'swing6.PNG', class:'img-responsive' %>
-  </div>
-</div>
-<br class="clr" />
-<div class="col-xs-10 col-xs-offset-1 lesson-instructions bottom">
-  <h3>Video Lessons are now live!</h3>
-  <br />
-  <p class="info">
-    Stuck and not sure what to work on?  Submit a video for a lesson! Once you checkout, you will be able to fill out a form and upload
-    your video. Your lesson will be viewable under the "Clubhouse" tab with-in 24 hours.
-    Questions or Concerns? Send me an <a href="mailto:wade.carlson@pga.com">Email</a>.
-  </p>
-</div>
-<br />
-<br class="clr" />
-<hr class="hr" />
-
 <div class="container test bottom">
     <div class="col-xs-10 col-xs-offset-1 text-center wc">
       <%= image_tag 'pga.png', class: 'pgalogo' %>
