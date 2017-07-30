@@ -1,12 +1,8 @@
 TO DO-
 
-Update Averages page - coincides with user landing page
-Update new lesson page with information and formatting.
-Round count to show how any rounds played by user in dash and 18/9 hole showing.
 Round notes highlight in yellow the duplicates - ignore common words, not list out in red
 Click on a users picture from the all rounds page and it pulls up a page that lists all of the users rounds.
 WITB section
-Have user landing page be profile and not scores listed out - make that another link.
 Footer?
 Highlights current user in the rankings section to easily see where you rank.
 Leaderboard needs to be on every page
@@ -17,6 +13,9 @@ NOT SURE -
 
 FINISHED -
 
+DONE- Update new lesson page with information and formatting.
+DONE- Have user landing page be profile and not scores listed out - make that another link.
+DONE- Round count to show how any rounds played by user in dash and 18/9 hole showing.
 DONE- Combine stats and tips info with your averages to make it easier to see what you need to work on.
 DONE- Form for scores
 DONE- Issues with not having scores for modal and current user
@@ -84,79 +83,10 @@ Leaderboard -
     </div>
   </div>
 </div>
-
 _____________________
 
 
-Averages from the Stats and Average Page
 
-<br />
-<div class="container">
-  <h2>Averages, Stats and ---> Your Stats</h2>
-  <div class="col-xs-4">
-    <h3 class="text-center big-score2">70</h3>
-    <ul class="info">
-      <li>12 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
-      <li>11 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
-      <li>29  Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
-      <li>3.2 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
-      <li>11.8 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
-    </ul>
-  </div>
-  <div class="col-xs-4">
-    <h3 class="text-center big-score2">75</h3>
-    <ul class="info">
-      <li>10 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
-      <li>10 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
-      <li>30 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
-      <li>2.4 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
-      <li>10.3 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
-    </ul>
-  </div>
-  <div class="col-xs-4">
-    <h3 class="text-center big-score2">80</h3>
-    <ul class="info">
-      <li>8 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
-      <li>8 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
-      <li>32 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
-      <li>1.8 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
-      <li>8.5 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
-    </ul>
-  </div>
-  <br class="clr" />
-  <div class="col-xs-4 bottom">
-    <h3 class="text-center big-score2">85</h3>
-    <ul class="info">
-      <li>5 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
-      <li>6 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
-      <li>33.7 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
-      <li>0.8 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
-      <li>6.6 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
-    </ul>
-  </div>
-  <div class="col-xs-4 bottom">
-    <h3 class="text-center big-score2">90</h3>
-    <ul class="info">
-      <li>3 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
-      <li>5 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
-      <li>35 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
-      <li>0.1 Birdies<b> ---> (<%= current_user.birdie_average_rounded %>)</b></li>
-      <li>4.8 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
-    </ul>
-  </div>
-  <div class="col-xs-4 bottom">
-    <h3 class="text-center big-score2">100</h3>
-    <ul class="info">
-      <li>0 Green's hit<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
-      <li>2 Fwy's hit<b> ---> (<%= current_user.fwys_hit_average_rounded %>)</b></li>
-      <li>38.3 Putts<b> ---> (<%= current_user.putting_average_rounded %>)</b></li>
-      <li>0 Birdies<b> ---> (<%= current_user.greens_hit_average_rounded %>)</b></li>
-      <li>1.3 Pars<b> ---> (<%= current_user.par_average_rounded %>)</b></li>
-    </ul>
-  </div>
-</div>
-<hr class="hr" />
-<br class="clr" />
 <div>
   <div class="col-xs-6 bottom what">
     <h2 class="text-center">What length course should I play?</h2>

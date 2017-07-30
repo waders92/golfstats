@@ -2,7 +2,7 @@
 <div class="container">
   <h2>Profile</h2>
   <%= link_to edit_user_registration_path do %>
-  <div class="col-xs-4 box text-center">
+  <div class="box text-center">
     <br />
       <% if current_user.picture.present? %>
     <div class="user-photo">
@@ -16,4 +16,14 @@
   </div>
   <% end %>
   <br />
+  <div>
+    <p class="info">
+      18 Hole Rounds Played - <%= current_user.rounds.count %><br />
+      9 Hole Rounds Played - <%= current_user.nineholerounds.count %>
+    </p>
+  </div>
+  <div class="linkavg">
+    <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
+    <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
+  </div>
 </div>

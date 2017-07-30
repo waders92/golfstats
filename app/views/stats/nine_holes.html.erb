@@ -1,11 +1,49 @@
 <br /><br />
 <div class="container">
+  <% if current_user.nineholerounds.present? %>
   <h2>9 Hole History</h2>
+  <p class="info">
+    Rounds Played: <%= current_user.nineholerounds.count %>
+  </p>
+  <div>
+    <div class="col-xs-4">
+      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#scoring9">
+        Scoring Average<br />
+        <%= current_user.scoring_average_nine_holes_rounded %>
+      </button><br /><br />
+      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#fairways9">
+        Fairways Hit Average<br />
+        <%= current_user.fwys_hit_average_nine_holes_rounded %>
+      </button><br /><br />
+      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#greens9">
+        Green's Hit Average<br />
+        <%= current_user.greens_hit_average_nine_holes_rounded %>
+      </button>
+    </div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-4">
+      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#putting9">
+        Putting Average<br />
+        <%= current_user.putting_average_nine_holes_rounded %>
+      </button><br /><br />
+      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#birdies9">
+        Birdie Average<br />
+        <%= current_user.birdie_average_nine_holes_rounded %>
+      </button><br /><br />
+      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#pars9">
+        Par Average<br />
+        <%= current_user.par_average_nine_holes_rounded %>
+      </button>
+    </div>
+    <% end %>
+  </div>
   <br class="clr" />
+  <br /><br /><br />
   <% if current_user.nineholerounds.present? %>
   <div class="linkavg">
     <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
   </div>
+  <hr />
   <br class="clr" />
   <% @monthly_nineholerounds.each do |month, round| %>
  <h2 class="text-center"><%= month %></h2>
@@ -49,4 +87,166 @@
       </div>
     </div>
   <% end %>
+</div>
+
+<!-- Scoring Average Modal -->
+<div class="modal fade" id="scoring9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Scoring By Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% current_user.nineholerounds.each do |nineholeround| %>
+      <%= nineholeround.created_at.strftime('%_m/%-d') %> <%= nineholeround.course %> - <%= nineholeround.score %>
+      <br />
+      <% end %>
+      <br />
+      <hr />
+      <h5>Low Round</h5>
+      <%= current_user.users_best_score_nine_holes %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fairway Average Modal -->
+<div class="modal fade" id="fairways9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Fairways Hit By Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% current_user.nineholerounds.each do |nineholeround| %>
+      <%= nineholeround.created_at.strftime('%_m/%-d') %> <%= nineholeround.course %> - <%= nineholeround.fwys %>
+      <br />
+      <% end %>
+      <br />
+      <hr />
+      <h5>Most fairways hit in a round</h5>
+      <%= current_user.users_best_fairways_nine_holes %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Greens Average Modal -->
+<div class="modal fade" id="greens9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Greens Hit By Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% current_user.nineholerounds.each do |nineholeround| %>
+      <%= nineholeround.created_at.strftime('%_m/%-d') %> <%= nineholeround.course %> - <%= nineholeround.greenshit %>
+      <br />
+      <% end %>
+      <br />
+      <hr />
+      <h5>Most Greens Hit In A Round</h5>
+      <%= current_user.users_best_greens_nine_holes %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Putting Average Modal -->
+<div class="modal fade" id="putting9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Putting Total By Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% current_user.nineholerounds.each do |nineholeround| %>
+      <%= nineholeround.created_at.strftime('%_m/%-d') %> <%= nineholeround.course %> - <%= nineholeround.putts %>
+      <br />
+      <% end %>
+      <br />
+      <hr />
+      <h5>Lowest Putting Total</h5>
+      <%= current_user.users_best_putting_round_nine_holes %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Birdie Average Modal -->
+<div class="modal fade" id="birdies9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Birdie Totals By Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% current_user.nineholerounds.each do |nineholeround| %>
+      <%= nineholeround.created_at.strftime('%_m/%-d') %> <%= nineholeround.course %> - <%= nineholeround.birdies %>
+      <br />
+      <% end %>
+      <br />
+      <hr />
+      <h5>Most Birdies In A Round</h5>
+      <%= current_user.users_best_birdie_total_nine_holes %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Par Average Modal -->
+<div class="modal fade" id="pars9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Par Totals By Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% current_user.nineholerounds.each do |nineholeround| %>
+      <%= nineholeround.created_at.strftime('%_m/%-d') %> <%= nineholeround.course %> - <%= nineholeround.pars %>
+      <br />
+      <% end %>
+      <br />
+      <hr />
+      <h5>Most Pars In A Round</h5>
+      <%= current_user.users_best_par_total_nine_holes %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
