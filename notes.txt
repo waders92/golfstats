@@ -1,11 +1,8 @@
 TO DO-
-
+PRIORITY--
 Round notes highlight in yellow the duplicates - ignore common words, not list out in red
-WITB section
 Highlights current user in the rankings section to easily see where you rank.
-Click on course form scoring area pulls up info about that course on google
-Show under par rounds in RED
-
+WITB section
 
 
 NOT SURE -
@@ -15,6 +12,7 @@ Footer?
 
 FINISHED -
 
+DONE- Click on course form scoring area pulls up info about that course on google
 DONE- Leaderboard is on about page
 DONE- Update new lesson page with information and formatting.
 DONE- Have user landing page be profile and not scores listed out - make that another link.
