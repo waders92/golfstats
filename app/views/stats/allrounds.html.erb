@@ -25,7 +25,7 @@
       <hr class="hr-divide"/>
       <div class="text-center course-name">
         <p class="info">
-          <%= round.course.upcase %>
+          <%= link_to round.course.upcase, "http://www.google.de/search?q=#{round.course}", :target => "_blank" %>
         </p>
       </div>
   </div>
