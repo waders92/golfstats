@@ -28,7 +28,7 @@ class RoundsController < ApplicationController
     if @round.invalid?
       flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
     end
-    redirect_to dashboard_path
+    redirect_to eighteen_path
   end
 
   def destroy
