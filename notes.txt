@@ -2,6 +2,11 @@ TO DO-
 PRIORITY--
 Round notes highlight in yellow the duplicates - ignore common words, not list out in red
 Highlights current user in the rankings section to easily see where you rank.
+Mobile friendly-
+  Bigger Link text
+  Bigger P text
+  Bigger Buttons
+  
 WITB section
 
 
