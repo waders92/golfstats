@@ -21,12 +21,15 @@ class User < ActiveRecord::Base
     rounds.count
   end
 
+  def last_round
+    last_round = self.rounds.last
+  end
+
   include ScoringAverage
   include GreensAverage
   include FwysAverage
   include PuttingAverage
   include BirdieAverage
   include ParAverage
-  include Badge
   include DuplicateNotes
 end

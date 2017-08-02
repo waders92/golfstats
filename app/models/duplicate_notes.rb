@@ -51,11 +51,6 @@ module DuplicateNotes
     p three
   end
 
-  def putts
-    putts = users_duplicate_notes.match(/PUTTS/)
-    p putts
-  end
-
   def putt
     putt = users_duplicate_notes.match(/PUTT/)
     p putt
