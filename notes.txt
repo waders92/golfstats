@@ -1,6 +1,5 @@
 TO DO-
 PRIORITY--
-Highlights current user in the rankings section to easily see where you rank.
 Mobile friendly-
   Bigger Link text
   Bigger P text
@@ -16,7 +15,8 @@ Footer?
 
 FINISHED -
 
-DONE -Round notes - ignore common words with gsub!
+DONE - Highlights current user in the rankings section to easily see where you rank.
+DONE - Round notes - ignore common words with gsub!
 DONE- Click on course form scoring area pulls up info about that course on google
 DONE- Leaderboard is on about page
 DONE- Update new lesson page with information and formatting.

@@ -9,12 +9,21 @@
       <th>Rnds</th>
     </tr>
   <% fairways_rank_with_index do |(user, avg), i| %>
+  <% if user_signed_in? && user.name == current_user.name %>
+  <tr class="text-center">
+    <td class="yellow"><%= i %></td>
+    <td class="yellow"><%= user.name %></td>
+    <td class="yellow"><%= avg.round(2) %></td>
+    <td class="yellow"><%= user.total_rounds %></td>
+  </tr>
+  <% else %>
     <tr class="text-center">
       <td><%= i %></td>
       <td><%= user.name %></td>
       <td><%= avg.round(2) %></td>
       <td><%= user.total_rounds %></td>
     </tr>
+    <% end %>
   <% end %>
   </table>
 </div>
