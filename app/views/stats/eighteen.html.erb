@@ -102,9 +102,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <% current_user.rounds.each do |round| %>
-      <%= round.created_at.strftime('%_m/%-d') %> <%= round.course %> - <%= round.score %>
+      <% @monthly_rounds.each do |month, round| %>
+      <% round.each do |round| %>
+      <%= round.created_at.strftime('%_m/%-d/%y') %> <%= round.course %> - <%= round.score %>
       <br />
+      <% end %>
       <% end %>
       <br />
       <hr />
@@ -129,9 +131,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <% current_user.rounds.each do |round| %>
-      <%= round.created_at.strftime('%_m/%-d') %> <%= round.course %> - <%= round.fwys %>
+      <% @monthly_rounds.each do |month, round| %>
+      <% round.each do |round| %>
+      <%= round.created_at.strftime('%_m/%-d/%y') %> <%= round.course %> - <%= round.fwys %>
       <br />
+      <% end %>
       <% end %>
       <br />
       <hr />
@@ -156,9 +160,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <% current_user.rounds.each do |round| %>
-      <%= round.created_at.strftime('%_m/%-d') %> <%= round.course %> - <%= round.greens %>
+      <% @monthly_rounds.each do |month, round| %>
+      <% round.each do |round| %>
+      <%= round.created_at.strftime('%_m/%-d/%y') %> <%= round.course %> - <%= round.greens %>
       <br />
+      <% end %>
       <% end %>
       <br />
       <hr />
@@ -183,9 +189,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <% current_user.rounds.each do |round| %>
-      <%= round.created_at.strftime('%_m/%-d') %> <%= round.course %> - <%= round.putts %>
+      <% @monthly_rounds.each do |month, round| %>
+      <% round.each do |round| %>
+      <%= round.created_at.strftime('%_m/%-d/%y') %> <%= round.course %> - <%= round.putts %>
       <br />
+      <% end %>
       <% end %>
       <br />
       <hr />
@@ -210,9 +218,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <% current_user.rounds.each do |round| %>
-      <%= round.created_at.strftime('%_m/%-d') %> <%= round.course %> - <%= round.birdies %>
+      <% @monthly_rounds.each do |month, round| %>
+      <% round.each do |round| %>
+      <%= round.created_at.strftime('%_m/%-d/%y') %> <%= round.course %> - <%= round.birdies %>
       <br />
+      <% end %>
       <% end %>
       <br />
       <hr />
@@ -237,9 +247,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <% current_user.rounds.each do |round| %>
-      <%= round.created_at.strftime('%_m/%-d') %> <%= round.course %> - <%= round.pars %>
+      <% @monthly_rounds.each do |month, round| %>
+      <% round.each do |round| %>
+      <%= round.created_at.strftime('%_m/%-d/%y') %> <%= round.course %> - <%= round.pars %>
       <br />
+      <% end %>
       <% end %>
       <br />
       <hr />
