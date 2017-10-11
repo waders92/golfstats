@@ -26,27 +26,27 @@
   </div>
   <div class="charts">
     <h3 class="text-center">Scoring</h3><br>
-    <%= area_chart Round.group_by_day(:created_at).maximum(:score), label: "Score" %>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:score) %>
   </div>
   <div class="charts top">
     <h3 class="text-center">Greens Hit</h3><br>
-    <%= area_chart Round.group_by_day(:created_at).maximum(:greens), label: "Score" %>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:greens) %>
   </div>
   <div class="charts top">
     <h3 class="text-center">Fairways Hit</h3><br>
-    <%= area_chart Round.group_by_day(:created_at).maximum(:fwys), label: "Score" %>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:fwys) %>
   </div>
   <div class="charts top">
     <h3 class="text-center">Putting</h3><br>
-    <%= area_chart Round.group_by_day(:created_at).maximum(:putts), label: "Score" %>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:putts) %>
   </div>
   <div class="charts top">
     <h3 class="text-center">Pars</h3><br>
-    <%= area_chart Round.group_by_day(:created_at).maximum(:pars), label: "Score" %>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:pars) %>
   </div>
   <div class="charts top">
     <h3 class="text-center">Birdies</h3><br>
-    <%= area_chart Round.group_by_day(:created_at).maximum(:birdies), label: "Score" %>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:birdies) %>
   </div>
   <div class="linkavg top bottom">
     <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
