@@ -16,14 +16,31 @@
   </div>
   <% end %>
   <br />
-  <div>
-    <p class="info bottom">
-      18 Hole Rounds Played - <%= current_user.rounds.count %><br />
-      9 Hole Rounds Played - <%= current_user.nineholerounds.count %><br>
-      Best Round - <%= current_user.users_best_score %><br />
-      Last Round - <%= current_user.rounds.first.created_at.strftime("%m/%d/%Y") %> (<%= current_user.rounds.first.course %> - <%= current_user.rounds.first.score %>)<br>
+  <div class="col-xs-3 text-center top">
+    <p class="giant-score">
+      <%= current_user.rounds.count %>
     </p>
+    <p class="info">18 Hole Games</p>
   </div>
+  <div class="col-xs-3 text-center top">
+       <p class="giant-score">
+      <%= current_user.nineholerounds.count %>
+    </p>
+    <p class="info">9 Hole Games</p>
+  </div>
+  <div class="col-xs-3 text-center top">
+       <p class="giant-score">
+      <%= current_user.users_best_score %>
+    </p>
+    <p class="info">Low Score 18 Holes</p>
+  </div>
+  <div class="col-xs-3 text-center top">
+       <p class="giant-score">
+      <%= current_user.users_best_score_nine_holes %>
+    </p>
+    <p class="info">Low Score 9 Holes</p>
+  </div>
+  <br class="clr" />
   <div class="charts">
     <h3 class="text-center">Scoring</h3><br>
     <%= area_chart Round.group_by_day(:created_at).maximum(:score) %>
