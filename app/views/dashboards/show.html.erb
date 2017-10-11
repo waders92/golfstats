@@ -21,7 +21,7 @@
       18 Hole Rounds Played - <%= current_user.rounds.count %><br />
       9 Hole Rounds Played - <%= current_user.nineholerounds.count %><br>
       Best Round - <%= current_user.users_best_score %><br />
-      Last Round - <%= current_user.last_round.created_at.strftime("%m/%d/%Y") %> (<%= current_user.last_round.course %> - <%= current_user.last_round.score %>)<br>
+      Last Round - <%= current_user.rounds.first.created_at.strftime("%m/%d/%Y") %> (<%= current_user.rounds.first.course %> - <%= current_user.rounds.first.score %>)<br>
     </p>
   </div>
   <div class="charts">
