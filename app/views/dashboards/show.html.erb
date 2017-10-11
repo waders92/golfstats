@@ -24,7 +24,31 @@
       Last Round - <%= current_user.last_round.created_at.strftime("%m/%d/%Y") %> (<%= current_user.last_round.course %> - <%= current_user.last_round.score %>)<br>
     </p>
   </div>
-  <div class="linkavg bottom">
+  <div class="charts">
+    <h3 class="text-center">Scoring</h3><br>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:score), label: "Score" %>
+  </div>
+  <div class="charts top">
+    <h3 class="text-center">Greens Hit</h3><br>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:greens), label: "Score" %>
+  </div>
+  <div class="charts top">
+    <h3 class="text-center">Fairways Hit</h3><br>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:fwys), label: "Score" %>
+  </div>
+  <div class="charts top">
+    <h3 class="text-center">Putting</h3><br>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:putts), label: "Score" %>
+  </div>
+  <div class="charts top">
+    <h3 class="text-center">Pars</h3><br>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:pars), label: "Score" %>
+  </div>
+  <div class="charts top">
+    <h3 class="text-center">Birdies</h3><br>
+    <%= area_chart Round.group_by_day(:created_at).maximum(:birdies), label: "Score" %>
+  </div>
+  <div class="linkavg top bottom">
     <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
     <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
   </div>

@@ -3,8 +3,10 @@
 <head>
   <title>TrakStats</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
