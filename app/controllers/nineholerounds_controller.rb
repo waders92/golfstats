@@ -14,7 +14,7 @@ class NineholeroundsController < ApplicationController
     if @nineholeround.invalid?
       flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
     end
-    redirect_to nine_holes_path
+    redirect_to dashboard_path
    end
 
   def edit
@@ -28,13 +28,13 @@ class NineholeroundsController < ApplicationController
     if @nineholeround.invalid?
       flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
     end
-    redirect_to nine_holes_path
+    redirect_to dashboard_path
   end
 
   def destroy
     @nineholeround = Nineholeround.find_by(id: params[:id])
     @nineholeround.destroy
-    redirect_to nine_holes_path
+    redirect_to dashboard_path
   end
 
   private

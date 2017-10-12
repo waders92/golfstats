@@ -26,11 +26,6 @@ class StatsController < ApplicationController
     @round = Round.all
   end
 
-  def eighteen
-    @round = Round.all
-    @monthly_rounds = current_user.rounds.order('created_at DESC').group_by(&:month)
-  end
-
   def about; end
   def lessons;end
   def averages;end

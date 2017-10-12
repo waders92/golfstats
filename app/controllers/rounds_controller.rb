@@ -14,7 +14,7 @@ class RoundsController < ApplicationController
     if @round.invalid?
       flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
     end
-    redirect_to eighteen_path
+    redirect_to dashboard_path
    end
 
   def edit
@@ -28,13 +28,13 @@ class RoundsController < ApplicationController
     if @round.invalid?
       flash[:error] = '<strong>Could not save</strong>, please fill in all fields.'
     end
-    redirect_to eighteen_path
+    redirect_to dashboard_path
   end
 
   def destroy
     @round = Round.find_by(id: params[:id])
     @round.destroy
-    redirect_to eighteen_path
+    redirect_to dashboard_path
   end
 
   private

@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   get '/allrounds', to: 'stats#allrounds'
   get '/allnineholes', to: 'stats#allnineholes'
   get '/members', to: 'stats#members'
-  get '/nine_holes', to: 'stats#nine_holes'
-  get '/eighteen', to: 'stats#eighteen'
   get 'notes' => 'stats#notes', as: :notes
   resources :rounds do
     resources :notes, except: :index
