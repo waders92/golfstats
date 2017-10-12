@@ -2,47 +2,61 @@
 <div class="container">
   <% if current_user.nineholerounds.present? %>
   <h2>9 Hole History</h2>
-  <p class="info">
-    Rounds Played: <%= current_user.nineholerounds.count %>
-  </p>
-  <div>
-    <div class="col-xs-4">
-      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#scoring9">
-        Scoring Average<br />
-        <%= current_user.scoring_average_nine_holes_rounded %>
-      </button><br /><br />
-      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#fairways9">
-        Fairways Hit Average<br />
-        <%= current_user.fwys_hit_average_nine_holes_rounded %>
-      </button><br /><br />
-      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#greens9">
-        Green's Hit Average<br />
-        <%= current_user.greens_hit_average_nine_holes_rounded %>
-      </button>
+    <div class="linkavg">
+     <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
     </div>
-    <div class="col-xs-2"></div>
-    <div class="col-xs-4">
-      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#putting9">
-        Putting Average<br />
-        <%= current_user.putting_average_nine_holes_rounded %>
-      </button><br /><br />
-      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#birdies9">
-        Birdie Average<br />
-        <%= current_user.birdie_average_nine_holes_rounded %>
-      </button><br /><br />
-      <button type="button" class="btn btn-default" style="width: 200px; height: 50px;" data-toggle="modal" data-target="#pars9">
-        Par Average<br />
-        <%= current_user.par_average_nine_holes_rounded %>
-      </button>
-    </div>
-    <% end %>
-  </div>
+     <div class="col-xs-6 col-xs-offset-3 text-center top">
+        <button type="button" class="giant-score2" data-toggle="modal" data-target="#rounds9">
+         <%= current_user.nineholerounds.count %>
+        </button>
+        <p class="ginfo">Rounds Played</p>
+     </div>
+   <div>
+      <div class="col-xs-4 text-center top">
+        <button type="button" class="giant-score2" data-toggle="modal" data-target="#scoring9">
+         <%= current_user.scoring_average_nine_holes_rounded %>
+        </button>
+        <p class="ginfo">Scoring Average</p>
+      </div>
+      <div class="col-xs-4 text-center top">  
+        <button type="button" class="giant-score2" data-toggle="modal" data-target="#fairways9">
+          <%= current_user.fwys_hit_average_nine_holes_rounded %>
+        </button>
+        <p class="ginfo">Fwy's Hit Avg</p>
+      </div>
+      <div class="col-xs-4 text-center top">  
+        <button type="button" class="giant-score2" data-toggle="modal" data-target="#greens9">
+          <%= current_user.greens_hit_average_nine_holes_rounded %>
+        </button>
+        <p class="ginfo">Green's Hit Avg</p>
+      </div>
+   </div>
+
+
+    <div>
+      <div class="col-xs-4 text-center top">
+        <button type="button" class="giant-score2" data-toggle="modal" data-target="#putting9">
+         <%= current_user.putting_average_nine_holes_rounded %>
+        </button>
+        <p class="ginfo">Putting Avg</p>
+      </div>
+      <div class="col-xs-4 text-center top">  
+        <button type="button" class="giant-score2" data-toggle="modal" data-target="#birdies9">
+          <%= current_user.birdie_average_nine_holes_rounded %>
+        </button>
+        <p class="ginfo">Birdie Avg</p>
+      </div>
+      <div class="col-xs-4 text-center top">  
+        <button type="button" class="giant-score2" data-toggle="modal" data-target="#pars9">
+          <%= current_user.par_average_nine_holes_rounded %>
+        </button>
+        <p class="ginfo">Par Avg</p>
+      </div>
+   </div>
+ <% end %>
   <br class="clr" />
   <br /><br /><br />
   <% if current_user.nineholerounds.present? %>
-  <div class="linkavg">
-    <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
-  </div>
   <hr />
   <br class="clr" />
   <% @monthly_nineholerounds.each do |month, round| %>
@@ -88,6 +102,35 @@
     </div>
   <% end %>
 </div>
+
+
+<!-- Rounds Modal -->
+<div class="modal fade" id="rounds9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Scoring By Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% current_user.nineholerounds.each do |nineholeround| %>
+      <%= nineholeround.created_at.strftime('%_m/%-d') %> <%= nineholeround.course %>
+      <br />
+      <% end %>
+      <br />
+      <hr />
+      <h5>Total Rounds</h5>
+      <%= current_user.nineholerounds.count %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Scoring Average Modal -->
 <div class="modal fade" id="scoring9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

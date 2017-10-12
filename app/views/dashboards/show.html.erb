@@ -1,6 +1,5 @@
 <br />
 <div class="container">
-  <h2>Profile</h2>
   <%= link_to edit_user_registration_path do %>
   <div class="box text-center">
     <br />
@@ -20,25 +19,25 @@
     <p class="giant-score">
       <%= current_user.rounds.count %>
     </p>
-    <p class="info">18 Hole Games</p>
+    <p class="ginfo">18 Hole Games</p>
   </div>
   <div class="col-xs-3 text-center top">
        <p class="giant-score">
       <%= current_user.nineholerounds.count %>
     </p>
-    <p class="info">9 Hole Games</p>
+    <p class="ginfo">9 Hole Games</p>
   </div>
   <div class="col-xs-3 text-center top">
        <p class="giant-score">
       <%= current_user.users_best_score %>
     </p>
-    <p class="info">Low Score 18 Holes</p>
+    <p class="ginfo">Low Score 18 Holes</p>
   </div>
   <div class="col-xs-3 text-center top">
        <p class="giant-score">
       <%= current_user.users_best_score_nine_holes %>
     </p>
-    <p class="info">Low Score 9 Holes</p>
+    <p class="ginfo">Low Score 9 Holes</p>
   </div>
   <br class="clr" />
   <div class="charts">
@@ -64,9 +63,5 @@
   <div class="charts top">
     <h3 class="text-center">Birdies</h3><br>
     <%= area_chart Round.group_by_day(:created_at).maximum(:birdies) %>
-  </div>
-  <div class="linkavg top bottom">
-    <%= link_to 'Post 18 Hole Score', new_round_path, class: 'btn btn-default' %>
-    <%= link_to 'Post 9 Hole Score', new_nineholeround_path, class: 'btn btn-default' %>
   </div>
 </div>
