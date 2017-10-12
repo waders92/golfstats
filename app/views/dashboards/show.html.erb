@@ -50,7 +50,7 @@
   <h1 class="text-center">18 Hole History</h1>
   <div class="charts top text-center">
     <h3 class="text-center">Scoring Avg</h3><br>
-        <button type="button" class="giant-score2" data-toggle="modal" data-target="#scoring">
+        <button type="button" class="text-center giant-score2" data-toggle="modal" data-target="#scoring">
          <%= current_user.scoring_average_rounded %>
         </button>
     <%= area_chart Round.group_by_day(:created_at).maximum(:score) %>
@@ -58,7 +58,7 @@
   <hr>
   <div class="charts top text-center">
     <h3 class="text-center">Greens Hit Avg</h3><br>
-     <button type="button" class="giant-score2" data-toggle="modal" data-target="#greens">
+     <button type="button" class="text-center giant-score2" data-toggle="modal" data-target="#greens">
           <%= current_user.greens_hit_average_rounded %>
         </button>
     <%= area_chart Round.group_by_day(:created_at).maximum(:greens) %>
@@ -66,7 +66,7 @@
   <hr>
   <div class="charts top text-center">
     <h3 class="text-center">Fairways Hit Avg</h3><br>
-    <button type="button" class="giant-score2" data-toggle="modal" data-target="#fairways">
+    <button type="button" class="text-center giant-score2" data-toggle="modal" data-target="#fairways">
           <%= current_user.fwys_hit_average_rounded %>
         </button>
     <%= area_chart Round.group_by_day(:created_at).maximum(:fwys) %>
@@ -74,7 +74,7 @@
   <hr>
   <div class="charts top text-center">
     <h3 class="text-center">Putting Avg</h3><br>
-        <button type="button" class="giant-score2" data-toggle="modal" data-target="#putting">
+        <button type="button" class="text-center giant-score2" data-toggle="modal" data-target="#putting">
          <%= current_user.putting_average_rounded %>
         </button>
     <%= area_chart Round.group_by_day(:created_at).maximum(:putts) %>
@@ -82,7 +82,7 @@
   <hr>
   <div class="charts top text-center">
     <h3 class="text-center">Par Avg</h3><br>
-     <button type="button" class="giant-score2" data-toggle="modal" data-target="#pars">
+     <button type="button" class="text-center giant-score2" data-toggle="modal" data-target="#pars">
           <%= current_user.par_average_rounded %>
         </button>
     <%= area_chart Round.group_by_day(:created_at).maximum(:pars) %>
@@ -90,7 +90,7 @@
   <hr>
   <div class="charts top text-center">
     <h3 class="text-center">Birdie Avg</h3><br>
-        <button type="button" class="giant-score2" data-toggle="modal" data-target="#birdies">
+        <button type="button" class="text-center giant-score2" data-toggle="modal" data-target="#birdies">
           <%= current_user.birdie_average_rounded %>
         </button>
     <%= area_chart Round.group_by_day(:created_at).maximum(:birdies) %>
