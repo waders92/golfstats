@@ -2,6 +2,7 @@
 <h2 class="text-center">Scoring - 18 Holes</h2>
 <br />
 <% @rounds.each do |round| %>
+<% if round.public? %>
 <div class="thumbnail col-xs-4 top-score2">
   <div class="text-center">
     <% if round.user.picture.present? %>
@@ -30,4 +31,5 @@
       </div>
   </div>
 </div>
+<% end %>
 <% end %>
