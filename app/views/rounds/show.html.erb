@@ -56,15 +56,6 @@
     <p class="info">
       <br />
       Notes:<br />
-      <% if @round.birdies > 1 %>
-      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!<br />
-      <% end %>
-      <% if @round.birdies == 0 %>
-      You had <%= @round.birdies %> birdies and <%= @round.pars %> pars. If you think about it, you played <%= @round.zero_birdie_round %> holes at EVEN par!<br />
-      <% end %>
-      <% if @round.birdies == 1 %>
-      You had <%= @round.birdies %> birdie and <%= @round.pars %> par(s). If you think about it, you played <%= @round.total_stretch_under %> holes at <%= @round.birdies %> under!<br />
-      <% end %>
       <% @round.notes.each do |note| %>
       <%= note.message %>&nbsp;&nbsp;<%#= link_to(image_tag("edit.png", class: 'pencil'), edit_round_note_path(@round, note)) %>&nbsp;&nbsp;
       <%= link_to(image_tag("trash.png", class: 'trash'), round_note_path(@round,note), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}) %><br />

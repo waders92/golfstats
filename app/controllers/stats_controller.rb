@@ -22,6 +22,16 @@ class StatsController < ApplicationController
     @lessons = Lesson.all
   end
 
+  def avg_eighteen
+    @user_rounds = current_user.rounds.all
+    @monthly_rounds = current_user.rounds.order('created_at DESC').group_by(&:month)
+  end
+
+  def avg_nine
+    @user_rounds_nine_holes = current_user.nineholerounds.all
+    @monthly_nineholerounds = current_user.nineholerounds.order('created_at DESC').group_by(&:month)
+  end
+
   def help
     @round = Round.all
   end
