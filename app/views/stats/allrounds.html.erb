@@ -5,11 +5,8 @@
 <% if round.public? %>
 <div class="thumbnail col-xs-4 top-score2">
   <div class="text-center">
-    <% if round.user.picture.present? %>
-    <%= image_tag round.user.picture %><br /><%= round.user.name %> | <%= round.created_at.strftime("%b %-d, %Y") %>
-    <% else %>
+    
     <%= image_tag 'add-user.png' %><br /><%= round.user.name %> | <%= round.created_at.strftime("%b %-d, %Y") %>
-    <% end %>
   </div>
   <hr class="divide" />
   <br />
