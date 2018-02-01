@@ -3,13 +3,8 @@
   <%= link_to edit_user_registration_path do %>
   <div class="box text-center">
     <br />
-      <% if current_user.picture.present? %>
-    <div class="user-photo">
-        <%= image_tag current_user.picture %>
-    </div>
-    <% else %>
     <%= image_tag 'add-user.png', class: 'user' %>
-    <% end %>
+    <br>
     <h1><%= current_user.name %></h1>
     <h5>Member since: <%= current_user.created_at.strftime("%m/%d/%Y") %>&nbsp;&nbsp;&nbsp;<%= image_tag 'edit.png', class: 'editing' %></h5>
   </div>
@@ -45,7 +40,7 @@
     <p class="ginfo">Low Score 9 Holes</p>
   </div>
   <br class="clr" />
-  <div class=" col-xs-8 col-xs-offset-2 text-center top linkavg">
+  <div class=" col-xs-8 col-xs-offset-2 text-center top bottom linkavg">
         <%= link_to '18 Hole Averages', avg_eighteen_path, class: 'btn btn-default' %>&nbsp;&nbsp;&nbsp;
         <%= link_to '9 Hole Averages', avg_nine_path, class: 'btn btn-default' %>
   </div>
